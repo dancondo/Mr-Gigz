@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bars
   resources :bands
   devise_for :users
   root to: 'pages#home'

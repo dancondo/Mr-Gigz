@@ -1,0 +1,20 @@
+<h1>Bares Mr. Gigz</h1>
+
+<table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Bar</th>
+        <th>Endereço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bars.each_with_index do |bar, index| %>
+        <tr>
+          <th><%= index + 1 %></th>
+          <td><%= bar.name %></td>
+          <td><%= bar.address %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
