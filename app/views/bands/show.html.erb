@@ -1,0 +1,12 @@
+<h1><%= @band.name %></h1>
+<p>Find me in app/views/bands/show.html.erb</p>
+
+
+<%= @band.photo %>
+<%= @band.description %>
+
+
+<%= link_to 'Edit', edit_band_path(@band) %>
+<%= link_to 'Delete', @band,
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %>

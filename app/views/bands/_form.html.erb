@@ -1,0 +1,8 @@
+<%= simple_form_for @band do |f| %>
+
+  <%= f.input :name %>
+  <%= f.input :photo %>
+  <%= f.input :minimum_price %>
+  <%= f.submit "Create Band", class: "btn btn-primary" %>
+
+<% end %>
