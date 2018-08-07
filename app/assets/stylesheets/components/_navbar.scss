@@ -1,12 +1,10 @@
 .navbar {
-  background-color: #0061D1;
-  height: 8vh;
-  margin: auto;
+  background-color: $highlight;
+  margin-bottom: 0 !important;
 }
 
-i {
+.nav-link i {
   color: white;
-  font-size: 21px;
 }
 
 li {
@@ -24,4 +22,8 @@ li {
   border-right: 2px solid white;
   margin: 0;
   padding-right: 10px;
+}
+
+.nav-item {
+  float: right;
 }
