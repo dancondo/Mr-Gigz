@@ -3,7 +3,12 @@ class BandsController < ApplicationController
   before_action :set_band, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bands = Band.all
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR syllabus ILIKE :query"
+      @bands = Band.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @bands = Band.all
+    end
   end
 
   def show

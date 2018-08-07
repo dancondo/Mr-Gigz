@@ -1,6 +1,34 @@
-<h1>Bands#index</h1>
-<p>Find me in app/views/bands/index.html.erb</p>
-<% @bands.each do |band| %>
-  <%= link_to band.name, band %>
-<% end %>
-<%= link_to 'Nova Banda!', new_band_path %>
+<div class = "container" >
+
+<br>
+
+  <%= form_tag bars_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a Band"
+    %>
+  <% end %>
+
+<br>
+
+  <div class="row">
+    <% @bands.each do |band| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 class="justify-content-end">
+        <div class="card" style="background-image: url('/../assets/images/logo.jpg'); height: 300px"><%= band.name %></div>
+        <%= link_to band.name, band %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <%= link_to 'Nova Banda!', new_band_path %> -->
