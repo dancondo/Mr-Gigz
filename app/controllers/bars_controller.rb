@@ -43,7 +43,7 @@ class BarsController < ApplicationController
   private
 
   def bar_params
-    params.require(:bar).permit(:name, :address)
+    params.require(:bar).permit(:name, :address, :photo)
   end
 
   def set_bar
