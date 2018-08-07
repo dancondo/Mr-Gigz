@@ -1,8 +1,11 @@
 <h1><%= @band.name %></h1>
 <p>Find me in app/views/bands/show.html.erb</p>
 
-<%= image_tag @band.photo.url, width: '500px'; %>
 
+<% if @band.photo.file %>
+  <%= image_tag @band.photo.url, width: '500px'; %>
+<% else %>
+<% end %>
 <%= @band.description %>
 
 
