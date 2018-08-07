@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   validates :role, inclusion: [:bar, :band, nil]
   has_one :band
-  has_many :bars
+  has_one :bar
 end
