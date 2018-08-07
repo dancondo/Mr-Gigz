@@ -4,10 +4,10 @@ a.bttn {
   -webkit-transition:0.3s all ease;
   transition:0.3s ease all;
   &:hover {
-    color:#660066;
+    color: $highlight;
   }
   &:focus {
-    color:#d9d9d9;
+    color: #d9d9d9;
   }
 }
 
@@ -17,10 +17,10 @@ a.bttn-dark {
   -webkit-transition:0.3s all ease;
   transition:0.3s ease all;
   &:hover {
-    color:#660066;
+    color: $highlight !important;
   }
   &:focus {
-    color:#d9d9d9;
+    color: #d9d9d9;
   }
 }
 

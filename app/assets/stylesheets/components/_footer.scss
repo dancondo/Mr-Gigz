@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background: $highlight;
+  color: black;
+  padding: 11px 13px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.fab {
+  padding-left: 8px;
+}
+
+#copyright-phrase {
+  color: white;
+}
