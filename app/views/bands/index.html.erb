@@ -2,12 +2,13 @@
 
 <br>
 
-  <%= form_tag bars_path, method: :get do %>
+  <%= form_tag bands_path, method: :get, class: 'form-inline' do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "form-control search-form-inline",
       placeholder: "Find a Band"
     %>
+    <%= submit_tag "Buscar!", class: 'btn btn-primary search-btn-inline' %>
   <% end %>
 
 <br>

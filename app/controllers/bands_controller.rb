@@ -4,7 +4,7 @@ class BandsController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = "title ILIKE :query OR syllabus ILIKE :query"
+      sql_query = "name ILIKE :query"
       @bands = Band.where(sql_query, query: "%#{params[:query]}%")
     else
       @bands = Band.all
