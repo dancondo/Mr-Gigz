@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+      <div class="user-show-main">
+
+        <% if @band.photo.file %>
+          <%= image_tag @band.photo.url, class: 'image-band-show'; %>
+        <% end %>
+
+        <h1><%= @band.name %></h1>
+
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4">
+      <div class="user-show-secondary">
+
+        <iframe width="100%" height="250"src="https://www.youtube.com/embed/Z8uvPLsah0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <h1><%= @band.name %></h1>
+  <p>Find me in app/views/bands/show.html.erb</p>
+
+
+  <%= @band.description %>
+
+  <%= link_to 'Edit', edit_band_path(@band) %>
+  <%= link_to 'Delete', @band,
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %>
+
+</div>
+
+
