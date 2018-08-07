@@ -13,10 +13,12 @@
             <%= link_to current_user.band, class: "nav-link" do %>
               <%= current_user.band.name %>
             <% end %>
-          <% else %>
+          <% elsif current_user.bar %>
             <%= link_to current_user.bar, class: "nav-link" do %>
               <%= current_user.bar.name %>
             <% end %>
+          <% else %>
+            <%= link_to 'Bem vindo', '#', class: 'nav-link' %>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path, class: "nav-link" do %>
