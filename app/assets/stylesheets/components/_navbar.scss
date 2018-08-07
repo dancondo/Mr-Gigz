@@ -1,0 +1,27 @@
+.navbar {
+  background-color: #0061D1;
+  height: 8vh;
+  margin: auto;
+}
+
+i {
+  color: white;
+  font-size: 21px;
+}
+
+li {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  &:before {
+    padding-right: 20px;
+    color: white;
+  }
+}
+
+.navbar-brand {
+  color: white;
+  border-right: 2px solid white;
+  margin: 0;
+  padding-right: 10px;
+}
