@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 2018_08_06_231348) do
     t.index ["user_id"], name: "index_bars_on_user_id"
   end
 
+  create_table "bars", force: :cascade do |t|
+    t.string "address"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
