@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  validates :role, inclusion: [:bar, :band, nil]
   has_one :band
   has_many :bars
-  validates :role, inclusion: [:bar, :band]
 end
