@@ -1,1 +1,23 @@
 // Specific CSS for your home-page
+html {
+  position: relative;
+}
+
+body {
+  margin-bottom: 105px !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.como-funciona {
+  margin-top: 40px;
+}
+
+#titulo-como-funciona {
+  text-align: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 15px;
+  margin: 50px 400px 0 400px;
+}
