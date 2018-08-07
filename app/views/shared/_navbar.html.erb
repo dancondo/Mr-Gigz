@@ -18,7 +18,7 @@
               <%= current_user.bar.name %>
             <% end %>
           <% else %>
-            <%= link_to 'Bem vindo', '#', class: 'nav-link' %>
+            <%= link_to 'Bem vindo', new_role_path, class: 'nav-link' %>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path, class: "nav-link" do %>
