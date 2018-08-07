@@ -1,6 +1,7 @@
 <h2><%= @bar.name %>- Mr.Gigz</h2>
 
 <%= link_to "Voltar", bars_path %>
+<%= link_to 'Edit', edit_bar_path(@bar) %>
 <%= link_to "Deletar", @bar,
                        method: :delete,
                        data: { confirm: "Você tem certeza?" } %>
