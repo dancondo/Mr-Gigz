@@ -36,6 +36,10 @@ class BandsController < ApplicationController
   end
 
   def update
+    band_params[:tag_ids].each do |tag_id|
+      next if tag_id.empty?
+      MyTag.create(band: @band, tag_id: tag_id)
+    end
     if @band.update(band_params)
       redirect_to @band
     else
