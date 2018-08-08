@@ -3,4 +3,5 @@ class Band < ApplicationRecord
   belongs_to :user
   has_many :applies
   validates :user, presence: true
+  has_many :mytag
 end
