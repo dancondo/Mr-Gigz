@@ -1,31 +1,25 @@
-.card {
-  flex: 1 1 auto;
-  margin: 10px;
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
+.btn-primary {
+  background-color: #3A3B9A;
+  border-color: $highlight;
 }
 
-.card:hover {
-  margin-top: -5px;
+.btn-primary:hover {
+  background-color: $highlight;
+  border-color: $highlight;
 }
 
 .card-body {
-  height: 180px;
-  background-size: cover;
-  color: white;
   position: relative;
+  padding: 0.25rem;
 }
 
-.card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
+.card-text {
+  position: absolute;
+  bottom: 0px;
+  margin: 0px;
 }
 
-.card-footer p {
-  color: rgba(0,0,0,0.4);
-  font-weight: lighter;
-  font-size: 12px;
+.card-title {
+  text-transform: uppercase;
+   font-weight: bold;
 }
