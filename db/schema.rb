@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_07_230501) do
+ActiveRecord::Schema.define(version: 2018_08_08_152855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,21 @@ ActiveRecord::Schema.define(version: 2018_08_07_230501) do
     t.index ["user_id"], name: "index_bars_on_user_id"
   end
 
+  create_table "my_tags", force: :cascade do |t|
+    t.bigint "tag_id"
+    t.bigint "band_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_my_tags_on_band_id"
+    t.index ["tag_id"], name: "index_my_tags_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "genre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -56,4 +71,6 @@ ActiveRecord::Schema.define(version: 2018_08_07_230501) do
 
   add_foreign_key "bands", "users"
   add_foreign_key "bars", "users"
+  add_foreign_key "my_tags", "bands"
+  add_foreign_key "my_tags", "tags"
 end

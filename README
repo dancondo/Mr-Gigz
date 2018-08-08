@@ -1,13 +1,19 @@
 - If it is the first time working on the project do not forget to bundle install
 
 - Make an account in AWS and copy the bucket keys to the .env file as following:
-  
+
     AWS_REGION=
     AWS_S3_BUCKET_NAME=
     AWS_ACCESS_KEY_ID=
     AWS_SECRET_ACCESS_KEY=
 
 -Maybe the schema might be convoluted so I recommend to do a db:drop db:create db:migrate before coding
+
+- (André) - build a migration in 08/08 -> Table/Model TAG and  wrote the Seed although
+            i could not seed the tables cause USERS were necessary to it.
+            20180808151608 CreateTags: migrated
+
+            - 20180808152855 CreateMyTags - a second migration
 
 
 
