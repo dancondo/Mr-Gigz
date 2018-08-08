@@ -20,6 +20,11 @@ class BandsController < ApplicationController
 
   def create
     @band = Band.new(band_params)
+    @band.user = current_user
+    band_params[:tag_ids].each do |tag_id|
+      next if tag_id.empty?
+      MyTag.create(band: @band, tag_id: tag_id)
+    end
     if @band.save
       redirect_to @band
     else
@@ -53,7 +58,8 @@ class BandsController < ApplicationController
   end
 
   def band_params
-    params.require(:band).permit(:name, :photo, :description, :minimum_price)
+    params.require(:band).permit(:name, :photo, :description, :minimum_price,
+                                 tag_ids: [])
   end
 
 end
