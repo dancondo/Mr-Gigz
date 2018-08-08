@@ -3,6 +3,12 @@
 	margin-top: 16px
 }
 
+.bands-show-container-bottom {
+	max-width: 1140px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 .fa {
 	font-size: 35px;
 }
@@ -19,10 +25,11 @@
 
 
 .bands-show-image-border {
-	border: solid black 1px;
+	border: solid $highlight 3px;
 	margin-bottom: 16px;
 	margin-right: 16px;
-	padding-bottom: 8px;
+	padding: 16px;
+	border-radius: 3px;
 
 }
 
@@ -44,9 +51,10 @@
 
 }
     	
-.fab { 
+.fab-show { 
    margin-right: 8px;
    font-size: 40px;
+   color: $highlight
     	}
    
 
@@ -81,33 +89,32 @@
 .bands-show-tags {
 	display: flex;
 	align-items: center;
+
 }
 
 .bands-show-video {
-	border: solid black 1px;
+	border: solid $highlight 3px;
 	margin-bottom: 32px;
 	margin-left: 16px;
-	padding-left: 16px;
-	padding-right: 16px;
-	padding-bottom: 16px;
+	padding: 16px;
+	border-radius: 3px;
 
 }
 
 .bands-show-tags {
-	border: solid black 1px;
 	margin-bottom: 16px;
-	padding-left: 8px;
-	padding-right: 8px;
-	padding-bottom: 8px;
+	padding: 16px;
+	border: solid $highlight 3px;
+	border-radius: 3px;
 }
 
 .bands-show-repertories {
-	border: solid black 1px;
+	border: solid $highlight 3px;
+	border-radius: 3px;
 	margin-bottom: 16px;
 	margin-left: 16px;
-	padding-left: 8px;
-	padding-right: 8px;
-	padding-bottom: 8px;
+	padding: 16px;
+	border-radius: 3px;
 }
 
 .bands-show-description {
@@ -117,10 +124,13 @@
 .bands-show-action {
 	display: flex;
 	justify-content: space-around;
-	border: solid black 1px;
 	margin-bottom: 32px;
 	margin-left: 16px;
 	padding: 16px;
+}
+
+.bttn-bands-show {
+	margin-right: 24px;
 }
 
 
