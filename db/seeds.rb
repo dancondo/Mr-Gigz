@@ -8,7 +8,7 @@
 
 Bar.destroy_all
 #Band.destroy_all
-#User.destroy_all
+User.destroy_all
 
 Bar.create!(name: 'Spirugiro', address: 'Rua Zapara 114')
 Bar.create!(name: 'Estação São Paulo', address: 'Rua Zapara 114')
@@ -24,8 +24,31 @@ Bar.create!(name: 'Bar Budo', address: 'Rua Zapara 114')
 Bar.create!(name: 'Apertou, agora amassa', address: 'Rua Zapara 114')
 
 
-
-
+Tag.create!(genre: 'Samba')
+Tag.create!(genre: 'Choro')
+Tag.create!(genre: 'Pagode')
+Tag.create!(genre: 'Sertanejo')
+Tag.create!(genre: 'Bahia')
+Tag.create!(genre: 'Funk')
+Tag.create!(genre: 'Forró')
+Tag.create!(genre: 'Hip Hop')
+Tag.create!(genre: 'R&B')
+Tag.create!(genre: 'Blues')
+Tag.create!(genre: 'Bossa Nova')
+Tag.create!(genre: 'Jazz')
+Tag.create!(genre: 'Pop Nac/Int.')
+Tag.create!(genre: 'MPB')
+Tag.create!(genre: 'Jovem Guarda')
+Tag.create!(genre: 'Disco')
+Tag.create!(genre: 'Rock')
+Tag.create!(genre: 'Metal')
+Tag.create!(genre: 'Rock Alternativo')
+Tag.create!(genre: 'Hard Rock')
+Tag.create!(genre: 'Indie Rock')
+Tag.create!(genre: 'Pop Rock')
+Tag.create!(genre: 'Reggae')
+Tag.create!(genre: 'Salsa/Latina')
+Tag.create!(genre: 'Gospel')
 
 #Band.create!(name: 'Raul Seixas', description: 'tqwtfdghejglçktrl', photo: 'https://abrilveja.files.wordpress.com/2016/06/raul-seixas-20140820-71-original.jpeg?quality=70&amp', minimum_price: 100)
 #Band.create!(name: 'Led Zeppelin', description: 'tqwtfdghejglçktrl', photo: 'www.ledzeppelin.com//sites/g/files/g2000006376/f/201706/led_zeppelin_photo1.jpg', minimum_price: 150)
