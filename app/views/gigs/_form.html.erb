@@ -4,5 +4,6 @@
 <%= f.input :cache %>
 <%= f.input :start_date, label: "Data de Inicio" %>
 <%= f.input :end_date, label: "Finalizacao" %>
+<%= f.association :tags, as: :check_boxes, label_method: :genre %>
 <%= f.submit 'Criar Gig!' %>
 <% end %>
