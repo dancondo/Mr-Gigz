@@ -2,8 +2,14 @@
 <p>Find me in app/views/gigs/show.html.erb</p>
 <%= @gig.date %>
 <%= @gig.description %>
-<%= link_to "Editar", edit_bar_gig_url(@bar, @gig)%>
-<%= link_to "Deletar", bar_gig_url(@bar, @gig),
+<% if current_user.bar %>
+  <%= link_to "Editar", edit_bar_gig_url(current_user.bar, @gig)%>
+<% end %>
+<%= link_to "Deletar", @gig,
                        method: :delete,
                        data: { confirm: "Você tem certeza?" } %>
-
+<% if current_user.band %>
+  <%= link_to "Inscrever!", gig_applies_url(@gig),
+                            method: :post,
+                            data: { confirm: "Aplicar para esse Gig?"} %>
+<% end %>

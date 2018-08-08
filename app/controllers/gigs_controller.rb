@@ -1,5 +1,5 @@
 class GigsController < ApplicationController
-  before_action :set_bar, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :set_bar, only: [:new, :create, :edit, :update]
   before_action :set_gig, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -17,7 +17,7 @@ class GigsController < ApplicationController
     @gig = Gig.new(gig_params)
     @gig.bar = @bar
     if @gig.save
-      redirect_to bar_gig_url(@bar, @gig)
+      redirect_to @gig
     else
       render :new
     end
