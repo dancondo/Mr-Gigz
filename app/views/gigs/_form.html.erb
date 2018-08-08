@@ -1,0 +1,7 @@
+<%= simple_form_for [@bar, @gig] do |f| %>
+<%= f.input :title, label: "Titulo do Anuncio" %>
+<%= f.input :description, label: "Descricao" %>
+<%= f.input :cache %>
+<%= f.input :date, label: "Data" %>
+<%= f.submit 'Criar Gig!' %>
+<% end %>

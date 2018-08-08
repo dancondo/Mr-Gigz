@@ -2,12 +2,15 @@
 
   <div class="row">
     <div class="bands-show-image-border col-sm-12 col-md-7">
-     <%= image_tag @band.photo.url, class: 'image-band-show';%>
-     <div class="bands-show-text">
-       <h1><%= @band.name %></h1>
-       <h3> Preço da banda</h3>
-     </div>
-     <div class="band-show-description">
+      <% if @band.photo.url %>
+        <%= image_tag @band.photo.url, class: 'image-band-show';%>
+      <% end %>
+      <div class="bands-show-text">
+        <h1><%= @band.name %></h1>
+        <h3> Preço da banda</h3>
+      </div>
+      
+      <div class="band-show-description">
       <p><%= @band.description %></p>
     </div>
     <div class="bands-show-social-logo">
@@ -22,6 +25,7 @@
       <button type="button" class="bttn btn-primary">Mensagem</button>
       <button type="button" class="bttn btn-warning">Ad Favoritos</button>
     </div>
+
     <div class="bands-show-video row">
      <h3>Videos</h3>
      <iframe width="100%" height="250"src="https://www.youtube.com/embed/Z8uvPLsah0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -42,7 +46,6 @@
 </div>
 
 </div>
-
 
 <div class="row">
   <div class="bands-show-tags col-sm-12 col-md-11">

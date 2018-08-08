@@ -3,8 +3,12 @@
 <% unless @bar.name %>
   <%= render 'form' %>
 <% end %>
+<h3>Meus Gigs</h3>
+<% @bar.gigs.each do |gig| %>
+  <h4><%= link_to gig.title, gig_url(gig) %></h4>
+<% end %>
 
-
+<%= link_to "Anunciar um Gig", new_bar_gig_url(@bar) %>
 <%= link_to "Voltar", bars_path %>
 <%= link_to 'Edit', edit_bar_path(@bar) %>
 <%= link_to "Deletar", @bar,

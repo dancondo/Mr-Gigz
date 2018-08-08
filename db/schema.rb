@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_08_152855) do
+ActiveRecord::Schema.define(version: 2018_08_08_164720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applies", force: :cascade do |t|
+    t.bigint "band_id"
+    t.bigint "gig_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_applies_on_band_id"
+    t.index ["gig_id"], name: "index_applies_on_gig_id"
+  end
 
   create_table "bands", force: :cascade do |t|
     t.string "name"
@@ -36,6 +45,17 @@ ActiveRecord::Schema.define(version: 2018_08_08_152855) do
     t.index ["user_id"], name: "index_bars_on_user_id"
   end
 
+
+  create_table "gigs", force: :cascade do |t|
+    t.datetime "date"
+    t.text "description"
+    t.bigint "bar_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "cache"
+    t.string "title", default: "Gig"
+    t.index ["bar_id"], name: "index_gigs_on_bar_id"
+
   create_table "my_tags", force: :cascade do |t|
     t.bigint "tag_id"
     t.bigint "band_id"
@@ -49,6 +69,7 @@ ActiveRecord::Schema.define(version: 2018_08_08_152855) do
     t.string "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,8 +90,11 @@ ActiveRecord::Schema.define(version: 2018_08_08_152855) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "applies", "bands"
+  add_foreign_key "applies", "gigs"
   add_foreign_key "bands", "users"
   add_foreign_key "bars", "users"
+  add_foreign_key "gigs", "bars"
   add_foreign_key "my_tags", "bands"
   add_foreign_key "my_tags", "tags"
 end
