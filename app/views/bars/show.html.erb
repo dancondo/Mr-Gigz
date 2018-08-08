@@ -1,17 +1,45 @@
-<h2><%= @bar.name %>- Mr.Gigz</h2>
+
 
 <% unless @bar.name %>
-  <%= render 'form' %>
-<% end %>
-<h3>Meus Gigs</h3>
-<% @bar.gigs.each do |gig| %>
-  <h4><%= link_to gig.title, gig_url(gig) %></h4>
+<%= render 'form' %>
 <% end %>
 
-<%= link_to "Anunciar um Gig", new_bar_gig_url(@bar) %>
-<%= link_to "Voltar", bars_path %>
-<%= link_to 'Edit', edit_bar_path(@bar) %>
-<%= link_to "Deletar", @bar,
-                       method: :delete,
-                       data: { confirm: "Você tem certeza?" } %>
+
+<div class="container">
+	<div class="row bars-show-info classic-temp">
+		<div class="col-sm-12 col-md-7 bars-show-image">
+			<%= image_tag @bar.photo.url, class: 'image-bar-show' %>
+		</div>
+		<div class="col-sm-12 col-md-5 bars-show-infos">
+			<h2><%= @bar.name %></h2>
+			<h6><%= @bar.address %></h6>
+		</div>
+	</div>
+	<div class="row bars-show-vote classic-temp">
+      <div class="col-sm-12 col-md-12 bars-show-title">
+		<h3 class="bars-show-h3">Ao vivo</h3>
+		</div>
+		<div class="col-sm-12 col-md-4 bars-show-image"></div>
+		<div class="col-sm-12 col-md-4 bars-show-name"></div>
+		<div class="col-sm-12 col-md-4 bars-show-btn-vote"></div>
+	</div>
+	<div class="row bars-show-gigs classic-temp">
+		<div class="col-sm-12 col-md-12 bars-show-gigs">
+		<h3 class="bars-show-h3">Meus Gigz</h3>
+		<% @bar.gigs.each do |gig| %>
+		<h5><%= link_to gig.title, gig_url(gig) %></h4>
+		<% end %>
+	</div>
+</div>
+	<div class="row bars-show-action">
+		<div class="col-sm-12 col-md-12 bars-show-action">
+		  <button type="button" class="bttn btn-success bttn-bars-show"><%= link_to "Anunciar um Gig", new_bar_gig_url(@bar) %></button>
+		  <button type="button" class="bttn btn-info bttn-bars-show"><%= link_to 'Edit', edit_bar_path(@bar) %></button>
+		  <button type="button" class="bttn btn-danger bttn-bars-show"><%= link_to "Deletar", @bar,
+		  method: :delete,
+		  data: { confirm: "Você tem certeza?" } %></button>
+		  <button type="button" class="bttn btn-secondary bttn-bars-show"><%= link_to "Voltar", bars_path %></button>
+	    </div>
+	</div>
+</div>
 

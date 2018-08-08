@@ -1,0 +1,29 @@
+.image-bar-show {
+	max-height: 400px;
+}
+
+.classic-temp {
+	border: solid $highlight 3px;
+	margin-bottom: 32px;
+	padding: 16px;
+	border-radius: 3px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.bars-show-image {
+	display: flex;
+	justify-content: center;
+}
+
+.bars-show-action {
+	display: flex;
+	justify-content: space-around;	
+	margin-bottom: 32px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.bars-show-h3 {
+	text-align: center;
+}
