@@ -1,0 +1,54 @@
+class GigsController < ApplicationController
+  before_action :set_bar, only: [:new, :create, :show, :edit, :destroy]
+  before_action :set_gig, only: [:show, :edit, :destroy]
+
+  def index
+    @gigs = Gig.all
+  end
+
+  def show
+  end
+
+  def new
+    @gig = Gig.new
+  end
+
+  def create
+    @gig = Gig.new(gig_params)
+    @gig.bar = @bar
+    if @gig.save
+      redirect_to bar_gig_url(@bar, @gig)
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    if @gig.destroy
+      redirect_to @bar
+    else
+      redirect_to bar_gig_url
+    end
+  end
+
+  private
+
+  def set_gig
+    @gig = Gig.find(params[:id])
+  end
+
+  def set_bar
+    @bar = Bar.find(params[:bar_id])
+  end
+
+  def gig_params
+    params.require(:gig).permit(:bar_id, :description, :date)
+  end
+
+end
