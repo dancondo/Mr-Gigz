@@ -5,6 +5,7 @@
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.input :description %>
   <%= f.input :minimum_price %>
+  <%= f.association :tags, as: :check_boxes, label_method: :genre %>
   <%= f.submit "Create Band", class: "btn btn-primary" %>
 
 <% end %>
