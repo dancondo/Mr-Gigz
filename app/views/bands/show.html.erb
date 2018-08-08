@@ -16,7 +16,6 @@
       <a href="#"><i class="fab fa-twitter fab-show "></i></a>
       <a href="#"><i class="fab fa-youtube fab-show "></i></a>
     </div>
-
   </div>
   <div class="col-sm-12 col-md-4">
     <div class="bands-show-action row">
@@ -46,7 +45,7 @@
 
 
 <div class="row">
-  <div class="bands-show-tags col-sm-12 col-md-12">
+  <div class="bands-show-tags col-sm-12 col-md-11">
     <h3>Tags</h3>
   </div>
 </div>
@@ -54,10 +53,12 @@
 </div>
 
 <div class="bands-show-container-bottom">
-  <button type="button" class="bttn btn-danger bttn-bands-show"><%= link_to 'Edit', edit_band_path(@band) %>
+  <div class="col-sm-12 col-md-4 bands-show-buttons-bottom">
+  <button type="button" class="bttn btn-danger bttn-bands-show"><%= link_to 'Edit', edit_band_path(@band) %></button>
     <button type="button" class="bttn btn-info bttn-bands-show"><%= link_to 'Delete', @band,
     method: :delete,
     data: { confirm: "Are you sure?" } %></button>
+  </div>
   </div>
 
 
