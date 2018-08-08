@@ -8,7 +8,9 @@
 <div class="container">
 	<div class="row bars-show-info classic-temp">
 		<div class="col-sm-12 col-md-7 bars-show-image">
-			<%= image_tag @bar.photo.url, class: 'image-bar-show' %>
+			<% if @bar.photo.url %>
+				<%= image_tag @bar.photo.url, class: 'image-bar-show' %>
+			<% end %>
 		</div>
 		<div class="col-sm-12 col-md-5 bars-show-infos">
 			<h2><%= @bar.name %></h2>
@@ -31,7 +33,7 @@
 		<% end %>
 	</div>
 </div>
-	<div class="row bars-show-action">
+	<div class="row bars-show-action classic">
 		<div class="col-sm-12 col-md-12 bars-show-action">
 		  <button type="button" class="bttn btn-success bttn-bars-show"><%= link_to "Anunciar um Gig", new_bar_gig_url(@bar) %></button>
 		  <button type="button" class="bttn btn-info bttn-bars-show"><%= link_to 'Edit', edit_bar_path(@bar) %></button>

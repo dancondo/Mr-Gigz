@@ -1,0 +1,96 @@
+.gigs-show-container {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	padding-top: auto;
+	padding-bottom: auto;
+}
+
+.gigs-show-header {
+	background-color: $highlight;
+}
+
+.gigs-temp {
+	border: solid $highlight 3px;
+	margin-bottom: 8px;
+	padding: 16px;
+	border-radius: 3px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+ .image-bar-gig {
+ 	max-height: 100px;
+ }
+
+ .col-gig {
+ 	border-right: solid 2px $highlight;
+ }
+
+ .col-gig-white {
+ 	border-right: solid 2px white;
+ }
+
+ .gigs-show-name-bar {
+ 	font-size: 25px;
+ 	font-weight: bold;
+ }
+
+ .gigs-show-title-gigs {
+	font-size: 30px;
+ 	font-weight: bold;
+
+ }
+
+ .gigs-show-description-cache {
+	font-size: 25px;
+ 	font-weight: bold;
+ 	color: $highlight;
+ }
+
+ .gigs-show-date-gigs {
+ 	font-size: 20px;
+ 	font-weight: bold;
+ 	color: $highlight;
+ }
+
+ .gigs-show-description-gigs {
+ 		font-size: 20px;
+ }
+
+ .gigs-show-description-time {
+ 	font-size: 25px;
+ 	font-weight: bold;
+ 	color: $highlight;
+ }
+
+ .bttn-temp {
+
+	margin-bottom: 8px;
+	padding: 16px;
+	margin-left: 4px;
+	margin-right: 4px;
+ }
+
+ .gigs-show-head-logo {
+     font-size: 25px;
+     color: white;
+ }
+
+
+.gigs-show-head-text {
+     font-size: 20px;
+     color: white;
+     font-weight: bold;
+ }
+
+ .gigs-show-head-text-2 {
+ 	 font-size: 15px;
+     color: white;
+     font-weight: bold;
+ }

@@ -1,15 +1,102 @@
-<h1>Gigs#show</h1>
-<p>Find me in app/views/gigs/show.html.erb</p>
-<%= @gig.date %>
-<%= @gig.description %>
-<% if current_user.bar %>
-  <%= link_to "Editar", edit_bar_gig_url(current_user.bar, @gig)%>
-<% end %>
-<%= link_to "Deletar", @gig,
-                       method: :delete,
-                       data: { confirm: "Você tem certeza?" } %>
-<% if current_user.band %>
-  <%= link_to "Inscrever!", gig_applies_url(@gig),
-                            method: :post,
-                            data: { confirm: "Aplicar para esse Gig?"} %>
-<% end %>
+<h1 class="bttn-temp">Gig - Details </h1>
+
+<div class="gigs-show-container">
+	<div class="row gigs-show-header gigs-temp">
+        <div class="col-sm-6 col-md-1 gigs-show-head center col-gig">
+			<i class="far fa-calendar-alt gigs-show-head-logo"></i>
+		</div>
+
+		<div class="col-sm-6 col-md-4 gigs-show-head center gigs-show-head-text col-gig">
+			GIG
+		</div>
+		<div class="col-sm-6 col-md-5 gigs-show-head center gigs-show-head-text col-gig">
+			DESCRICAO
+		</div>
+
+		<div class="col-sm-6 col-md-1 gigs-show-head center col-gig">
+			<i class="far fa-clock gigs-show-head-logo"></i>
+		</div>
+
+		<div class="col-sm-6 col-md-1 gigs-show-head center ">
+			<i class="fas fa-dollar-sign gigs-show-head-logo"></i>
+		</div>
+
+    </div>
+
+	<div class="row gigs-show-info-gigs gigs-temp">
+		
+		<div class="col-sm-6 col-md-1 gigs-show-date-gigs center col-gig">
+			<%= @gig.date %>
+		</div>
+
+		<div class="col-sm-6 col-md-4 gigs-show-title-gigs center col-gig">
+			<%= @gig.title %>
+		</div>
+		<div class="col-sm-6 col-md-5 gigs-show-description-gigs center col-gig">
+			<%= @gig.description %>
+		</div>
+
+		<div class="col-sm-6 col-md-1 gigs-show-description-time center col-gig">
+			2:00
+		</div>
+
+		<div class="col-sm-6 col-md-1 gigs-show-description-cache center ">
+			<%= @gig.cache %>
+		</div>
+
+	</div>
+
+
+	<div class="row gigs-show-header gigs-temp">
+        <div class="col-sm-6 col-md-10 gigs-show-head-text-2 center col-gig-white">
+			ONDE ?
+		</div>
+
+		<div class="col-sm-6 col-md-2 gigs-show-head-text-2 center gigs-show-head-text ">
+			TAGS
+		</div>
+    </div>
+
+	<div class="row gigs-show-info-bar gigs-temp">
+
+		<div class="col-sm-6 col-md-2 gigs-show-image-bar center col-gig">
+			<% if @gig.bar.photo.url %>
+			<%= image_tag @gig.bar.photo.url, class: 'image-bar-gig' %>
+			<% end %>
+		</div>
+
+		<div class="col-sm-6 col-md-3 gigs-show-name-bar center col-gig">
+			<%= @gig.bar.name %>
+		</div>
+
+		<div class="col-sm-6 col-md-5 gigs-show-address-bar center col-gig">
+			<%= @gig.bar.address %>
+		</div>
+
+		<div class="col-sm-6 col-md-2 gigs-show-tags-gigs center ">
+			<ul>
+				<li> Hard</li>
+				<li> Oral Sex</li>
+				<li> Cerveja Shower</li>
+			</ul>
+		</div>	
+
+	</div>
+	<div class="row gigs-show-info-gigs bttn-temp">
+		<div class="col-sm-12 col-md-12 gigs-show-action center">
+			<button type="button" class="bttn btn-success bttn-gigs-show"><% if current_user.band %>
+				<%= link_to "Inscrever!", gig_applies_url(@gig),
+				method: :post,
+				data: { confirm: "Aplicar para esse Gig?"} %>
+				<% end %></button>
+			</div>
+		</div>
+	</div>
+
+	<% if current_user.bar %>
+	<%= link_to "Editar", edit_bar_gig_url(current_user.bar, @gig)%>
+	<% end %>
+	<%= link_to "Deletar", @gig,
+	method: :delete,
+	data: { confirm: "Você tem certeza?" } %>
+
