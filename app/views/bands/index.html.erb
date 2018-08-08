@@ -1,6 +1,6 @@
 <div class = "container" >
 
-<br>
+  <br>
 
   <%= form_tag bands_path, method: :get, class: 'form-inline' do %>
     <%= text_field_tag :query,
@@ -11,27 +11,25 @@
     <%= submit_tag "Buscar!", class: 'btn btn-primary search-btn-inline' %>
   <% end %>
 
-<br>
+  <br>
 
   <div class="row">
     <% @bands.each do |band| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="band-card"><%= band.name %></div>
-        <%= link_to band.name, band %>
+        <div class="card">
+          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('images/berlin.jpg');">
+          </div>
+          <div class="card-footer">
+            <div class="band-card"><%= band.name %></div>
+            <%= link_to band.name, band %>
+            <%= band.minimum_price %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
-
 </div>
 
-<div class="cards">
-<div class="card">
-  <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('images/berlin.jpg');">
-  </div>
-  <div class="card-footer">
-    <p>Posted on 22/11/19</p>
-  </div>
-</div>
 
 
 
