@@ -7,7 +7,7 @@ class BandsController < ApplicationController
       sql_query = "name ILIKE :query"
       @bands = Band.where(sql_query, query: "%#{params[:query]}%")
     else
-      @bands = Band.all
+      @bands = Band.where.not(name: nil)
     end
   end
 

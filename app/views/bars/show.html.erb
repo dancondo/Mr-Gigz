@@ -1,5 +1,10 @@
 <h2><%= @bar.name %>- Mr.Gigz</h2>
 
+<% unless @bar.name %>
+  <%= render 'form' %>
+<% end %>
+
+
 <%= link_to "Voltar", bars_path %>
 <%= link_to 'Edit', edit_bar_path(@bar) %>
 <%= link_to "Deletar", @bar,
