@@ -1,6 +1,7 @@
 <h1>Gigs#show</h1>
 <p>Find me in app/views/gigs/show.html.erb</p>
-<%= @gig.date %>
+<%= @gig.start_date %>
+<%= @gig.end_date %>
 <%= @gig.description %>
 <% if current_user.bar %>
   <%= link_to "Editar", edit_bar_gig_url(current_user.bar, @gig)%>
