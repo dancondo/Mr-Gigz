@@ -16,9 +16,9 @@
   <div class="row">
     <% @bands.each do |band| %>
 
-      <div class="col-xs-12 col-sm-6 col-md-6">
-        <div class="card" style="width: 18rem;">
-          <%= image_tag band.photo.url, class: 'card-img-top img-thumbnail' %>
+      <div class="col-xs-12 col-sm-6 col-lg-4">
+        <div class="card">
+          <%= image_tag band.photo.url, class: 'card-img-top', size: '250x250' %>
           <div class="card-body">
             <h5 class="card-title"><%= band.name %></h5>
             <p class="card-text">Mínimo: R$<%= band.minimum_price %></p>
