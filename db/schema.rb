@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_08_215357) do
+ActiveRecord::Schema.define(version: 2018_08_08_221901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 2018_08_08_215357) do
     t.index ["user_id"], name: "index_bars_on_user_id"
   end
 
+  create_table "gig_tags", force: :cascade do |t|
+    t.bigint "tag_id"
+    t.bigint "gig_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gig_id"], name: "index_gig_tags_on_gig_id"
+    t.index ["tag_id"], name: "index_gig_tags_on_tag_id"
+  end
+
   create_table "gigs", force: :cascade do |t|
     t.datetime "start_date"
     t.text "description"
@@ -62,9 +71,7 @@ ActiveRecord::Schema.define(version: 2018_08_08_215357) do
     t.bigint "band_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "gig_id"
     t.index ["band_id"], name: "index_my_tags_on_band_id"
-    t.index ["gig_id"], name: "index_my_tags_on_gig_id"
     t.index ["tag_id"], name: "index_my_tags_on_tag_id"
   end
 
@@ -96,8 +103,9 @@ ActiveRecord::Schema.define(version: 2018_08_08_215357) do
   add_foreign_key "applies", "gigs"
   add_foreign_key "bands", "users"
   add_foreign_key "bars", "users"
+  add_foreign_key "gig_tags", "gigs"
+  add_foreign_key "gig_tags", "tags"
   add_foreign_key "gigs", "bars"
   add_foreign_key "my_tags", "bands"
-  add_foreign_key "my_tags", "gigs"
   add_foreign_key "my_tags", "tags"
 end

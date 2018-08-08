@@ -16,6 +16,10 @@ class GigsController < ApplicationController
   def create
     @gig = Gig.new(gig_params)
     @gig.bar = @bar
+    gig_params[:tag_ids].each do |tag_id|
+      next if tag_id.empty?
+      GigTag.create(gig: @gig, tag_id: tag_id)
+    end
     if @gig.save
       redirect_to @gig
     else
@@ -27,14 +31,21 @@ class GigsController < ApplicationController
   end
 
   def update
+    @current_tags = GigTag.where(gig: @gig)
+    @current_tags.destroy_all
+    gig_params[:tag_ids].each do |tag_id|
+      next if tag_id.empty?
+      GigTag.create(gig: @gig, tag_id: tag_id)
+    end
     if @gig.update(gig_params)
-      redirect_to bar_gig_url(@bar, @gig)
+      redirect_to @gig
     else
       render :edit
     end
   end
 
   def destroy
+    @bar = @gig.bar
     if @gig.destroy
       redirect_to @bar
     else
@@ -53,7 +64,7 @@ class GigsController < ApplicationController
   end
 
   def gig_params
-    params.require(:gig).permit(:bar_id, :description, :start_date, :end_date, :cache, :title)
+    params.require(:gig).permit(:bar_id, :description, :start_date, :end_date, :cache, :title, tag_ids: [])
   end
 
 end
