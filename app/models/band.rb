@@ -4,4 +4,5 @@ class Band < ApplicationRecord
   has_many :applies
   has_many :gigs, through: :applies
   validates :user, presence: true
+  has_many :mytag
 end
