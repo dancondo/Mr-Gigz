@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :gigs, only: [:new, :create, :edit, :update]
   end
   resources :gigs, only: [:index, :show, :destroy] do
-    resources :applies, only: [:create]
+    resources :applies, only: [:create, :destroy]
   end
   resources :bands
   resources :roles, only: [:new, :create]

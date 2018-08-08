@@ -9,7 +9,15 @@
                        method: :delete,
                        data: { confirm: "Você tem certeza?" } %>
 <% if current_user.band %>
-  <%= link_to "Inscrever!", gig_applies_url(@gig),
-                            method: :post,
-                            data: { confirm: "Aplicar para esse Gig?"} %>
+  <% if current_user.band.gigs.include?(@gig) %>
+    <%= link_to "Cancelar Inscricao!", gig_apply_url(@gig),
+                              method: :delete,
+                              data: { confirm: "Cancelar inscricao?"} %>
+
+  <% else %>
+
+    <%= link_to "Inscrever!", gig_applies_url(@gig),
+                              method: :post,
+                              data: { confirm: "Aplicar para esse Gig?"} %>
+  <% end %>
 <% end %>
