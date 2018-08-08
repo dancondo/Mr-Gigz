@@ -2,3 +2,8 @@
 <p>Find me in app/views/gigs/show.html.erb</p>
 <%= @gig.date %>
 <%= @gig.description %>
+<%= link_to "Editar", edit_bar_gig_url(@bar, @gig)%>
+<%= link_to "Deletar", bar_gig_url(@bar, @gig),
+                       method: :delete,
+                       data: { confirm: "Você tem certeza?" } %>
+

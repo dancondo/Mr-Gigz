@@ -1,6 +1,6 @@
 class GigsController < ApplicationController
-  before_action :set_bar, only: [:new, :create, :show, :edit, :destroy]
-  before_action :set_gig, only: [:show, :edit, :destroy]
+  before_action :set_bar, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :set_gig, only: [:show, :edit, :update, :destroy]
 
   def index
     @gigs = Gig.all
@@ -27,6 +27,11 @@ class GigsController < ApplicationController
   end
 
   def update
+    if @gig.update(gig_params)
+      redirect_to bar_gig_url(@bar, @gig)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -48,7 +53,7 @@ class GigsController < ApplicationController
   end
 
   def gig_params
-    params.require(:gig).permit(:bar_id, :description, :date)
+    params.require(:gig).permit(:bar_id, :description, :date, :cache, :title)
   end
 
 end

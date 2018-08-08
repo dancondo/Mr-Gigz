@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :bars do
-    resources :gigs, only: [:show, :new, :create]
+    resources :gigs, only: [:show, :new, :create, :edit, :update, :destroy]
   end
   resources :gigs, only: :index
   resources :bands

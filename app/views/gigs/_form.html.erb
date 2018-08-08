@@ -1,5 +1,7 @@
 <%= simple_form_for [@bar, @gig] do |f| %>
+<%= f.input :title %>
 <%= f.input :description %>
+<%= f.input :cache %>
 <%= f.input :date %>
 <%= f.submit 'Criar Gig!' %>
 <% end %>
