@@ -21,7 +21,7 @@
   </div>
   <div class="col-sm-12 col-md-4">
     <div class="bands-show-action row">
-      <button type="button" class="bttn btn-primary">Mensagem</button>
+      <%= link_to 'Mensagem', new_message_url(element_id: @band), class: 'bttn btn-primary' %>
       <button type="button" class="bttn btn-warning">Ad Favoritos</button>
     </div>
 

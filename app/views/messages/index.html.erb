@@ -1,0 +1,5 @@
+<ul>
+  <% @element.each do |e| %>
+    <li><%= link_to e.name, conversation_url(element_id: e.id) %></li>
+  <% end %>
+</ul>

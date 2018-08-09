@@ -1,0 +1,5 @@
+<%= simple_form_for @message do |f| %>
+  <%= f.input :content, label: "Mensagem" %>
+  <%= hidden_field_tag(:element_id, @element_id) %>
+  <%= f.submit 'Enviar!'%>
+<% end %>
