@@ -6,5 +6,6 @@ class Band < ApplicationRecord
   validates :user, presence: true
   has_many :my_tags, dependent: :destroy
   has_many :tags, through: :my_tags
+  has_many :messages
   accepts_nested_attributes_for :my_tags
 end
