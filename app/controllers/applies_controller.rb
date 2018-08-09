@@ -7,6 +7,7 @@ class AppliesController < ApplicationController
     @apply.gig = @gig
     @apply.band = current_user.band
     if @apply.save
+      UserMailer.apply(@gig.bar.user).deliver_now
       redirect_to @gig
     end
   end

@@ -1,0 +1,11 @@
+<h1><%= @user.name, Mr. Gigs tem uma nova Banda candidata %></h1>
+
+<p>
+
+  <div> A Banda <%= @apply.band %> está interessada em seu anúncio na plataforma Mr.Gigs.</div>
+
+  <div> Click no link para ouvir o material da <%= @apply.band %> !! </div>
+  <%= link_to 'Ouça uma palhinha!', band %>
+  <div> Ou se preferir, inicie uma conversa diretamente com <%= @apply.band %> !! </div>
+  <%= link_to 'Inicie uma conversa', band %>
+</p>
