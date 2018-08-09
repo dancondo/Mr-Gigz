@@ -1,5 +1,14 @@
+.list-inline-item {
+  margin-top: 30px;
+}
+
 #gigs-titulo {
-  color: #424242;
+  color: white;
+  background-color: #2C2C2C;
   text-align: center;
-  font: 600 50px/1.4 arial,sans-serif;
+  font: 600 50px/1.4 sans-serif;
+  margin-right: -8px;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-radius: 5px;
 }

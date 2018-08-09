@@ -16,10 +16,6 @@ class GigsController < ApplicationController
   def create
     @gig = Gig.new(gig_params)
     @gig.bar = @bar
-    gig_params[:tag_ids].each do |tag_id|
-      next if tag_id.empty?
-      GigTag.create(gig: @gig, tag_id: tag_id)
-    end
     if @gig.save
       redirect_to @gig
     else
