@@ -1,5 +1,24 @@
-<%= simple_form_for @message do |f| %>
-  <%= f.input :content, label: "Mensagem" %>
-  <%= hidden_field_tag(:element_id, @element_id) %>
-  <%= f.submit 'Enviar!'%>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12">
+			<div class="form-post">
+				<h1>Inscreve seu bar !</h1>
+				<%= simple_form_for @message do |f| %>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12">
+						<div class="form-group">
+							<%= f.input :content, label: "Mensagem" %>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<%= hidden_field_tag(:element_id, @element_id) %>
+				</div>
+				<div class="form-group caixa-bttn">
+					<%= f.submit 'Enviar', class: "btn btn-primary" %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

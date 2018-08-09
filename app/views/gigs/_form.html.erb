@@ -1,9 +1,43 @@
-<%= simple_form_for [@bar, @gig] do |f| %>
-<%= f.input :title, label: "Titulo do Anuncio" %>
-<%= f.input :description, label: "Descricao" %>
-<%= f.input :cache %>
-<%= f.input :start_date, label: "Data de Inicio" %>
-<%= f.input :end_date, label: "Finalizacao" %>
-<%= f.association :tags, as: :check_boxes, label_method: :genre %>
-<%= f.submit 'Criar Gig!' %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12">
+			<div class="form-post">
+				<h1>Criar um Gig !</h1>
+				<%= simple_form_for [@bar, @gig] do |f| %>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12">
+						<div class="form-group">
+							<%= f.input :title, label: "Titulo do Anuncio" %>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<%= f.input :description, label: "Descricao" %>
+				</div>
+				<div class="form-group">
+					<%= f.input :cache %>
+				</div>
+				<div class="form-group">
+					<%= f.input :start_date, label: "Data de Inicio" %>
+				</div>
+				<div class="form-group">
+					<%= f.input :end_date, label: "Finalizacao" %>
+				</div>
+				<div class="form-group">
+					<label class="control-label check_boxes optional">Género de música</label>
+				  <input type="hidden" name="band[tag_ids][]" value="">
+					<div class="tag-choices">
+						<% Tag.all.each do |tag| %>
+						<input  type="checkbox" class="d-none" value="<%=tag.id%>" name="band[tag_ids][]" id="band_tag_ids_<%=tag.genre %>">
+						<label class="tag-choice" for="band_tag_ids_<%=tag.genre%>"> <%= tag.genre %></label>
+						<% end %>
+					</div>
+				</div>
+				<div class="form-group caixa-bttn">
+					<%= f.submit 'Criar Gig !', class: "btn btn-primary" %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
