@@ -1,11 +1,40 @@
-<%= simple_form_for @band do |f| %>
-
-  <%= f.input :name %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.input :description %>
-  <%= f.input :minimum_price %>
-  <%= f.association :tags, as: :check_boxes, label_method: :genre %>
-  <%= f.submit "Create Band", class: "btn btn-primary" %>
-
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12">
+			<div class="form-post">
+				<h1>Cria sua Banda !</h1>
+				<%= simple_form_for(@band) do |f| %>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12">
+						<div class="form-group">
+							<%= f.input :name, placeholder: "Nome da banda" %>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="hidden" name="band[tag_ids][]" value="">
+					<div class="tag-choices">
+						<% Tag.all.each do |tag| %>
+						<input  type="checkbox" class="d-none" value="<%=tag.id%>" name="band[tag_ids][]" id="band_tag_ids_<%=tag.genre %>">
+						<label class="tag-choice" for="band_tag_ids_<%=tag.genre%>"> <%= tag.genre %></label>
+						<% end %>
+					</div>
+				</div>
+				<div class="form-group">
+					<%= f.input :description, placeholder: "Descreve sua banda ..." %>
+				</div>
+				<div class="form-group">
+					<%= f.input :minimum_price, placeholder: "Qual é seu précio minimo ?" %>
+				</div>
+				<div class="form-group">
+					<%= f.input :photo %>
+					<%= f.input :photo_cache, as: :hidden %>
+				</div>
+				<div class="form-group caixa-bttn">
+					<%= f.submit "Create Band", class: "btn btn-primary"  %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
