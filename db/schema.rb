@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_09_203730) do
+ActiveRecord::Schema.define(version: 2018_08_09_204429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2018_08_09_203730) do
     t.string "title", default: "Gig"
     t.datetime "end_date"
     t.boolean "active", default: true
+    t.bigint "band_id"
+    t.index ["band_id"], name: "index_gigs_on_band_id"
     t.index ["bar_id"], name: "index_gigs_on_bar_id"
   end
 
@@ -117,6 +119,7 @@ ActiveRecord::Schema.define(version: 2018_08_09_203730) do
   add_foreign_key "bars", "users"
   add_foreign_key "gig_tags", "gigs"
   add_foreign_key "gig_tags", "tags"
+  add_foreign_key "gigs", "bands"
   add_foreign_key "gigs", "bars"
   add_foreign_key "messages", "bands"
   add_foreign_key "messages", "bars"

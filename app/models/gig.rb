@@ -1,5 +1,6 @@
 class Gig < ApplicationRecord
   belongs_to :bar
+  belongs_to :band, optional: true
   has_many :applies
   has_many :bands, through: :applies
   has_many :gig_tags, dependent: :destroy

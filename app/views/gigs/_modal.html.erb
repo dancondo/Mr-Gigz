@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Pegar Nome do Bar</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"><%= gig.bar.name %></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -12,8 +12,23 @@
         <p>Descrição: <%= gig.description %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Candidatar</button>
+        <% if current_user.band %>
+          <% if current_user.band.gigs.include?(gig) %>
+
+            Voce ja aplicou para este gig
+
+          <% else %>
+
+            <%= link_to "Inscrever!", gig_applies_url(gig), class: "btn btn-secondary",
+                                      method: :post,
+                                      data: { confirm: "Aplicar para esse Gig?"} %>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<%#= link_to "Cancelar Inscricao!", gig_apply_url(gig), class: "btn btn-secondary",
+                                      method: :delete,
+                                      data: { confirm: "Cancelar inscricao?"} %>
