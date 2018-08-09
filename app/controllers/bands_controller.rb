@@ -3,11 +3,13 @@ class BandsController < ApplicationController
   before_action :set_band, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].present?
-      sql_query = "name ILIKE :query"
-      @bands = Band.where(sql_query, query: "%#{params[:query]}%")
+    @tags = Tag.all
+
+    if params[:tag]
+      tag = Tag.find(params[:tag])
+      @bands = tag.bands
     else
-      @bands = Band.where.not(name: nil)
+      @bands = Band.all
     end
   end
 

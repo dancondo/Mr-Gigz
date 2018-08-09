@@ -3,11 +3,7 @@
   <br>
 
   <%= form_tag bands_path, method: :get, class: 'form-inline' do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control search-form-inline",
-      placeholder: "Find a Band"
-    %>
+    <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control' %>
     <%= submit_tag "Buscar!", class: 'btn btn-primary search-btn-inline' %>
   <% end %>
 
