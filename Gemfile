@@ -38,4 +38,5 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
   gem 'letter_opener'
+  gem 'postmark-rails'
 end
