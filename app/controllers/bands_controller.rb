@@ -33,6 +33,7 @@ class BandsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
