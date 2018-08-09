@@ -17,3 +17,13 @@
 
 
 
+- (André) - rails generete mailer UserMailer apply
+            - criou
+            create  app/mailers/user_mailer.rb
+            invoke  erb
+            create    app/views/user_mailer
+            create    app/views/user_mailer/apply.text.erb
+            create    app/views/user_mailer/apply.html.erb
+            invoke  test_unit
+            create    test/mailers/user_mailer_test.rb
+            create    test/mailers/previews/user_mailer_preview.rb
