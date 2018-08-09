@@ -49,10 +49,9 @@
 
 .bands-show-social-logo {
  display: flex;
- justify-content: space-around;
- padding-bottom: 48px;
-
-
+ justify-content: space-between;
+ padding-bottom: 18px;
+ padding-left: 64px;
 }
 
 .fab-show {
@@ -132,12 +131,23 @@
 .bands-show-action {
  display: flex;
  justify-content: space-around;
-	margin-bottom: 32px;
-    margin-left: 4px;
-	margin-right: 4px;
+	margin-bottom: 16px;
 }
 
 .bands-show-buttons-bottom {
 	display: flex;
 	justify-content: space-around;
+}
+
+.bands-show-tags-title {
+	margin-right: 16px;
+}
+
+.bands-show-action {
+	display: flex;
+    justify-content: space-around;
+}
+
+.mini-p {
+	margin-right: 8px;
 }
