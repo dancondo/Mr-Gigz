@@ -1,19 +1,10 @@
-<ul>
-<% @messages.each do |m| %>
+<div class="messages_container">
+  <ul class="messages-all">
+  <% @messages.each do |m| %>
 
-  <% if m.sender == current_user.role %>
-    <li class="my-message">
-      <%= m.content %>
-      You
-    </li>
-  <% else %>
-    <li class="counterpart-message">
-      <%= m.content %>
-      <%= m.send(m.sender).name %>
-    </li>
+    <%= render 'show', m: m %>
+
   <% end %>
-
-<% end %>
-</ul>
-
+  </ul>
+</div>
 <%= render 'form', message: @message %>
