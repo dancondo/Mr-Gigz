@@ -1,0 +1,58 @@
+
+.list-inline-item {
+  border: 2px solid gray;
+  width: 100%;
+  height: 300px;
+}
+
+
+.top {
+
+}
+
+.gig-card-top {
+  height: 40px;
+  background-color: #B0B0B0;
+  border-bottom: 2px solid gray;
+}
+
+.gig-card-titulo {
+  font-size: 22px;
+  font-weight: 900;
+  font-family: Sans-Serif;
+  padding-top: 7px;
+  text-align: center;
+}
+
+.gig-card-body {
+  text-align: center;
+}
+
+.gig-card-genero {
+  padding-top: 16px;
+  font-size: 20px;
+}
+
+.gig-card-localizacao {
+  font-size: 20px;
+}
+
+.gig-card-data {
+  font-size: 18px;
+}
+
+.gig-card-price {
+  font-size: 21px;
+  color: #57AB47;
+}
+
+.btn-default {
+  justify-content: center;
+  background-color: #E8670B;
+  padding: .5rem 1rem;
+  border: 1px solid transparent;
+  line-height: 1.25;
+  font-weight: 400;
+  border-radius: 5px;
+  box-shadow: 0px 2.5px 5px 0 rgba(0, 1, 0, 0.4);
+}

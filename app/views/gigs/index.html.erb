@@ -1,5 +1,38 @@
-<h1>Gigs#index</h1>
-<p>Find me in app/views/gigs/index.html.erb</p>
 <% @gigs.each do |gig| %>
   <li><%= link_to gig.title, gig %></li>
 <% end %>
+
+<div class="container">
+  <h1 id="gigs-titulo">Candidate-se a um Gig</h1>
+  <div class="gigs-box">
+    <ul class="list-inline">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+          <li class="list-inline-item catalog">
+            <div class="top">
+              <div class="gig-card-top">
+                <p class="gig-card-titulo">Samba na Vila Madalena</p>
+              </div>
+            </div>
+            <div class="gig-card-body">
+              <p class="gig-card-genero">
+                <spam>Samba, Samba Raíz</spam>
+              </p>
+              <p class="gig-card-localizacao">
+                <i class="fa fa-map-marker-alt"></i>
+                São Paulo
+              </p>
+              <p class="gig-card-data">
+                11/09/2018
+              </p>
+              <p class="gig-card-price">
+                R$250,00 por 1 hora
+              </p>
+              <a class="btn btn-default">Ver Gig</a>
+            </div>
+          </li>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>
