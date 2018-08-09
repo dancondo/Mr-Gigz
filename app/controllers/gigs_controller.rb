@@ -3,10 +3,11 @@ class GigsController < ApplicationController
   before_action :set_gig, only: [:show, :edit, :update, :destroy]
 
   def index
-    @gigs = Gig.all
+    @gigs = Gig.where(active: true)
   end
 
   def show
+    @bands = @gig.bands
   end
 
   def new
@@ -60,7 +61,7 @@ class GigsController < ApplicationController
   end
 
   def gig_params
-    params.require(:gig).permit(:bar_id, :description, :start_date, :end_date, :cache, :title, tag_ids: [])
+    params.require(:gig).permit(:bar_id, :band_id, :description, :start_date, :end_date, :cache, :title, :active, tag_ids: [])
   end
 
 end
