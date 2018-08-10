@@ -1,16 +1,20 @@
-<div class = "container" >
-
-  <br>
-
-  <div class="band-search">
-    <%= form_tag bands_path, method: :get, class: 'form-inline' do %>
-    <h1> Pesquise uma banda por gênero:</h1>
-    <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control' %>
-      <%= submit_tag "Buscar", class: 'btn btn-primary search-btn-inline' %>
-    <% end %>
+<div class="band-search">
+    <div class="container bands-page">
+      <div class="row band-search-title">
+        <%= form_tag bands_path, method: :get, class: 'form-inline' do %>
+        <div class="search-title">
+          <h1> Pesquise uma banda por gênero:</h1>
+        </div>
+        <div class="band-search-form">
+          <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control genre-selector' %>
+            <%= submit_tag "Buscar", class: 'btn btn-primary search-btn-inline' %>
+          <% end %>
+        </div>
+        </div>
+    </div>
   </div>
-  <br>
 
+<div class = "container band-cards" >
   <div class="row">
     <% @bands.each do |band| %>
 
