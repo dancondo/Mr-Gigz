@@ -26,7 +26,7 @@ class BarsController < ApplicationController
 
   def update
     if @bar.update(bar_params)
-      redirect_to bars_path
+      redirect_to @bar
     else
       render_new
     end

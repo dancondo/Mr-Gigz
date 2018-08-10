@@ -18,7 +18,7 @@ class GigsController < ApplicationController
     @gig = Gig.new(gig_params)
     @gig.bar = @bar
     if @gig.save
-      redirect_to @gig
+      redirect_to gigs_url
     else
       render :new
     end
@@ -35,7 +35,7 @@ class GigsController < ApplicationController
       GigTag.create(gig: @gig, tag_id: tag_id)
     end
     if @gig.update(gig_params)
-      redirect_to @gig
+      redirect_to gigs_url
     else
       render :edit
     end
