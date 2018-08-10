@@ -7,24 +7,10 @@ class MessagesController < ApplicationController
   def index
     if current_user.role == 'bar'
       @element = Message.where(bar: current_user.bar).map{|m| Band.find(m.band_id)}.uniq
-      @element_ch
     else
       @element = Message.where(band: current_user.band).map{|m| Bar.find(m.bar_id)}.uniq
-      @element_ch
     end
     # @messages = Message.where(current_user.role.to_sym => current_user.send(current_user.role))
-  end
-
-  def conversation
-    @message = Message.new
-    @message.sender = current_user.role
-    if current_user.role == 'bar'
-      @messages = Message.where(bar: current_user.bar, band_id: params[:element_id])
-      @element_id = params[:element_id]
-    else
-      @messages = Message.where(band: current_user.band, bar: params[:element_id])
-      @element_id = params[:element_id]
-    end
   end
 
   def new
@@ -35,6 +21,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message.sender = current_user.role
+    @message.conversation = Conversation.find(params[:conversation_id])
     @element_id = params[:element_id]
     if @message.sender == 'bar'
       @message.bar = current_user.bar
@@ -70,7 +57,7 @@ class MessagesController < ApplicationController
   # end
 
   def message_params
-    params.require(:message).permit(:content, :bar_id, :band_id, :sender)
+    params.require(:message).permit(:content, :bar_id, :band_id, :conversation_id, :sender)
   end
 
 end
