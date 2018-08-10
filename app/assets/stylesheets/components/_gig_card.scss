@@ -1,16 +1,15 @@
 
 .list-inline-item {
-  border: 2px solid gray;
   border-radius: 5px;
   width: 100%;
   height: 300px;
 }
 
 .gig-card-top {
-  color: black;
+  border-radius: 5px 5px 0 0;
+  color: white;
   height: 40px;
-  background-color: gray;
-  border: 2px solid gray;
+  background-color: #3F3F3F;
 }
 
 .gig-card-titulo {
@@ -22,7 +21,10 @@
 }
 
 .gig-card-body {
+  padding-bottom: 24px;
+  background-color: #DEDEDE;
   text-align: center;
+  border-radius: 0 0 5px 5px;
 }
 
 .gig-card-genero {
