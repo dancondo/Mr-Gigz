@@ -1,12 +1,23 @@
-<div class="messages_container">
-  <ul class="messages-all">
-  <% @messages.each do |m| %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="messages_container">
 
-    <%= render 'messages/show', m: m %>
+        <h1>Conversa com <%= @element.name %></h1>
 
-  <% end %>
-  </ul>
+        <ul class="messages-all">
+        <% @messages.each do |m| %>
+
+          <%= render 'messages/show', m: m %>
+
+        <% end %>
+        </ul>
+
+      </div>
+    </div>
+  </div>
 </div>
+
 <%= render 'messages/form', message: @message %>
 
 <% content_for :after_js do %>

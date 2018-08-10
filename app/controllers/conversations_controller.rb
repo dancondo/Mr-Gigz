@@ -7,9 +7,11 @@ class ConversationsController < ApplicationController
     if current_user.role == 'bar'
       @messages = Message.where(bar: current_user.bar, band_id: params[:element_id])
       @element_id = params[:element_id]
+      @element = Band.find(@element_id)
     else
       @messages = Message.where(band: current_user.band, bar: params[:element_id])
       @element_id = params[:element_id]
+      @element = Bar.find(@element_id)
     end
   end
 
