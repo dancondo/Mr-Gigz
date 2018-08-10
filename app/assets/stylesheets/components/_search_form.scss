@@ -5,6 +5,10 @@
   border-radius: 0 5px 5px 0;
 }
 
+.genre-selector {
+  width: 180px !important;
+}
+
 .band-search-title {
   padding-left: 16.3%;
 }
@@ -17,6 +21,7 @@
   .search-title h1 {
     font-size: 25px;
   }
+
   .band-search-form {
     padding-left: 0px;
     padding-bottom: 5px;
@@ -24,5 +29,8 @@
     .btn-primary {
       margin-left: 5px;
     }
+  }
+  .genre-selector {
+    width: 155px !important;
   }
 }

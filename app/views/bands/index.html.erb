@@ -6,7 +6,7 @@
           <h1> Pesquise uma banda por gênero:</h1>
         </div>
         <div class="band-search-form">
-          <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control' %>
+          <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control genre-selector' %>
             <%= submit_tag "Buscar", class: 'btn btn-primary search-btn-inline' %>
           <% end %>
         </div>
