@@ -17,7 +17,7 @@ a.bttn-dark {
   -webkit-transition:0.3s all ease;
   transition:0.3s ease all;
   &:hover {
-    color: $highlight !important;
+    color: $background !important;
   }
   &:focus {
     color: #d9d9d9;
