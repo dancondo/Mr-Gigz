@@ -3,12 +3,15 @@
 }
 
 .classic-temp {
-	border: solid $highlight 3px;
+	border: solid white 3px ;
 	margin-bottom: 32px;
 	padding: 16px;
 	border-radius: 3px;
 	margin-left: 4px;
 	margin-right: 4px;
+	background-color: rgba(255,255,255,0.3);
+	color: white;
+
 }
 
 .bars-show-image {
@@ -26,4 +29,8 @@
 
 .bars-show-h3 {
 	text-align: center;
+}
+
+.bttn-bands-show {
+	margin-right: 32px;
 }
