@@ -14,6 +14,7 @@
   end
 
   def show
+    @conversation = Conversation.new
   end
 
   def new
