@@ -44,9 +44,6 @@ class MessagesController < ApplicationController
       @message.bar = Bar.find(@element_id)
     end
     if @message.save
-      # ActionCable.server.broadcast("conversation", {
-      #   message_partial: render(partial: "messages/active_show", locals: { m: @message })
-      # })
       respond_to do |format|
         format.html { redirect_to conversation_url(element_id: @element_id) }
         format.js

@@ -1,3 +1,10 @@
+.messages-all {
+  margin: 50px;
+  li {
+    padding: 40px;
+    list-style: none;
+  }
+}
 .my-message {
   background-color: $main;
 }
