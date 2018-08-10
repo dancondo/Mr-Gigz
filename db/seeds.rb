@@ -66,7 +66,8 @@
 # Band.create!(user: band_user, name: 'Iron Maiden', description: 'tqwtfdghejglçktrl', photo: 'https://armazemdovinil.com/wp-content/uploads/2014/11/Disco-de-Vinil-Iron-Maiden-The-number-Of-The-Beast.jpg', minimum_price: 180)
 # Band.create!(user: band_user, name: 'AC DC', description: 'tqwtfdghejglçktrl', photo: 'http://armazemdovinil.com/wp-content/uploads/2017/12/3234277-220x220.jpg', minimum_price: 130)
 # Band.create!(user: band_user, name: 'Bob Marley', description: 'um show com muita fumaça e skank liberado', photo: 'https://armazemdovinil.com/wp-content/uploads/2016/11/R-4296423-1361027192-8554.jpeg-510x510.jpg', minimum_price: 120)
-
+Message.destroy_all
+Conversation.destroy_all
 MyTag.destroy_all
 GigTag.destroy_all
 Tag.destroy_all
