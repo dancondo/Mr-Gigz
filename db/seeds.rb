@@ -82,18 +82,18 @@ sertanejo = Tag.create!(genre: 'Sertanejo')
 samba = Tag.create!(genre: 'Samba')
 mpb = Tag.create!(genre: 'MPB')
 
-rock_user = User.create!(email: 'rock_band@gmail.com', password: '123456', role: 'band')
+rock_user = User.create!(email: 'andreluiz_pinho@hotmail.com', password: '123456', role: 'band')
 pop_user = User.create!(email: 'pop_band@gmail.com', password: '123456', role: 'band')
 sertanejo_user = User.create!(email: 'sertanejo@gmail.com', password: '123456', role: 'band')
 samba_user = User.create!(email: 'samba@gmail.com', password: '123456', role: 'band')
 mpb_user = User.create!(email: 'mpb_band@gmail.com', password: '123456', role: 'band')
 pop_rock_user = User.create!(email: 'pop_rock@gmail.com', password: '123456', role: 'band')
 
-bar_one = User.create!(email: 'bar_one@gmail.com', password: '123456', role: 'bar')
-bar_two = User.create!(email: 'bar_two@gmail.com', password: '123456', role: 'bar')
-bar_3 = User.create!(email: 'bar_3@gmail.com', password: '123456', role: 'bar')
-bar_4 = User.create!(email: 'bar_4@gmail.com', password: '123456', role: 'bar')
-bar_5 = User.create!(email: 'bar_5@gmail.com', password: '123456', role: 'bar')
+bar_user_one = User.create!(email: 'mrgigslewagon@gmail.com', password: '123456', role: 'bar')
+bar_user_two = User.create!(email: 'mrgigslewagon1@gmail.com', password: '123456', role: 'bar')
+bar_user_three = User.create!(email: 'mrgigslewagon2@gmail.com', password: '123456', role: 'bar')
+bar_user_four = User.create!(email: 'mrgigslewagon3@gmail.com', password: '123456', role: 'bar')
+bar_user_five = User.create!(email: 'mrgigslewagon4@gmail.com', password: '123456', role: 'bar')
 
 rock_band_url = 'https://images.unsplash.com/photo-1508252592163-5d3c3c559f36?ixlib=rb-0.3.5&ixid=
 eyJhcHBfaWQiOjEyMDd9&s=ec1ecefddebe708d9f122e4ef5372b04&auto=format&fit=crop&w=1350&q=80'
@@ -137,3 +137,40 @@ pop_rock_band.remote_photo_url = pop_rock_band_url
 pop_rock_band.save
 MyTag.create!(band: pop_rock_band, tag: rock)
 MyTag.create!(band: pop_rock_band, tag: pop)
+
+rock_bar_url = 'https://images.myguide-cdn.com/moscow/companies/lets-rock-bar/large/lets-rock-bar-126324.jpg'
+rock_bar = Bar.create!(name: 'Xerelete', address: 'Rua Londres 123', user: bar_user_one)
+rock_bar.remote_photo_url = rock_bar_url
+rock_bar.save
+# MyTag.create!(bar: rock_bar, tag: rock)
+
+pop_bar_url = 'https://www.baressp.com.br/barreporter/imgs/Outs_Rock_SP.jpg'
+pop_bar = Bar.create!(name: 'Pinguçu', address: 'Rua EUA 123', user: bar_user_one)
+pop_bar.remote_photo_url = pop_bar_url
+pop_bar.save
+# MyTag.create!(bar: pop_bar, tag: pop)
+
+sertanejo_bar_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvGUarvC3ZViezl_JFpWW8rlmPEm5ykGD-NlFSSWHkern9bECv'
+sertanejo_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua Mato Grosso 123', user: bar_user_one)
+sertanejo_bar.remote_photo_url = sertanejo_bar_url
+sertanejo_bar.save
+# MyTag.create!(bar: sertanejo_bar, tag: sertanejo)
+
+samba_bar_url = 'https://umbrinconopalheiro.files.wordpress.com/2010/07/traco-de-uniao2.jpg'
+samba_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua Rio de Janeiro 123', user: bar_user_one)
+samba_bar.remote_photo_url = samba_bar_url
+samba_bar.save
+# MyTag.create!(bar: samba_bar, tag: samba)
+
+mpb_bar_url = 'https://cdn-az.allevents.in/banners/0f52efb3e218ce28b74fda29312c1c34'
+mpb_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua São Paulo 123', user: bar_user_one)
+mpb_bar.remote_photo_url = mpb_bar_url
+mpb_bar.save
+# MyTag.create!(bar: mpb_bar, tag: mpb)
+
+gig_one = Gig.create!(start_date: Time.now, description: 'A melhor sexta de rock da Vila Madalena', bar: rock_bar, cache: '250', end_date: Time.now)
+gig_two = Gig.create!(start_date: Time.now, description: 'A melhor sexta de pop da Vila Madalena', bar:pop_bar, cache: '180', end_date: Time.now)
+gig_three = Gig.create!(start_date: Time.now, description: 'A melhor sexta de sertanejo da Vila Madalena', bar: sertanejo_bar, cache: '320', end_date: Time.now)
+gig_four = Gig.create!(start_date: Time.now, description: 'A melhor sexta de samba da Vila Madalena', bar:samba_bar, cache: '280', end_date: Time.now)
+gig_five = Gig.create!(start_date: Time.now, description: 'A melhor sexta de mpb da Vila Madalena', bar: mpb_bar, cache: '150', end_date: Time.now)
+
