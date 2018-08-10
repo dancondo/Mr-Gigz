@@ -1,0 +1,17 @@
+  <% if user_signed_in? %>
+
+    <% if current_user.band %>
+
+      <%= link_to 'Mr.Gigz', sou_banda_url %>
+
+    <% else %>
+
+      <%= link_to 'Mr.Gigz', root_path %>
+
+    <% end %>
+
+  <% else %>
+
+    <%= link_to 'Mr.Gigz', root_path %>
+
+  <% end %>
