@@ -39,7 +39,7 @@
 
 .gig-card-price {
   font-size: 21px;
-  color: #57AB47;
+  color: $price;
 }
 
 .btn-primary {
@@ -50,5 +50,5 @@
   line-height: 1.25;
   font-weight: 400;
   border-radius: 5px;
-  box-shadow: 0px 2.5px 5px 0 rgba(0, 1, 0, 0.4);
+  box-shadow: 1px 0.5px 5px 0 rgba(0, 1, 0, 0.4);
 }

@@ -1,11 +1,12 @@
 .btn-primary {
   background-color: #3A3B9A;
-  border-color: $highlight;
+  border-color: $main;
+
 }
 
 .btn-primary:hover {
-  background-color: $highlight;
-  border-color: $highlight;
+  background-color: #D65F0A;
+  border-color: #D65F0A;
 }
 
 .card-body {
@@ -14,12 +15,20 @@
 }
 
 .card-text {
+  font-size: 17px;
+  color: $price;
+  padding: 0 0 1px 1px;
   position: absolute;
   bottom: 0px;
   margin: 0px;
 }
 
 .card-title {
+  padding-left: 1px;
   text-transform: uppercase;
    font-weight: bold;
+}
+
+#band-card {
+  margin-top: 16px;
 }
