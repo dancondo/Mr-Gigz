@@ -1,8 +1,28 @@
-.search-form-inline {
-  width: 80% !important;
-  border-radius: 0 !important;
+.band-search {
+  margin-right: 24%;
+  color: white;
+  background-color: #2C2C2C;
+  border-radius: 0 5px 5px 0;
 }
-.search-btn-inline {
-  width: 10%;
-  border-radius: 5px;
+
+.band-search-title {
+  padding-left: 16.3%;
+}
+
+.band-search-form {
+  padding-left: 19px;
+}
+
+@media screen and (max-width: 600px) {
+  .search-title h1 {
+    font-size: 25px;
+  }
+  .band-search-form {
+    padding-left: 0px;
+    padding-bottom: 5px;
+    display: flex;
+    .btn-primary {
+      margin-left: 5px;
+    }
+  }
 }
