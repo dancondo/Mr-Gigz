@@ -2,17 +2,19 @@
 
   <br>
 
-  <%= form_tag bands_path, method: :get, class: 'form-inline' do %>
+  <div class="band-search">
+    <%= form_tag bands_path, method: :get, class: 'form-inline' do %>
+    <h1> Pesquise uma banda por gênero:</h1>
     <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control' %>
-    <%= submit_tag "Buscar!", class: 'btn btn-primary search-btn-inline' %>
-  <% end %>
-
+      <%= submit_tag "Buscar", class: 'btn btn-primary search-btn-inline' %>
+    <% end %>
+  </div>
   <br>
 
   <div class="row">
     <% @bands.each do |band| %>
 
-      <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="col-xs-12 col-sm-6 col-lg-4" id="band-card">
         <div class="card">
           <% if band.photo.url %>
             <%= image_tag band.photo.url, class: 'card-img-top', size: '250x250' %>
@@ -21,7 +23,7 @@
           <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= band.name %></h5>
-            <p class="card-text">Mínimo: R$<%= band.minimum_price %></p>
+            <p class="card-text">Mínimo: R$<%= band.minimum_price %>,00</p>
             <div class="text-right">
               <%= link_to 'Ver Perfil', band, class: "btn btn-primary" %>
             </div>
