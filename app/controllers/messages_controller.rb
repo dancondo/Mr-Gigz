@@ -13,18 +13,6 @@ class MessagesController < ApplicationController
     # @messages = Message.where(current_user.role.to_sym => current_user.send(current_user.role))
   end
 
-  # def conversation
-  #   @message = Message.new
-  #   @message.sender = current_user.role
-  #   if current_user.role == 'bar'
-  #     @messages = Message.where(bar: current_user.bar, band_id: params[:element_id])
-  #     @element_id = params[:element_id]
-  #   else
-  #     @messages = Message.where(band: current_user.band, bar: params[:element_id])
-  #     @element_id = params[:element_id]
-  #   end
-  # end
-
   def new
     @element_id = params[:element_id]
     @message = Message.new

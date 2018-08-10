@@ -1,13 +1,13 @@
 <% if m.sender == current_user.role %>
 
-  <li class="my-message">
+  <li class="my-message message">
     <%= m.content %>
     You
   </li>
 
 <% else %>
 
-  <li class="counterpart-message">
+  <li class="counterpart-message message">
     <%= m.content %>
     <%= m.send(m.sender).name %>
   </li>

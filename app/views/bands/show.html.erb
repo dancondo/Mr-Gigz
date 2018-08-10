@@ -16,7 +16,15 @@
     </div>
     <div class="row">
       <div class="col-sm-6 bands-show-action">
-        <%= link_to 'Mensagem', conversations_path(element_id: @band), class: 'btn btn-primary', method: :post %>
+
+        <% if current_user.bar %>
+          <% if current_user.bar.messages.find_by(band: @band) %>
+            <%= link_to 'Mensagem', conversation_path(current_user.bar.messages.find_by(band: @band).conversation, element_id: @band), class: 'btn btn-primary' %>
+          <% else %>
+            <%= link_to 'Mensagem', conversations_path(element_id: @band), class: 'btn btn-primary', method: :post %>
+          <% end %>
+        <% end %>
+
         <button type="button" class="btn btn-warning">Ad Favoritos</button>
       </div>
       <div class="col-sm-6 bands-show-social-logo">
@@ -64,6 +72,7 @@
     <button type="button" class="btn btn-danger bttn-bands-show"><%= link_to 'Delete', @band,
     method: :delete,
     data: { confirm: "Are you sure?" } %></button>
+    <%= link_to "minhas mensagens", messages_path, class: "btn btn-primary" %>
   </div>
 </div>
 
