@@ -25,6 +25,7 @@ a:hover {
   list-style: none;
   padding: 20px 0 20px;
   position: relative;
+  font-family: $headers-font; 
 }
 .timeline:before {
   top: 0;
@@ -147,4 +148,8 @@ a:hover {
 }
 .timeline-body > p + p {
   margin-top: 5px;
+}
+
+.home-banner-h3 {
+  font-size: 50px;
 }
