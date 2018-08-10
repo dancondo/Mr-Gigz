@@ -1,5 +1,9 @@
-var newMessage = "<li class='my-message'><%= @message.content %></li>"
-var messages = document.querySelector('.messages-all');
-messages.insertAdjacentHTML('beforeend', newMessage);
-var inputBox = document.querySelector('.form-control');
-inputBox.value = "";
+<% if @message.errors.any? %>
+
+<% else %>
+  var messages = document.querySelector('.messages-all');
+  messages.insertAdjacentHTML('beforeend', "<%= j render 'show', m: @message %>");
+  var inputBox = document.querySelector('.form-control');
+  inputBox.value = "";
+  inputBox.blur();
+<% end %>
