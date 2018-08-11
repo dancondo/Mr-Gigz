@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_10_040805) do
+ActiveRecord::Schema.define(version: 2018_08_11_164527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,10 +81,8 @@ ActiveRecord::Schema.define(version: 2018_08_10_040805) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "conversation_id"
     t.index ["band_id"], name: "index_messages_on_band_id"
     t.index ["bar_id"], name: "index_messages_on_bar_id"
-    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
   end
 
   create_table "my_tags", force: :cascade do |t|
@@ -130,7 +128,6 @@ ActiveRecord::Schema.define(version: 2018_08_10_040805) do
   add_foreign_key "gigs", "bars"
   add_foreign_key "messages", "bands"
   add_foreign_key "messages", "bars"
-  add_foreign_key "messages", "conversations"
   add_foreign_key "my_tags", "bands"
   add_foreign_key "my_tags", "tags"
 end

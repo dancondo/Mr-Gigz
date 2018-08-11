@@ -1,24 +1,37 @@
-<div class="messages_container">
-  <ul class="messages-all">
-  <% @messages.each do |m| %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="messages_container">
 
-    <%= render 'show', m: m %>
+        <h1>Conversa com <%= @element.name %></h1>
 
-  <% end %>
-  </ul>
+        <ul class="messages-all">
+        <% @messages.each do |m| %>
+
+          <%= render 'messages/show', m: m %>
+
+        <% end %>
+        </ul>
+
+      </div>
+    </div>
+  </div>
 </div>
-<%= render 'form', message: @message %>
+
+<%= render 'messages/form', message: @message %>
 
 <% content_for :after_js do %>
   <script>
-    App['conversation'] = App.cable.subscriptions.create(
-      { channel: 'MessagesChannel' },
-      { received: (data) => {
-        if (data.current_sender.length !== <%= current_user.role.size %>) {
-          var messages = document.querySelector('.messages-all');
-          messages.insertAdjacentHTML('beforeend', data.message_partial);
-        }
+
+    const scrollLastMessageIntoView = () => {
+      const messages = document.querySelectorAll('.message');
+      const lastMessage = messages[messages.length - 1];
+
+      if (lastMessage !== undefined) {
+        lastMessage.scrollIntoView();
       }
-    })
+    }
+
+    scrollLastMessageIntoView();
   </script>
 <% end %>

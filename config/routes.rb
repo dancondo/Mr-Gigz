@@ -13,16 +13,17 @@ Rails.application.routes.draw do
   #   get 'messages'
   # end
 
-  resources :messages, only: [:index, :new]
-  resources :conversations, only: [:show, :create] do
-    resources :messages, only: :create
-  end
+  # resources :messages, only: [:index, :new]
+  # resources :conversations, only: [:show, :create] do
+  #   resources :messages, only: :create
+  # end
   # namespace :band do
   #   # resources :messages, only: [:index, :new, :create]
   #   get 'messages'
   # end
 
-  resources :messages, only: :show
+  resources :messages, only: [:create, :index]
+  get 'messages/conversation', to: 'messages#conversation', as: :conversation
 
 
   resources :roles, only: [:new, :create]
