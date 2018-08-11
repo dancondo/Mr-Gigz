@@ -55,6 +55,8 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
+    bootstrap-datepicker-rails (1.8.0.1)
+      railties (>= 3.0)
     builder (3.2.3)
     byebug (10.0.2)
     carrierwave (1.2.3)
@@ -247,6 +249,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   bootstrap
+  bootstrap-datepicker-rails
   carrierwave
   devise
   dotenv-rails
@@ -264,7 +267,7 @@ DEPENDENCIES
   puma
   pundit
   rails (= 5.2.0)
-  redis (= 3.0.0)
+  redis
   sass-rails
   simple_form
   spring

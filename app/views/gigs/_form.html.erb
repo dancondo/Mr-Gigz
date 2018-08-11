@@ -18,10 +18,10 @@
 					<%= f.input :cache %>
 				</div>
 				<div class="form-group">
-					<%= f.input :start_date, label: "Data de Inicio" %>
+					<%= f.input :start_date, as: :string,  label: "Data de Inicio", input_html: { class: "datepicker" } %>
 				</div>
 				<div class="form-group">
-					<%= f.input :end_date, label: "Finalizacao" %>
+					<%= f.input :end_date, as: :string, label: "Finalizacao", input_html: { class: "datepicker" } %>
 				</div>
 				<div class="form-group">
 					<label class="control-label check_boxes optional">Género de música</label>
