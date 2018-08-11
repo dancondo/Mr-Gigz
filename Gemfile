@@ -24,6 +24,10 @@ gem 'webpacker'
 
 gem 'bootstrap-datepicker-rails'
 
+# Select2
+
+gem "select2-rails"
+
 # Image Upload
 
 gem 'carrierwave'
