@@ -23,6 +23,9 @@
     padding: 10px;
     font-weight: bold;
   }
+  li {
+    color: black;
+  }
 }
 
 // Checkboxes design
@@ -66,3 +69,8 @@ label {
   margin-top: 64px;
 }
 
+// Select2
+
+.select2-results__option {
+  color: black;
+}
