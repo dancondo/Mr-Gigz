@@ -1,7 +1,17 @@
+<div class="band_banner">
+  <div class="gig-banner-content">
+    <h1 style="padding: 32px;">ESCOLHE SEU GIG !</h1>
+        <div class="row gig-search">
+          <%= form_tag gigs_path, method: :get, class: 'form-inline ' do %>
+          <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control gig-search-path genre-selector' %>
+          <%= submit_tag "Buscar", class: 'btn btn-primary search-btn-inline' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
 <div class="container">
-
-  <h1 id="gigs-titulo">Candidate-se</h1>
-
+  <h2 style="text-decoration: overline #FFFFFF; margin-top: 64px;">Ultimos anuncios</h2>
   <div class="gigs-box">
     <ul class="list-inline">
       <div class="row">
@@ -17,7 +27,7 @@
             <div class="gig-card-body">
               <p class="gig-card-genero">
                 <% gig.gig_tags.each do |tag| %>
-                  <spam><%= tag.tag.genre %></spam>
+                <spam><button type="button" class="btn btn-secondary"><%= tag.tag.genre %></button></spam>
                 <% end %>
               </p>
               <p class="gig-card-localizacao">
@@ -30,7 +40,7 @@
               <p class="gig-card-price">
                 R$<%= gig.cache %>,00 por 1 hora
               </p>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<%= gig.id %>">
+              <button type="button" class="btn btn-primary btn-primary-card" data-toggle="modal" data-target="#modal<%= gig.id %>">
                 Ver Gig
               </button>
               <%= render partial: 'modal', locals: {gig: gig} %>

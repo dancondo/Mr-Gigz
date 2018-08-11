@@ -3,7 +3,14 @@ class GigsController < ApplicationController
   before_action :set_gig, only: [:show, :edit, :update, :destroy]
 
   def index
-    @gigs = Gig.where(active: true)
+    @tags = Tag.all
+
+    if params[:tag]
+      tag = Tag.find(params[:tag])
+      @gigs = tag.gigs
+    else
+      @gigs = Gig.where(active: true)
+    end
   end
 
   def show
