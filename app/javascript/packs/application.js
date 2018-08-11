@@ -4,12 +4,10 @@ import formCheck from "./form_check"
 
 import scrollLastMessageIntoView from "./scroll_last_message"
 
+import popOver from "./pop_over"
 
-$(function () {
-  $('[data-toggle="popover"]').popover()
-})
-
-
-console.log('hello from webpack!')
+import '../plugins/flatpickr'
 
 formCheck();
+scrollLastMessageIntoView();
+popOver();
