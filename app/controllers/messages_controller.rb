@@ -18,10 +18,26 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
+  def conversation
+    # @conversation = Conversation.find(params[:id])
+    # @message.conversation = @conversation
+    @message = Message.new
+    @message.sender = current_user.role
+    if current_user.role == 'bar'
+      @messages = Message.where(bar: current_user.bar, band_id: params[:element_id])
+      @element_id = params[:element_id]
+      @element = Band.find(@element_id)
+    else
+      @messages = Message.where(band: current_user.band, bar: params[:element_id])
+      @element_id = params[:element_id]
+      @element = Bar.find(@element_id)
+    end
+  end
+
   def create
     @message = Message.new(message_params)
     @message.sender = current_user.role
-    @message.conversation = Conversation.find(params[:conversation_id])
+    # @message.conversation = Conversation.find(params[:conversation_id])
     @element_id = params[:element_id]
     if @message.sender == 'bar'
       @message.bar = current_user.bar
@@ -57,7 +73,7 @@ class MessagesController < ApplicationController
   # end
 
   def message_params
-    params.require(:message).permit(:content, :bar_id, :band_id, :conversation_id, :sender)
+    params.require(:message).permit(:content, :bar_id, :band_id, :sender)
   end
 
 end
