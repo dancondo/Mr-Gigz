@@ -30,6 +30,10 @@ gem "select2-rails"
 
 # Image Upload
 
+# Geocode
+
+gem 'geocoder'
+
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'

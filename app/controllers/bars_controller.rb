@@ -14,10 +14,11 @@ class BarsController < ApplicationController
 
   def create
     @bar = Bar.new(bar_params)
+    @bar.user = current_user
     if @bar.save
       redirect_to @bar
     else
-      render_new
+      render :new
     end
   end
 
@@ -43,7 +44,7 @@ class BarsController < ApplicationController
   private
 
   def bar_params
-    params.require(:bar).permit(:name, :address, :photo)
+    params.require(:bar).permit(:name, :address, :photo, :user_id)
   end
 
   def set_bar
