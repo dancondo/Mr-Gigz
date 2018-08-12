@@ -8,8 +8,7 @@
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
-  asset-url('banner-img.jpg');  
-  position: relative;
+  asset-url('banner-img.jpg');
 
 }
 
@@ -26,14 +25,13 @@
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 60px;
 }
-.gig_banner {
+.band_banner {
   background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
   asset-url('band_background.jpeg') !important;
-  height: 40vh;
+  height: 35vh;
   background-repeat: no-repeat;
   background-size: cover !important;
-  background-position: 30% 90%;
-  background-attachment: fixed;
+  background-position: 30% 30%;
   display: flex;
   align-items: center;
   justify-content: center;
