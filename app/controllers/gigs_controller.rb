@@ -14,7 +14,11 @@ class GigsController < ApplicationController
   end
 
   def show
-    @bands = @gig.bands
+    @bar = @gig.bar
+    @markers = [{
+      lat: @bar.latitude,
+      lng: @bar.longitude
+    }]
   end
 
   def new
