@@ -22,3 +22,7 @@ We might use the following codes at some points
             <% end %>
           </div>
         </div>
+
+Removed this
+
+//= require rails-ujs
