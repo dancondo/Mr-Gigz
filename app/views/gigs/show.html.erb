@@ -1,61 +1,31 @@
-<h1>Gigs#show</h1>
-
-<div class = "container" >
+<div class = "container">
+  <h1>Nome do bar</h1>
 
   <div class="row">
-    <% @bands.each do |band| %>
-
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        <div class="card">
-          <% if band.photo.url %>
-            <%= image_tag band.photo.url, class: 'card-img-top', size: '250x250' %>
-          <% else %>
-            <img src='https://images.unsplash.com/photo-1431069767777-c37892aa0a07?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c3a556a7c67a4fe290e9336a9703ed61&auto=format&fit=crop&w=1353&q=80' class='card-img-top' style='height: 250px;' >
-          <% end %>
-          <div class="card-body">
-            <h5 class="card-title"><%= band.name %></h5>
-            <p class="card-text">Mínimo: R$<%= band.minimum_price %></p>
-            <div class="text-right">
-              <%= link_to 'Ver Perfil', band, class: "btn btn-primary" %>
-            </div>
-          </div>
-        </div>
+    <div class="gig-box gig-image-box col-sm-12 col-md-7">
+      <img src="https://guia-static.gazetadopovo.com.br/fichas/267/267-e1c08c54a9b7f38e79c329d427ea2165-27f797c14e5d8886d8bbd339176d56cb.jpg" alt="Imagem do bar" height="442" width="100%">
+    </div>
+    <div class="gig-box gig-infos-box col-sm-12 col-md-5">
+      <div class="gig-map">
+        <img src= "http://joomly.net/frontend/web/images/googlemap/map.png" alt="Imagem do Google Maps" height="170" width="100%">
       </div>
-    <% end %>
+      <div class="gig-infos">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>Rua Mourato Coelho, 1404</p>
+        <i class="far fa-calendar-alt"></i>
+        <p>11/10/2018</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="gig-box gig-description col-sm-12 col-md-7">
+      <h3>Descrição:</h3>
+      <p>Buscamos sambistas competentes que estejam aptos a tocar a playlist sei lá o que, estou apenas fazendo uma fake description</p>
+    </div>
+    <div class="gig-box gig-apply col-sm-12 col-md-5">
+      <h4>Ficou interessado? Não perca tempo!</h4>
+      <button type="button" class="btn btn-primary">Candidatar-se</button>
+    </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<%= @gig.start_date %>
-<%= @gig.end_date %>
-<%= @gig.description %>
-<% if current_user.bar %>
-  <%= link_to "Editar", edit_bar_gig_url(current_user.bar, @gig)%>
-<% end %>
-<%= link_to "Deletar", @gig,
-                       method: :delete,
-                       data: { confirm: "Você tem certeza?" } %>
-<% if current_user.band %>
-  <% if current_user.band.gigs.include?(@gig) %>
-    <%= link_to "Cancelar Inscricao!", gig_apply_url(@gig),
-                              method: :delete,
-                              data: { confirm: "Cancelar inscricao?"} %>
-
-  <% else %>
-
-    <%= link_to "Inscrever!", gig_applies_url(@gig),
-                              method: :post,
-                              data: { confirm: "Aplicar para esse Gig?"} %>
-  <% end %>
-<% end %>
