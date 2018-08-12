@@ -12,6 +12,11 @@ class BarsController < ApplicationController
     @bar = Bar.new
   end
 
+  def dashboard
+    @bands = Message.where(bar: current_user.bar).map{ |m| Band.find(m.band_id) }.uniq
+    @bar = current_user.bar
+  end
+
   def create
     @bar = Bar.new(bar_params)
     @bar.user = current_user

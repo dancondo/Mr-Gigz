@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
+
+  get 'bars/dashboard', to: 'bars#dashboard', as: :bar_dashboard
   resources :bars do
     resources :gigs, only: [:new, :create, :edit, :update]
   end
+
   resources :gigs, only: [:index, :show, :destroy] do
     resources :applies, only: [:create, :destroy, :create]
   end
