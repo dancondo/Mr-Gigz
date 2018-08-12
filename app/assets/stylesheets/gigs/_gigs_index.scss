@@ -22,8 +22,25 @@
 
 .gigs-box {
   border-radius: 10px;
+  margin: -100px 0;
 }
 
 .gig-card-top {
   background-color: rgba(0,0,0,0.5);
+}
+
+.gig-image-crochet {
+  position: relative; 
+  top: -40px;
+  left: -100px;
+
+}
+
+.gig-image-crochet-2 {
+  position: relative;
+  bottom: -10px;
+  left: 1100px;
+}
+.gigs-container {
+  position: relative;
 }
