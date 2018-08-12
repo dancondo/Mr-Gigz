@@ -42,9 +42,10 @@
                 <p class="gig-card-price">
                   R$<%= gig.cache %>,00 por 1 hora
                 </p>
-                <button type="button" class="btn btn-primary btn-primary-card" data-toggle="modal" data-target="#modal<%= gig.id %>">
+                <%= link_to 'Ver Gig', gig, class: 'btn btn-primary btn-primary-card' %>
+<!--                 <button type="button" class="btn btn-primary btn-primary-card" data-toggle="modal" data-target="#modal<%= gig.id %>">
                   Ver Gig
-                </button>
+                </button> -->
                 <%= render partial: 'modal', locals: {gig: gig} %>
               </div>
             </li>
