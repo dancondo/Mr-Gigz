@@ -2,10 +2,14 @@
   background-color: white;
   color: gray;
   border-radius: 4px;
+  min-height: 100px;
+  min-height: 100%;
 }
 
 .gig-image-box{
-
+  img {
+    border-radius: 4px;
+  }
 }
 
 .gig-description {
@@ -26,4 +30,10 @@
   button {
 
   }
+}
+.map-gig-show{
+  border-radius: 4px;
+}
+.separator-margin {
+  margin-bottom: 15px;
 }
