@@ -5,12 +5,12 @@ class PagesController < ApplicationController
   end
 
   def band_home
-    @bars = Bar.where.not(gigs: nil, latitude: nil, longitude: nil)
-    @markers = @bars.map do |bar|
+    @gigs = Gig.all
+    @markers = @gigs.map do |gig|
       {
-        lat: bar.latitude,
-        lng: bar.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/bars/map_box", locals: { bar: bar }) }
+        lat: gig.bar.latitude,
+        lng: gig.bar.longitude,
+        infoWindow: { content: render_to_string(partial: "./gigs/map_box", locals: { gig: gig }) }
       }
     end
   end

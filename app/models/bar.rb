@@ -8,8 +8,8 @@ class Bar < ApplicationRecord
   has_many :messages
 
   #validations
-  validates :user, presence: true
   validates :address, presence: true
+  validates :name, presence: true
 
   #geocoding
   geocoded_by :address
