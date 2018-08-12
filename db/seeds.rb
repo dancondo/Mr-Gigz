@@ -79,35 +79,37 @@ pop_rock_band.save
 MyTag.create!(band: pop_rock_band, tag: rock)
 MyTag.create!(band: pop_rock_band, tag: pop)
 
-# rock_bar_url = 'https://images.myguide-cdn.com/moscow/companies/lets-rock-bar/large/lets-rock-bar-126324.jpg'
-# rock_bar = Bar.create!(name: 'Xerelete', address: 'Rua Londres 123', user: bar_user_one)
-# rock_bar.remote_photo_url = rock_bar_url
-# rock_bar.save
-# # MyTag.create!(bar: rock_bar, tag: rock)
+puts "Creating new Bars"
 
-# pop_bar_url = 'https://www.baressp.com.br/barreporter/imgs/Outs_Rock_SP.jpg'
-# pop_bar = Bar.create!(name: 'Pinguçu', address: 'Rua EUA 123', user: bar_user_one)
-# pop_bar.remote_photo_url = pop_bar_url
-# pop_bar.save
-# # MyTag.create!(bar: pop_bar, tag: pop)
+rock_bar_url = 'https://images.unsplash.com/photo-1456743625079-86a97ff8bc86?ixlib=rb-0.3.5&
+ixid=eyJhcHBfaWQiOjEyMDd9&s=eebf1f844460b2b340c876eb14ee2861&auto=format&fit=crop&w=1489&q=80'
+rock_bar = Bar.create!(name: 'Xerelete', address: 'Rua Londres 123', user: bar_user_one)
+rock_bar.remote_photo_url = rock_bar_url
+rock_bar.save
 
-# sertanejo_bar_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvGUarvC3ZViezl_JFpWW8rlmPEm5ykGD-NlFSSWHkern9bECv'
-# sertanejo_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua Mato Grosso 123', user: bar_user_one)
-# sertanejo_bar.remote_photo_url = sertanejo_bar_url
-# sertanejo_bar.save
-# # MyTag.create!(bar: sertanejo_bar, tag: sertanejo)
+pop_bar_url = 'https://images.unsplash.com/photo-1532499408512-a163ed4b16a7?ixlib=rb-0.3.5&
+ixid=eyJhcHBfaWQiOjEyMDd9&s=b80b8460b37bd0aa447bf44ea1620b24&auto=format&fit=crop&w=1350&q=80'
+pop_bar = Bar.create!(name: 'Pinguçu', address: 'Rua EUA 123', user: bar_user_one)
+pop_bar.remote_photo_url = pop_bar_url
+pop_bar.save
 
-# samba_bar_url = 'https://umbrinconopalheiro.files.wordpress.com/2010/07/traco-de-uniao2.jpg'
-# samba_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua Rio de Janeiro 123', user: bar_user_one)
-# samba_bar.remote_photo_url = samba_bar_url
-# samba_bar.save
-# # MyTag.create!(bar: samba_bar, tag: samba)
+sertanejo_bar_url = 'https://images.unsplash.com/photo-1523173508938-2dbf2c43d473?ixlib=rb-0.3.5&
+ixid=eyJhcHBfaWQiOjEyMDd9&s=d71c648d8d781564da5f7f9e45f20deb&auto=format&fit=crop&w=1351&q=80'
+sertanejo_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua Mato Grosso 123', user: bar_user_one)
+sertanejo_bar.remote_photo_url = sertanejo_bar_url
+sertanejo_bar.save
 
-# mpb_bar_url = 'https://cdn-az.allevents.in/banners/0f52efb3e218ce28b74fda29312c1c34'
-# mpb_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua São Paulo 123', user: bar_user_one)
-# mpb_bar.remote_photo_url = mpb_bar_url
-# mpb_bar.save
-# # MyTag.create!(bar: mpb_bar, tag: mpb)
+samba_bar_url = 'https://images.unsplash.com/photo-1515612457076-03034c364cd4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&
+s=dc6445bbd3690e76bfb94e4d7dfb6836&auto=format&fit=crop&w=1350&q=80'
+samba_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua Rio de Janeiro 123', user: bar_user_one)
+samba_bar.remote_photo_url = samba_bar_url
+samba_bar.save
+
+mpb_bar_url = 'https://images.unsplash.com/photo-1481833761820-0509d3217039?ixlib=rb-0.3.5&
+ixid=eyJhcHBfaWQiOjEyMDd9&s=3fb6b264e88b8819ae92aa44494eca81&auto=format&fit=crop&w=1350&q=80'
+mpb_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua São Paulo 123', user: bar_user_one)
+mpb_bar.remote_photo_url = mpb_bar_url
+mpb_bar.save
 
 # gig_one = Gig.create!(start_date: Time.now, description: 'A melhor sexta de rock da Vila Madalena', bar: rock_bar, cache: '250', end_date: Time.now)
 # gig_two = Gig.create!(start_date: Time.now, description: 'A melhor sexta de pop da Vila Madalena', bar:pop_bar, cache: '180', end_date: Time.now)
