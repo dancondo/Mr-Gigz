@@ -3,7 +3,30 @@
 
     <h1 class="dashboard-main-title">Bem Vindo! <%= @bar.name %></h1>
 
+    <div class="col-sm-12 dashboard-col">
+      <div class="dashboard-box">
+        <h2 id="month" class="text-center">
+          <%= link_to "<", date: @date.prev_month %>
+          <%= @date.strftime("%B %Y") %>
+          <%= link_to ">", date: @date.next_month %>
+        </h2>
+
+        <%= calendar @date do |date| %>
+          <% if @gigs_by_date[date] %>
+            <%= link_to @gigs_by_date[date], class: 'gig-today' do %>
+              <%= date.day %>
+              <i class="fas fa-music"></i>
+            <% end %>
+          <% else %>
+            <%= date.day %>
+          <% end %>
+        <% end %>
+        <%= link_to 'Novo Gig', new_bar_gig_path(@bar) %>
+      </div>
+    </div>
+
     <div class='col-sm-12 col-md-4 dashboard-col'>
+
       <div class="contact-dashboard dashboard-box">
         <h3>Contatos</h3>
 
@@ -26,25 +49,36 @@
       </div>
 
     <div class="col-sm-12 col-md-8 dashboard-col">
-      <div class="dashboard-box">
+      <div class="gigs-dashboard">
 
-        <h2 id="month" class="text-center">
-          <%= link_to "<", date: @date.prev_month %>
-          <%= @date.strftime("%B %Y") %>
-          <%= link_to ">", date: @date.next_month %>
-        </h2>
+        <table class="dashboard-gig-table">
+          <thead>
+            <tr>
+              <td>Titulo</td>
+              <td>Data</td>
+              <td>Tags</td>
+              <td>Cache</td>
+              <td>Status</td>
+            </tr>
+          </thead>
 
-        <%= calendar @date do |date| %>
-          <% if @gigs[date] %>
-            <%= link_to @gigs[date], class: 'gig-today' do %>
-              <%= date.day %>
-              <i class="fas fa-music"></i>
+          <tbody>
+            <% @gigs.each do |gig| %>
+            <tr>
+              <td><%= gig.title %></td>
+              <td><%= gig.date %></td>
+              <td>
+                <% gig.tags.each do |tag| %>
+                  <%= tag.genre %>
+                <% end %>
+              </td>
+              <td>R$<%= gig.cache %></td>
+              <td><%= gig.active ? 'Ativo' : 'Desativo' %></td>
+            </tr>
             <% end %>
-          <% else %>
-            <%= date.day %>
-          <% end %>
-        <% end %>
-        <%= link_to 'Novo Gig', new_bar_gig_path(@bar) %>
+          </tbody>
+        </table>
+
       </div>
     </div>
 

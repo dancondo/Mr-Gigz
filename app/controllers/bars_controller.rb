@@ -15,7 +15,8 @@ class BarsController < ApplicationController
   def dashboard
     @bar = current_user.bar
     @bands = Message.where(bar: @bar).map{ |m| Band.find(m.band_id) }.uniq
-    @gigs = Gig.where(bar: @bar).group_by(&:date)
+    @gigs = Gig.where(bar: @bar)
+    @gigs_by_date = @gigs.group_by(&:date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
