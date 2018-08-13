@@ -69,3 +69,18 @@ Removed this
                               #data: { confirm: "Aplicar para esse Gig?"} %>
   <%# end %>
 <%# end %>
+
+
+                    <ul class="details">
+                      <li class="gig-card-name">nome do bar</li>
+                      <li class="gig-card-a">endereco do bar</li>
+                      <li class="tags">
+                    <ul>
+                      <p class="gig-card-genero">
+                        <% gig.gig_tags.each do |tag| %>
+                        <spam><button type="button" class="btn btn-secondary"><%= tag.tag.genre %></button></spam>
+                        <% end %>
+                      </p>
+                  </ul>
+                  </li>
+                </ul>
