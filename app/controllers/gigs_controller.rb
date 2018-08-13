@@ -28,6 +28,7 @@ class GigsController < ApplicationController
   def create
     @gig = Gig.new(gig_params)
     @gig.bar = @bar
+    @gig.date = gig_params[:start_date].to_date
     if @gig.save
       redirect_to gigs_url
     else
@@ -45,6 +46,7 @@ class GigsController < ApplicationController
       next if tag_id.empty?
       GigTag.create(gig: @gig, tag_id: tag_id)
     end
+    @gig.date = gig_params[:start_date].to_date
     if @gig.update(gig_params)
       redirect_to gigs_url
     else
@@ -72,7 +74,7 @@ class GigsController < ApplicationController
   end
 
   def gig_params
-    params.require(:gig).permit(:bar_id, :band_id, :description, :start_date, :end_date, :cache, :title, :active, tag_ids: [])
+    params.require(:gig).permit(:bar_id, :band_id, :description, :date, :start_date, :end_date, :cache, :title, :active, tag_ids: [])
   end
 
 end

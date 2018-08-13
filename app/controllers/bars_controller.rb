@@ -13,8 +13,9 @@ class BarsController < ApplicationController
   end
 
   def dashboard
-    @bands = Message.where(bar: current_user.bar).map{ |m| Band.find(m.band_id) }.uniq
     @bar = current_user.bar
+    @bands = Message.where(bar: @bar).map{ |m| Band.find(m.band_id) }.uniq
+    @gigs = Gig.where(bar: @bar).group_by(&:date)
   end
 
   def create
