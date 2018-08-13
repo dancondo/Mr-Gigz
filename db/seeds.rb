@@ -11,6 +11,7 @@ Bar.destroy_all
 Band.destroy_all
 User.destroy_all
 
+
 puts "Creating new Tags"
 
 rock = Tag.create!(genre: 'Rock')
@@ -111,9 +112,29 @@ mpb_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua São Paulo 123', user:
 mpb_bar.remote_photo_url = mpb_bar_url
 mpb_bar.save
 
-# gig_one = Gig.create!(start_date: Time.now, description: 'A melhor sexta de rock da Vila Madalena', bar: rock_bar, cache: '250', end_date: Time.now)
-# gig_two = Gig.create!(start_date: Time.now, description: 'A melhor sexta de pop da Vila Madalena', bar:pop_bar, cache: '180', end_date: Time.now)
-# gig_three = Gig.create!(start_date: Time.now, description: 'A melhor sexta de sertanejo da Vila Madalena', bar: sertanejo_bar, cache: '320', end_date: Time.now)
-# gig_four = Gig.create!(start_date: Time.now, description: 'A melhor sexta de samba da Vila Madalena', bar:samba_bar, cache: '280', end_date: Time.now)
-# gig_five = Gig.create!(start_date: Time.now, description: 'A melhor sexta de mpb da Vila Madalena', bar: mpb_bar, cache: '150', end_date: Time.now)
+puts "Creating new GIGS"
+
+gig_one = Gig.create!(start_date: Time.now, description: 'A melhor sexta de rock da Vila Madalena', bar: rock_bar, cache: '250', end_date: Time.now)
+gig_two = Gig.create!(start_date: Time.now, description: 'A melhor sexta de pop da Vila Madalena', bar:pop_bar, cache: '180', end_date: Time.now)
+gig_three = Gig.create!(start_date: Time.now, description: 'A melhor sexta de sertanejo da Vila Madalena', bar: sertanejo_bar, cache: '320', end_date: Time.now)
+gig_four = Gig.create!(start_date: Time.now, description: 'A melhor sexta de samba da Vila Madalena', bar:samba_bar, cache: '280', end_date: Time.now)
+gig_five = Gig.create!(start_date: Time.now, description: 'A melhor sexta de mpb da Vila Madalena', bar: mpb_bar, cache: '150', end_date: Time.now)
+gig_six = Gig.create!(start_date: Time.now, description: 'Sábado é dia de muito pop na Vila Madalena', bar: rock_bar, cache: '250', end_date: Time.now)
+gig_seven = Gig.create!(start_date: Time.now, description: 'Sábado é dia de muito sertanejo na Vila Madalena', bar:pop_bar, cache: '180', end_date: Time.now)
+gig_eight = Gig.create!(start_date: Time.now, description: 'Sábado é dia de muito samba da Vila Madalena', bar: sertanejo_bar, cache: '320', end_date: Time.now)
+gig_nine = Gig.create!(start_date: Time.now, description: 'Sábado é dia de muito mpb da Vila Madalena', bar:samba_bar, cache: '280', end_date: Time.now)
+gig_ten = Gig.create!(start_date: Time.now, description: 'Domingo bomba com rock da Vila Madalena', bar: mpb_bar, cache: '150', end_date: Time.now)
+gig_eleven = Gig.create!(start_date: Time.now, description: 'Domingo bomba com muito pop na Vila Madalena', bar: rock_bar, cache: '250', end_date: Time.now)
+gig_twelve = Gig.create!(start_date: Time.now, description: 'Domingo bomba com muito sertanejo na Vila Madalena', bar:pop_bar, cache: '180', end_date: Time.now)
+gig_thirten = Gig.create!(start_date: Time.now, description: 'Domingo bomba com muito samba da Vila Madalena', bar: sertanejo_bar, cache: '320', end_date: Time.now)
+gig_fourten = Gig.create!(start_date: Time.now, description: 'Domingo bomba com muito mpb da Vila Madalena', bar:samba_bar, cache: '280', end_date: Time.now)
+gig_fiften = Gig.create!(start_date: Time.now, description: 'Terça tem novidade com Rock da Vila Madalena', bar: mpb_bar, cache: '150', end_date: Time.now)
+gig_sixten = Gig.create!(start_date: Time.now, description: 'Terça tem novidade com pop na Vila Madalena', bar: rock_bar, cache: '250', end_date: Time.now)
+gig_seventen = Gig.create!(start_date: Time.now, description: 'Terça tem novidade com sertanejo na Vila Madalena', bar:pop_bar, cache: '180', end_date: Time.now)
+gig_eighten = Gig.create!(start_date: Time.now, description: 'Terça tem novidade com muito samba da Vila Madalena', bar: sertanejo_bar, cache: '320', end_date: Time.now)
+gig_nineten = Gig.create!(start_date: Time.now, description: 'Terça tem novidade com mpb da Vila Madalena', bar:samba_bar, cache: '280', end_date: Time.now)
+
+
+
+
 
