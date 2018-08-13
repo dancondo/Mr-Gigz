@@ -1,55 +1,61 @@
 <div class="container">
   <div class="row">
 
-    <h1 class="dashboard-main-title">Bem Vindo! <%= @bar.name %></h1>
+    <h1 class="dashboard-box dashboard-main-title">Bem Vindo! <%= @bar.name %></h1>
 
-    <div class="col-sm-12 dashboard-col">
-      <div class="dashboard-box">
-        <h2 id="month" class="text-center">
-          <%= link_to "<", date: @date.prev_month %>
-          <%= l(@date, format:  '%B %Y') %>
-          <%= link_to ">", date: @date.next_month %>
-        </h2>
+    <div class='col-sm-12 col-md-5 dashboard-col'>
 
-        <%= calendar @date do |date| %>
-          <% if @gigs_by_date[date] %>
-            <%#= link_to @gigs_by_date[date], class: 'gig-today' do %>
-              <%= date.day %>
-              <i class="fas fa-music"></i>
-            <%# end %>
-          <% else %>
-            <%= date.day %>
-          <% end %>
-        <% end %>
-        <%= link_to 'Novo Gig', new_bar_gig_path(@bar) %>
-      </div>
-    </div>
+      <div class="col-sm-12 dashboard-no-padding-col">
+        <div class="contact-dashboard dashboard-box">
+          <h2>Contatos</h2>
 
-    <div class='col-sm-12 col-md-4 dashboard-col'>
+          <% @bands.each do |band| %>
 
-      <div class="contact-dashboard dashboard-box">
-        <h3>Contatos</h3>
-
-        <% @bands.each do |band| %>
-
-          <%= link_to conversation_url(element_id: band.id), class: 'contact-coversation-link' do %>
+            <%= link_to conversation_url(element_id: band.id), class: 'contact-coversation-link' do %>
             <div class="contact-section-part contact-message">
               <%= image_tag band.photo.url, class: 'contact-photo' %>
               <div class="contact-section-part preview-message-content">
                 <h4><%= band.name %></h4>
-                <p><%= Message.where(band: band, bar: @bar).last.content %></p>
-                <p><%= l Message.where(band: band, bar: @bar).last.created_at, format: :long %></p>
+                <div class="hide-on-mobile">
+                  <p><%= Message.where(band: band, bar: @bar).last.content[0..30] %></p>
+                  <p class="message-date-preview"><%= l Message.where(band: band, bar: @bar).last.created_at, format: :long %></p>
+                </div>
               </div>
             </div>
-          <% end %>
+            <% end %>
 
-        <% end %>
+          <% end %>
 
         </div>
       </div>
+    </div>
 
-    <div class="col-sm-12 col-md-8 dashboard-col">
-      <div class="gigs-dashboard">
+    <div class="col-sm-12 col-md-7 dashboard-col">
+        <div class="dashboard-box dashboard-calendar">
+          <h2 id="month" class="text-center">
+            <%= link_to "<", date: @date.prev_month %>
+            <%= l(@date, format:  '%B %Y') %>
+            <%= link_to ">", date: @date.next_month %>
+          </h2>
+
+          <%= calendar @date do |date| %>
+            <% if @gigs_by_date[date] %>
+              <%#= link_to @gigs_by_date[date], class: 'gig-today' do %>
+                <%= date.day %>
+                <i class="fas fa-music"></i>
+              <%# end %>
+            <% else %>
+              <%= date.day %>
+            <% end %>
+          <% end %>
+        </div>
+    </div>
+
+
+    <div class="col-sm-12 dashboard-col">
+      <div class="gigs-dashboard gig-dashboard-table-container">
+
+        <h3>Seus Anuncios</h3>
 
         <table class="dashboard-gig-table">
           <thead>
@@ -59,6 +65,7 @@
               <td>Tags</td>
               <td>Cache</td>
               <td>Status</td>
+              <td></td>
             </tr>
           </thead>
 
@@ -74,6 +81,7 @@
               </td>
               <td>R$<%= gig.cache %></td>
               <td><%= gig.active ? 'Ativo' : 'Desativo' %></td>
+              <td><%= link_to 'Ver Aplicacoes', gig_applies_url(gig) %></td>
             </tr>
             <% end %>
           </tbody>

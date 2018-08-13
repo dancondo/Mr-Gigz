@@ -1,15 +1,16 @@
 .calendar {
   border-collapse: collapse;
   width: 100%;
+  box-sizing: border-box;
   td, th {
     height: 75px;
     border: 1px solid $transparent;
-    width: 100px;
     position: relative;
   }
   th {
     background-color: $transparent;
     text-align: center;
+    border: none;
   }
   .notmonth {
     color: $transparent;
