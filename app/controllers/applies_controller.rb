@@ -1,14 +1,17 @@
 class AppliesController < ApplicationController
 
-  before_action :set_gig, only: [:create, :destroy]
+  before_action :set_gig, only: [:index ,:create, :destroy]
+
+  def index
+    @applies = Apply.where(gig: @gig)
+  end
 
   def create
     @apply = Apply.new
     @apply.gig = @gig
     @apply.band = current_user.band
     if @apply.save
-      # UserMailer.apply(@gig.bar.user).deliver_now
-      redirect_to gigs_url
+      redirect_to @gig
     end
   end
 
