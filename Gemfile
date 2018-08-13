@@ -34,6 +34,10 @@ gem "select2-rails"
 
 gem 'geocoder'
 
+# Internacionalization 118n
+
+gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
+
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
