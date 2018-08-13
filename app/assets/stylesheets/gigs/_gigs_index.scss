@@ -2,53 +2,117 @@
   margin-top: 30px;
 }
 
-#gigs-titulo {
-  color: white;
-  background-color: $highlight;
-  text-align: left;
-  font-size: 47px;
-  font-weight: 500;
-  margin-right: -165px;
-  margin-left: 10px;
-  padding-left: 10px;
-  border-radius: 5px;
-}
-
-.gig-card-body{
-  background-color: rgba(255,255,255,0.2);
-  box-shadow: 0 10px 60px -5px black;
-  color: white;
-}
 
 .gigs-box {
   border-radius: 10px;
   // margin: -100px 0;
 }
 
-.gig-card-top {
-  background-color: rgba(0,0,0,0.5);
+
+.gig-card-description {
+ 
+  margin-bottom: 24px;
+  padding-right: 8px;
+  padding-left: 8px;
+  box-shadow: 0 18px 35px rgba(50,50,93,.5)
+
 }
 
-.gig-image-crochet {
-  position: relative;
-  top: -40px;
-  left: -100px;
-
-}
-
-.gig-image-crochet-2 {
-  position: relative;
-  bottom: -10px;
-  left: 1100px;
-}
 .gigs-container {
   position: relative;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+ 
+  h4 {
+    color: rgba(255,255,255,0.5);
+  }
 }
 
-.gig-card {
-  margin-bottom: 64px;
+.gig-card-localizacao {
+
+  color: rgba(255,255,255,0.5);
 }
+
+
+.photo {
+  width: 100%;
+  padding-top: auto;
+  padding-bottom: auto;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gigs-card {
+  background-color: rgba(255,255,255,0.2);
+  margin-bottom: 88px;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 18px 35px rgba(50,50,93,.5), 0 8px 15px rgba(0,0,0,.5);
+}
+
+.ver-gig {
+  text-align: right;
+}
+
+.photo-container {
+  margin-bottom: 16px;
+
+}
+
+.gig-card-details {
+  display: flex;
+  justify-content: center;
+
+}
+
+.gig-text-center {
+  text-align: center;
+}
+
+.gig-card-price {
+  font-size: 24px;
+}
+
+.gig-card-align-item {
+    display: flex;
+    align-content: center;
+    align-item: center;
+
+}
+
+.outer {
+  overflow: hidden;
+}
+.inner {
+  border: 1px solid #888;
+}
+.inner i {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #888;
+  border-radius: 50%;
+  background-color: $background;
+}
+.inner .top {
+  margin-top: -20px;
+}
+.inner .bottom {
+  margin-top: -20px;
+  margin-bottom: -22px;
+}
+.inner .left {
+  float: left;
+  margin-left: -20px;
+}
+.inner .right {
+  float: right;
+  margin-right: -20px;
+}
+
+
+// NEW CARD //
+
+
 
