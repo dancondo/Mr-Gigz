@@ -1,7 +1,7 @@
-.container {
-
-	margin-top: 16px
+.container-show-band {
+  margin-top: 16px;
 }
+
 
 .bands-show-container-bottom {
 	max-width: 1140px;
@@ -9,7 +9,7 @@
 	margin-left: auto;
 	display: flex;
 	justify-content: space-around;
-
+  border-style: solid;
 }
 
 .fab-show {
@@ -45,6 +45,8 @@
   width: 100%;
   margin-bottom: 16px;
   margin-top: 16px;
+  border-radius: 8px;
+  border-color: #bfbdbd;
 }
 
 .bands-show-social-logo {
