@@ -48,7 +48,7 @@
     text-align: right;
   }
   td {
-    width: 16.666%;
+    width: 13.28%;
   }
   td {
     padding: 15px;
@@ -80,6 +80,9 @@
   overflow-x: scroll;
   &::-webkit-scrollbar {
     display: none;
+  }
+  .price-table {
+    color: $price;
   }
 }
 .gig-dashboard-table-container {
