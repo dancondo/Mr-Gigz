@@ -27,7 +27,14 @@
 
     <div class="col-sm-12 col-md-8 dashboard-col">
       <div class="dashboard-box">
-        <%= calendar do |date| %>
+
+        <h2 id="month" class="text-center">
+          <%= link_to "<", date: @date.prev_month %>
+          <%= @date.strftime("%B %Y") %>
+          <%= link_to ">", date: @date.next_month %>
+        </h2>
+
+        <%= calendar @date do |date| %>
           <% if @gigs[date] %>
             <%= link_to @gigs[date], class: 'gig-today' do %>
               <%= date.day %>
