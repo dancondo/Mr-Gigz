@@ -1,31 +1,55 @@
 <div class = "container">
-  <h1>Nome do bar</h1>
 
   <div class="row">
-    <div class="gig-box gig-image-box col-sm-12 col-md-7">
-      <img src="https://guia-static.gazetadopovo.com.br/fichas/267/267-e1c08c54a9b7f38e79c329d427ea2165-27f797c14e5d8886d8bbd339176d56cb.jpg" alt="Imagem do bar" height="442" width="100%">
-    </div>
-    <div class="gig-box gig-infos-box col-sm-12 col-md-5">
-      <div class="gig-map">
-        <img src= "http://joomly.net/frontend/web/images/googlemap/map.png" alt="Imagem do Google Maps" height="170" width="100%">
-      </div>
-      <div class="gig-infos">
-        <i class="fas fa-map-marker-alt"></i>
-        <p>Rua Mourato Coelho, 1404</p>
-        <i class="far fa-calendar-alt"></i>
-        <p>11/10/2018</p>
-      </div>
-    </div>
-  </div>
+    <div class="col-sm-12 col-md-12">
 
-  <div class="row">
-    <div class="gig-box gig-description col-sm-12 col-md-7">
-      <h3>Descrição:</h3>
-      <p>Buscamos sambistas competentes que estejam aptos a tocar a playlist sei lá o que, estou apenas fazendo uma fake description</p>
+      <h1><%= @bar.name %></h1>
+
+      <div class="row">
+
+        <div class="col-sm-12 col-md-8 separator-margin">
+          <div class= "gig-box gig-image-box">
+            <% if @bar.photo.url %>
+              <%= image_tag @bar.photo.url, style: 'width: 100%; height: 100%;' %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 separator-margin">
+          <div class="gig-box gig-infos-box ">
+              <div id="map" class="map-gig-show"
+                style="width: 100%;
+                height: 300px;"
+                data-markers="<%= @markers.to_json %>"
+              ></div>
+
+            <div class="gig-infos">
+              <i class="fas fa-map-marker-alt"></i>
+              <p><%= @bar.address %></p>
+              <i class="far fa-calendar-alt"></i>
+              <p><%= @gig.start_date %></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="gig-box gig-apply col-sm-12 col-md-5">
-      <h4>Ficou interessado? Não perca tempo!</h4>
-      <button type="button" class="btn btn-primary">Candidatar-se</button>
+
+    <div class="col-sm-12 col-md-8">
+      <div class="gig-box gig-description">
+        <h3>Descrição:</h3>
+        <p><%= @gig.description %></p>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <div class="gig-box gig-apply">
+        <h4>Ficou interessado? Não perca tempo!</h4>
+        <%= link_to "Inscrever!", gig_applies_url(@gig), class: "btn btn-primary",
+                                  method: :post,
+                                  data: { confirm: "Aplicar para esse Gig?"} %>
+      </div>
     </div>
   </div>
 </div>
+
+<%= @gig.band ? @gig.band.name : 'Nada Aqui' %>

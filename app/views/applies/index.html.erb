@@ -1,0 +1,25 @@
+<div class = "container band-cards" >
+  <div class="row">
+    <% @applies.each do |apply| %>
+
+      <div class="col-xs-12 col-sm-6 col-lg-4" id="band-card">
+        <div class="card">
+          <% if apply.band.photo.url %>
+            <%= image_tag apply.band.photo.url, class: 'card-img-top', size: '250x250' %>
+          <% else %>
+            <img src='https://images.unsplash.com/photo-1431069767777-c37892aa0a07?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c3a556a7c67a4fe290e9336a9703ed61&auto=format&fit=crop&w=1353&q=80' class='card-img-top' style='height: 250px;' >
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= apply.band.name %></h5>
+            <p class="card-text">Mínimo: R$<%= apply.band.minimum_price %>,00</p>
+            <div class="text-right">
+              <%= link_to "Selecionar", select_band_url(gig_id: @gig.id, band_id: apply.band.id), class: "btn btn-primary",
+                          method: :post,
+                          data: { confirm: "Voce quer escolher #{apply.band.name} para tocar neste Gig?"} %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

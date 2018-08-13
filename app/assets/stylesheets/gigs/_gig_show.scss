@@ -2,14 +2,19 @@
   background-color: white;
   color: gray;
   border-radius: 4px;
+  min-height: 100px;
+  min-height: 100%;
 }
 
 .gig-image-box{
-
+  img {
+    border-radius: 4px;
+  }
 }
 
 .gig-description {
   margin-top: 10px;
+  padding-top: 5px;
 }
 
 .gig-infos-box {
@@ -22,8 +27,14 @@
 
 .gig-apply {
   margin-top: 10px;
-
+  padding: 15px;
   button {
 
   }
+}
+.map-gig-show{
+  border-radius: 4px;
+}
+.separator-margin {
+  margin-bottom: 15px;
 }
