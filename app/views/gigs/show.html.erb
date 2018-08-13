@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-sm-12 col-md-12">
 
-      <h1><%= @bar.name %></h1>
+      <h1 class="bar-name"><%= @bar.name %></h1>
 
       <div class="row">
 
@@ -17,17 +17,21 @@
 
         <div class="col-sm-12 col-md-4 separator-margin">
           <div class="gig-box gig-infos-box ">
-              <div id="map" class="map-gig-show"
-                style="width: 100%;
-                height: 300px;"
-                data-markers="<%= @markers.to_json %>"
-              ></div>
+            <div id="map" class="map-gig-show"
+              style="width: 100%;
+              height: 300px;"
+              data-markers="<%= @markers.to_json %>">
+            </div>
 
             <div class="gig-infos">
-              <i class="fas fa-map-marker-alt"></i>
-              <p><%= @bar.address %></p>
-              <i class="far fa-calendar-alt"></i>
-              <p><%= @gig.start_date %></p>
+              <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <%= @bar.address %>
+              </p>
+              <p>
+                <i class="far fa-calendar-alt"></i>
+                <%= @gig.start_date %>
+              </p>
             </div>
           </div>
         </div>
@@ -38,12 +42,12 @@
     <div class="col-sm-12 col-md-8">
       <div class="gig-box gig-description">
         <h3>Descrição:</h3>
-        <p><%= @gig.description %></p>
+        <p class="text-description"><%= @gig.description %></p>
       </div>
     </div>
     <div class="col-sm-12 col-md-4">
       <div class="gig-box gig-apply">
-        <h4>Ficou interessado? Não perca tempo!</h4>
+        <h4>Ficou interessado?</h4>
         <button type="button" class="btn btn-primary">Candidatar-se</button>
       </div>
     </div>
