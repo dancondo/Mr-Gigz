@@ -63,6 +63,12 @@ class GigsController < ApplicationController
     end
   end
 
+  def select_band
+    @gig = Gig.find(params[:gig_id])
+    @gig.update(band_id: params[:band_id], active: false)
+    redirect_to @gig
+  end
+
   private
 
   def set_gig
