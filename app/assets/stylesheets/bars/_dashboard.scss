@@ -5,30 +5,32 @@
 .dashboard-box {
   background-color: rgba(255, 255, 255, .1);
   width: 100%;
+  border-radius: 5px;
 }
 .contact-section-part {
-  padding: 0 10px
+  padding: 0 10px;
 }
 .contact-coversation-link:hover .contact-message {
   background-color: $transparent;
 }
 .contact-message {
-  height: 100px;
+  height: 75px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid $detail;
-
-  &:nth-child(2) {
-    border-top: 1px solid $detail;
-  }
+  border-top: 2px solid $background;
+}
+.message-date-preview {
+  font-size: 10px;
 }
 .dashboard-main-title {
   width: 100%;
   background-color: $transparent;
+  text-align: center;
+  padding: 10px 0;
 }
 .contact-photo {
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   border-radius: 5px;
 }
 .preview-message-content {
@@ -38,4 +40,86 @@
 }
 .dashboard-gig-table {
   width: 100%;
+  background-color: rgba(255, 255, 255, .1);
+  thead {
+    background-color: $transparent;
+  }
+  th {
+    text-align: right;
+  }
+  td {
+    width: 13.28%;
+  }
+  td {
+    padding: 15px;
+  }
+  tbody td {
+    border: 1px solid $background;
+  }
+}
+.dashboard-calendar {
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 497px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.dashboard-no-padding-col {
+  &:nth-child(1) {
+    padding-left: 0;
+  }
+  &:nth-child(2) {
+    padding-right: 0;
+  }
+}
+.contact-dashboard {
+  height: 497px;
+}
+.dashboard-gig-table {
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .price-table {
+    color: $price;
+  }
+}
+.gig-dashboard-table-container {
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (max-width: 780px) {
+  .dashboard-no-padding-col {
+    padding: 0;
+  }
+  .hide-on-mobile {
+    display: none;
+  }
+}
+.new-gig {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span{
+    display: block;
+  }
+  i {
+    margin-left: 5px;
+  }
+}
+.dashboard-form {
+  background-color: $transparent;
+}
+.collapsable {
+  cursor: pointer;
+
+}
+.hidden-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
