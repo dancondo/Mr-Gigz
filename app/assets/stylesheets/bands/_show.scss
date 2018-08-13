@@ -1,11 +1,9 @@
 .container-show-band {
-  margin-top: 16px;
-
+  margin-top: 18px;
 }
 
 
 .bands-show-container-bottom {
-	max-width: 1140px;
 	margin-right: auto;
 	margin-left: auto;
 	display: flex;
@@ -32,11 +30,11 @@
 .bands-show-image-border {
 	background-color: rgba(255, 255, 255, 0.3);
   color: white;
-	margin-bottom: 32px;
-	padding: 16px;
+	margin-bottom: 8px;
+	padding: 8px;
 	border-radius: 3px;
-	margin-left: 4px;
-	margin-right: 4px;
+	margin-left: 2px;
+	margin-right: 2px;
 }
 
 .bands-show-text {
@@ -48,7 +46,7 @@
   margin-bottom: 16px;
   margin-top: 16px;
   border-radius: 8px;
-  border-color: #bfbdbd;
+  border-shadow: #bfbdbd;
 }
 
 .bands-show-social-logo {
@@ -65,10 +63,11 @@
    font-size: 30px;
    padding-bottom: 1px;
    padding-top: 15px;
+   justify-content: space-between;
 }
 
 .bands-show-name {
-	border: solid black 1px;
+	border: solid black 5px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -100,11 +99,12 @@
 
 .bands-show-video {
 	border: solid $highlight 3px;
-	margin-bottom: 32px;
-	padding: 16px;
 	border-radius: 3px;
-	margin-left: 4px;
-	margin-right: 4px;
+  margin-bottom: 8px;
+	padding: 8px;
+	border-radius: 3px;
+	margin-left: 2px;
+	margin-right: 2px;
 
 }
 
@@ -120,11 +120,11 @@
 .bands-show-repertories {
 	border: solid $highlight 3px;
 	border-radius: 3px;
-	margin-bottom: 16px;
-	padding: 16px;
+	margin-bottom: 8px;
+	padding: 8px;
 	border-radius: 3px;
-	margin-left: 4px;
-	margin-right: 4px;
+	margin-left: 2px;
+	margin-right: 2px;
 }
 
 .band-show-description {
