@@ -5,11 +5,13 @@
 }
 
 .gig-image-box{
-
+  padding: 0;
+  border-radius: 4px;
 }
 
 .gig-description {
   margin-top: 10px;
+  padding-top: 5px;
 }
 
 .gig-infos-box {
@@ -22,7 +24,7 @@
 
 .gig-apply {
   margin-top: 10px;
-
+  padding: 15px;
   button {
 
   }
