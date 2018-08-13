@@ -13,10 +13,6 @@ Rails.application.routes.draw do
   #   get 'messages'
   # end
 
-  # resources :messages, only: [:index, :new]
-  # resources :conversations, only: [:show, :create] do
-  #   resources :messages, only: :create
-  # end
   # namespace :band do
   #   # resources :messages, only: [:index, :new, :create]
   #   get 'messages'
