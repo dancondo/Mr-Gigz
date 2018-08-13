@@ -1,0 +1,6 @@
+<div class="gig-box gig-apply">
+  <h4>Ficou interessado?</h4>
+  <%= link_to "Inscrever!", gig_applies_url(@gig), class: "btn btn-primary",
+  method: :post,
+  data: { confirm: "Aplicar para esse Gig?"} %>
+</div>

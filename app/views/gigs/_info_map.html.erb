@@ -1,0 +1,14 @@
+<div class="gig-box gig-infos-box ">
+  <div id="map" class="map-gig-show" data-markers="<%= @markers.to_json %>"></div>
+
+<div class="gig-infos">
+  <p>
+    <i class="fas fa-map-marker-alt"></i>
+    <%= @bar.address %>
+  </p>
+  <p>
+    <i class="far fa-calendar-alt"></i>
+    <%= @gig.start_date %>
+  </p>
+</div>
+</div>
