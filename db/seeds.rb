@@ -97,42 +97,42 @@ bar_user_five = User.create!(email: 'mrgigslewagon4@gmail.com', password: '12345
 
 rock_band_url = 'https://images.unsplash.com/photo-1508252592163-5d3c3c559f36?ixlib=rb-0.3.5&ixid=
 eyJhcHBfaWQiOjEyMDd9&s=ec1ecefddebe708d9f122e4ef5372b04&auto=format&fit=crop&w=1350&q=80'
-rock_band = Band.new(name: 'Rock Band', user: rock_user, minimum_price: '500')
+rock_band = Band.new(name: 'Rock Band', user: rock_user, minimum_price: '500', description: 'O Botafogo de Mané foi bicampeão carioca de 1961/62, campeão do Rio-São Paulo de 1962 e 1964 e ganhou inúmeros torneios internacionais. Juntamente com o Santos, abriu de vez as portas do mercado europeu para os jogadores brasileiros. Esses clubes tornaram-se a base da Seleção Brasileira.')
 rock_band.remote_photo_url = rock_band_url
 rock_band.save
 MyTag.create!(band: rock_band, tag: rock)
 
 pop_band_url = 'https://images.unsplash.com/photo-1518552722618-737f6d8e91c6?ixlib=rb-0.3.5&ixid=
 eyJhcHBfaWQiOjEyMDd9&s=20e3528b582270383b6b01e784e50c7c&auto=format&fit=crop&w=1350&q=80'
-pop_band = Band.new(name: 'Pop Band', user: pop_user, minimum_price: '450')
+pop_band = Band.new(name: 'Pop Band', user: pop_user, minimum_price: '450', description: 'O Botafogo de Mané foi bicampeão carioca de 1961/62, campeão do Rio-São Paulo de 1962 e 1964 e ganhou inúmeros torneios internacionais. Juntamente com o Santos, abriu de vez as portas do mercado europeu para os jogadores brasileiros. Esses clubes tornaram-se a base da Seleção Brasileira.')
 pop_band.remote_photo_url = pop_band_url
 pop_band.save
 MyTag.create!(band: pop_band, tag: pop)
 
 sertanejo_band_url = 'https://images.unsplash.com/photo-1516016906593-866c0d0356af?ixlib=rb-0.3.5&ixid=
 eyJhcHBfaWQiOjEyMDd9&s=94b14b7f05f19b3bf6ef1ee7d21e07e6&auto=format&fit=crop&w=1350&q=80'
-sertanejo_band = Band.new(name: 'Sertanejo Band', user: sertanejo_user, minimum_price: '800')
+sertanejo_band = Band.new(name: 'Sertanejo Band', user: sertanejo_user, minimum_price: '800', description: 'O Botafogo de Mané foi bicampeão carioca de 1961/62, campeão do Rio-São Paulo de 1962 e 1964 e ganhou inúmeros torneios internacionais. Juntamente com o Santos, abriu de vez as portas do mercado europeu para os jogadores brasileiros. Esses clubes tornaram-se a base da Seleção Brasileira.')
 sertanejo_band.remote_photo_url = sertanejo_band_url
 sertanejo_band.save
 MyTag.create!(band: sertanejo_band, tag: sertanejo)
 
 samba_band_url = 'https://images.unsplash.com/photo-1518886849533-2a7b825fe852?ixlib=rb-0.3.5&ixid=
 eyJhcHBfaWQiOjEyMDd9&s=caafb9f7f5f2804d01e4f7d8ba483418&auto=format&fit=crop&w=1347&q=80'
-samba_band = Band.new(name: 'samba Band', user: samba_user, minimum_price: '300')
+samba_band = Band.new(name: 'samba Band', user: samba_user, minimum_price: '300', description: 'O Botafogo de Mané foi bicampeão carioca de 1961/62, campeão do Rio-São Paulo de 1962 e 1964 e ganhou inúmeros torneios internacionais. Juntamente com o Santos, abriu de vez as portas do mercado europeu para os jogadores brasileiros. Esses clubes tornaram-se a base da Seleção Brasileira.')
 samba_band.remote_photo_url = samba_band_url
 samba_band.save
 MyTag.create!(band: samba_band, tag: samba)
 
 mpb_band_url = 'https://images.unsplash.com/photo-1471478331149-c72f17e33c73?ixlib=rb-0.3.5&ixid=
 eyJhcHBfaWQiOjEyMDd9&s=0debe31c6e62bc9fd67ef3a8c1b43bd0&auto=format&fit=crop&w=1349&q=80'
-mpb_band = Band.new(name: 'mpb Band', user: mpb_user, minimum_price: '100')
+mpb_band = Band.new(name: 'mpb Band', user: mpb_user, minimum_price: '100', description: 'O Botafogo de Mané foi bicampeão carioca de 1961/62, campeão do Rio-São Paulo de 1962 e 1964 e ganhou inúmeros torneios internacionais. Juntamente com o Santos, abriu de vez as portas do mercado europeu para os jogadores brasileiros. Esses clubes tornaram-se a base da Seleção Brasileira.')
 mpb_band.remote_photo_url = mpb_band_url
 mpb_band.save
 MyTag.create!(band: mpb_band, tag: mpb)
 
 pop_rock_band_url = 'https://images.unsplash.com/photo-1481886756534-97af88ccb438?ixlib=
 rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=647d9bcf339347ac2104b4ef7868a9da&auto=format&fit=crop&w=1489&q=80'
-pop_rock_band = Band.new(name: 'pop_rock Band', user: pop_rock_user, minimum_price: '250')
+pop_rock_band = Band.new(name: 'pop_rock Band', user: pop_rock_user, minimum_price: '250', description: 'O Botafogo de Mané foi bicampeão carioca de 1961/62, campeão do Rio-São Paulo de 1962 e 1964 e ganhou inúmeros torneios internacionais. Juntamente com o Santos, abriu de vez as portas do mercado europeu para os jogadores brasileiros. Esses clubes tornaram-se a base da Seleção Brasileira.')
 pop_rock_band.remote_photo_url = pop_rock_band_url
 pop_rock_band.save
 MyTag.create!(band: pop_rock_band, tag: rock)
