@@ -44,8 +44,12 @@
     <div class="col-sm-12 col-md-4">
       <div class="gig-box gig-apply">
         <h4>Ficou interessado? Não perca tempo!</h4>
-        <button type="button" class="btn btn-primary">Candidatar-se</button>
+        <%= link_to "Inscrever!", gig_applies_url(@gig), class: "btn btn-primary",
+                                  method: :post,
+                                  data: { confirm: "Aplicar para esse Gig?"} %>
       </div>
     </div>
   </div>
 </div>
+
+<%= @gig.band ? @gig.band.name : 'Nada Aqui' %>
