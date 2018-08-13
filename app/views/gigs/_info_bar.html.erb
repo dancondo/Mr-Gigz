@@ -1,12 +1,12 @@
-<div class= "gig-box bar-blog-card">
+<div class= "gig-box bar-blog-card element-card">
   <div class="blog-card">
     <div class="meta">
-      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+      <div class="photo" style="background-image: url(<%= @bar.photo.url %>)"></div>
     </div>
     <div class="description">
       <h1><%= @bar.name %></h1>
 <!--       <h2>Opening a door to the future</h2> -->
-      <p>@gig.description</p>
+      <p><%= @gig.description %></p>
 <!--       <p class="read-more">
         <a href="#">Read More</a>
       </p> -->
