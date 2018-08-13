@@ -1,0 +1,40 @@
+.dashboard-col {
+  padding: 0;
+  &:nth-child(2) {
+    padding-right: 15px;
+  }
+}
+.dashboard-box {
+  background-color: rgba(255, 255, 255, .1);
+  width: 100%;
+}
+.contact-section-part {
+  padding: 0 10px
+}
+.contact-coversation-link:hover .contact-message {
+  background-color: $transparent;
+}
+.contact-message {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $detail;
+
+  &:nth-child(2) {
+    border-top: 1px solid $detail;
+  }
+}
+.dashboard-main-title {
+  width: 100%;
+  background-color: $transparent;
+}
+.contact-photo {
+  height: 80px;
+  width: 80px;
+  border-radius: 5px;
+}
+.preview-message-content {
+  h4, p {
+    margin: 0;
+  }
+}
