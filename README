@@ -6,48 +6,19 @@
     AWS_S3_BUCKET_NAME=
     AWS_ACCESS_KEY_ID=
     AWS_SECRET_ACCESS_KEY=
+    GOOGLE_API_SERVER_KEY=
+    GOOGLE_API_BROWSER_KEY=
 
--Maybe the schema might be convoluted so I recommend to do a db:drop db:create db:migrate before coding
-
-- (André) - build a migration in 08/08 -> Table/Model TAG and  wrote the Seed although
-            i could not seed the tables cause USERS were necessary to it.
-            20180808151608 CreateTags: migrated
-
-            - 20180808152855 CreateMyTags - a second migration
-
-
-
-- (André) - rails generete mailer UserMailer apply
-            - criou
-            create  app/mailers/user_mailer.rb
-            invoke  erb
-            create    app/views/user_mailer
-            create    app/views/user_mailer/apply.text.erb
-            create    app/views/user_mailer/apply.html.erb
-            invoke  test_unit
-            create    test/mailers/user_mailer_test.rb
-            create    test/mailers/previews/user_mailer_preview.rb
-
-- (Danilo) - Código do gig show
-<%= @gig.start_date %>
-<%= @gig.end_date %>
-<%= @gig.description %>
-<% #if current_user.bar %>
-  <%=# link_to "Editar", edit_bar_gig_url(current_user.bar, @gig)%>
-<% #end %>
-<%=# link_to "Deletar", @gig,
-                       #method: :delete,
-                       #data: { confirm: "Você tem certeza?" } %>
-<%# if current_user.band %>
-  <%# if current_user.band.gigs.include?(@gig) %>
-    <%= link_to #{}"Cancelar Inscricao!", gig_apply_url(@gig),
-                              #method: :delete,
-                              #data: { confirm: "Cancelar inscricao?"} %>
-
-  <%# else %>
-
-    <%= link_to #{}"Inscrever!", gig_applies_url(@gig),
-                              #method: :post,
-                              #data: { confirm: "Aplicar para esse Gig?"} %>
-  <%# end %>
-<%# end %>
+-TODO {
+  -Improve bar dashboard,
+  -Do bands dashboard == bar dashboard without calendar || render bar dashboard
+  -Remove gigs when the date has already passed
+  -Improve de Gigs#show to receive the band summary when a band is selected
+  -Decided how to display the bands cards in the applies index
+  -Make the gig time be displayed
+  -Use AJAX to filter the tags
+  -Use select2 in the tags selection of the index
+  -Allow bars to block or remove bands from the apply list
+  -Redirect the bar to a page that fits its needs after creating a gig
+  -Put extra information about how the website works for bands
+}
