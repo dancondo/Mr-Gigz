@@ -17,9 +17,7 @@
   height: 75px;
   display: flex;
   align-items: center;
-  border-top: 1px solid $background;
-
-
+  border-top: 2px solid $background;
 }
 .message-date-preview {
   font-size: 10px;
@@ -97,4 +95,28 @@
   .hide-on-mobile {
     display: none;
   }
+}
+.new-gig {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span{
+    display: block;
+  }
+  i {
+    margin-left: 5px;
+  }
+}
+.dashboard-form {
+  background-color: $transparent;
+}
+.collapsable {
+  cursor: pointer;
+
+}
+.hidden-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }

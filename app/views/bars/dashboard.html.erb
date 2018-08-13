@@ -90,5 +90,18 @@
       </div>
     </div>
 
+    <div class="col-sm-12 dashboard-col">
+      <div class="gigs-dashboard gig-dashboard-table-container">
+        <div class="dashboard-form">
+          <div class="new-gig collapsable">
+            <span class="text-center">Novo Gig<i class="fas fa-plus"></i></span>
+          </div>
+          <div class="hidden-content">
+            <%= render 'gigs/plain_form', gig: @gig, bar: @bar %>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

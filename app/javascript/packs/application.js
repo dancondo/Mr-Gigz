@@ -1,9 +1,9 @@
 import "bootstrap";
 
 import formCheck from "./form_check"
+import collapser from "../components/collapser"
 
 import scrollLastMessageIntoView from "./scroll_last_message"
-import highlightGig from "../components/highlight_gig"
 
 import popOver from "./pop_over"
 
@@ -15,3 +15,4 @@ import '../plugins/tokenizer'
 formCheck();
 scrollLastMessageIntoView();
 popOver();
+collapser();
