@@ -4,12 +4,51 @@
 
 #gigs-titulo {
   color: white;
-  background-color: #2C2C2C;
+  background-color: $highlight;
   text-align: left;
-  font-size: 50px;
+  font-size: 47px;
   font-weight: 500;
   margin-right: -165px;
   margin-left: 10px;
   padding-left: 10px;
   border-radius: 5px;
 }
+
+.gig-card-body{
+  background-color: rgba(255,255,255,0.2);
+  box-shadow: 0 10px 60px -5px black;
+  color: white;
+}
+
+.gigs-box {
+  border-radius: 10px;
+  // margin: -100px 0;
+}
+
+.gig-card-top {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.gig-image-crochet {
+  position: relative;
+  top: -40px;
+  left: -100px;
+
+}
+
+.gig-image-crochet-2 {
+  position: relative;
+  bottom: -10px;
+  left: 1100px;
+}
+.gigs-container {
+  position: relative;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gig-card {
+  margin-bottom: 64px;
+}
+

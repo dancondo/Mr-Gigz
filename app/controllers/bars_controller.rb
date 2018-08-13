@@ -12,12 +12,21 @@ class BarsController < ApplicationController
     @bar = Bar.new
   end
 
+  def dashboard
+    @bar = current_user.bar
+    @bands = Message.where(bar: @bar).map{ |m| Band.find(m.band_id) }.uniq
+    @gigs = Gig.where(bar: @bar)
+    @gigs_by_date = @gigs.group_by(&:date)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+  end
+
   def create
     @bar = Bar.new(bar_params)
+    @bar.user = current_user
     if @bar.save
-      redirect_to bars_path
+      redirect_to @bar
     else
-      render_new
+      render :new
     end
   end
 
@@ -26,7 +35,7 @@ class BarsController < ApplicationController
 
   def update
     if @bar.update(bar_params)
-      redirect_to bars_path
+      redirect_to @bar
     else
       render_new
     end
@@ -43,7 +52,7 @@ class BarsController < ApplicationController
   private
 
   def bar_params
-    params.require(:bar).permit(:name, :address, :photo)
+    params.require(:bar).permit(:name, :address, :photo, :user_id)
   end
 
   def set_bar

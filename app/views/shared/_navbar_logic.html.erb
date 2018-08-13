@@ -6,6 +6,7 @@
 
         <%= link_to current_user.band, class: "nav-link" do %>
           <%= current_user.band.name %>
+
         <% end %>
 
       <% else %>
@@ -37,6 +38,15 @@
   <% else %>
 
     <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+
+  <% end %>
+</li>
+
+
+<li class="nav-item" >
+  <% if user_signed_in? %>
+
+    <%= link_to "Mensagens", messages_path, class: "nav-link" %>
 
   <% end %>
 </li>

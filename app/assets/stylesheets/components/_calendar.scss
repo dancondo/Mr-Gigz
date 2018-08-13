@@ -1,0 +1,41 @@
+.calendar {
+  border-collapse: collapse;
+  width: 100%;
+  td, th {
+    height: 75px;
+    border: 1px solid $transparent;
+    width: 100px;
+    position: relative;
+  }
+  th {
+    background-color: $transparent;
+    text-align: center;
+  }
+  .notmonth {
+    color: $transparent;
+  }
+  .today {
+    background-color: rgba($blue, .9)
+  }
+  .gig-today {
+    a {
+      width: 100%;
+    }
+    i {
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      font-size: 20px;
+      color: $blue;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .calendar {
+    td, th {
+      height: 40px ;
+      width: 30px;
+      font-size: 10px;
+    }
+  }
+}

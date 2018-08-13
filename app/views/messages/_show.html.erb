@@ -1,15 +1,39 @@
 <% if m.sender == current_user.role %>
 
-  <li class="my-message">
-    <%= m.content %>
-    You
+  <li class="my-message message">
+
+    <div class="message-photo">
+
+      <% if current_user.send(current_user.role).photo.url %>
+        <%= image_tag current_user.send(current_user.role).photo.url, class: 'avatar-photo';%>
+      <% else %>
+        <img src="https://images.unsplash.com/photo-1468056961052-15507578a50d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a6464285ebfa529f5a355fd9df34b896&auto=format&fit=crop&w=1267&q=80" class="avatar-photo">
+      <% end %>
+    </div>
+
+    <div class="message-content">
+      <%= m.content %>
+    </div>
+
   </li>
 
 <% else %>
 
-  <li class="counterpart-message">
-    <%= m.content %>
-    <%= m.send(m.sender).name %>
+  <li class="counterpart-message message">
+
+    <div class="message-content">
+      <%= m.content %>
+    </div>
+
+    <div class="message-photo">
+
+      <% if m.send(m.sender).photo.url %>
+        <%= image_tag m.send(m.sender).photo.url, class: 'avatar-photo';%>
+      <% else %>
+        <img src="https://images.unsplash.com/photo-1468056961052-15507578a50d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a6464285ebfa529f5a355fd9df34b896&auto=format&fit=crop&w=1267&q=80" class="avatar-photo">
+      <% end %>
+    </div>
+
   </li>
 
 <% end %>

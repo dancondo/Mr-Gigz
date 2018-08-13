@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="row">
+	<div class="row row-form">
 		<div class="col-xs-12 col-sm-12">
 			<div class="form-post">
 				<h1>Cria sua Banda !</h1>
@@ -11,15 +11,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="form-group">
-					<input type="hidden" name="band[tag_ids][]" value="">
-					<div class="tag-choices">
-						<% Tag.all.each do |tag| %>
-						<input  type="checkbox" class="d-none" value="<%=tag.id%>" name="band[tag_ids][]" id="band_tag_ids_<%=tag.genre %>">
-						<label class="tag-choice" for="band_tag_ids_<%=tag.genre%>"> <%= tag.genre %></label>
-						<% end %>
-					</div>
-				</div>
+
+        <div class="form-group">
+          <%= f.association :tags, label: 'Estilo da Banda' ,label_method: :genre, value_method: :id, input_html: { class: 'form-control tags-form' } %>
+        </div>
+
 				<div class="form-group">
 					<%= f.input :description, placeholder: "Descreve sua banda ..." %>
 				</div>

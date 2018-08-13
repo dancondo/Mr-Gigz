@@ -1,61 +1,59 @@
-<h1>Gigs#show</h1>
-
-<div class = "container" >
+<div class = "container">
 
   <div class="row">
-    <% @bands.each do |band| %>
+    <div class="col-sm-12 col-md-12">
 
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        <div class="card">
-          <% if band.photo.url %>
-            <%= image_tag band.photo.url, class: 'card-img-top', size: '250x250' %>
-          <% else %>
-            <img src='https://images.unsplash.com/photo-1431069767777-c37892aa0a07?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c3a556a7c67a4fe290e9336a9703ed61&auto=format&fit=crop&w=1353&q=80' class='card-img-top' style='height: 250px;' >
-          <% end %>
-          <div class="card-body">
-            <h5 class="card-title"><%= band.name %></h5>
-            <p class="card-text">Mínimo: R$<%= band.minimum_price %></p>
-            <div class="text-right">
-              <%= link_to 'Ver Perfil', band, class: "btn btn-primary" %>
+      <h1 class="bar-name"><%= @bar.name %></h1>
+
+      <div class="row">
+
+        <div class="col-sm-12 col-md-8 separator-margin">
+          <div class= "gig-box gig-image-box">
+            <% if @bar.photo.url %>
+              <%= image_tag @bar.photo.url, style: 'width: 100%; height: 100%;' %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 separator-margin">
+          <div class="gig-box gig-infos-box ">
+            <div id="map" class="map-gig-show"
+              style="width: 100%;
+              height: 300px;"
+              data-markers="<%= @markers.to_json %>">
+            </div>
+
+            <div class="gig-infos">
+              <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <%= @bar.address %>
+              </p>
+              <p>
+                <i class="far fa-calendar-alt"></i>
+                <%= @gig.start_date %>
+              </p>
             </div>
           </div>
         </div>
+
       </div>
-    <% end %>
+    </div>
+
+    <div class="col-sm-12 col-md-8">
+      <div class="gig-box gig-description">
+        <h3>Descrição:</h3>
+        <p class="text-description"><%= @gig.description %></p>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <div class="gig-box gig-apply">
+        <h4>Ficou interessado?</h4>
+        <%= link_to "Inscrever!", gig_applies_url(@gig), class: "btn btn-primary",
+                                  method: :post,
+                                  data: { confirm: "Aplicar para esse Gig?"} %>
+      </div>
+    </div>
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<%= @gig.start_date %>
-<%= @gig.end_date %>
-<%= @gig.description %>
-<% if current_user.bar %>
-  <%= link_to "Editar", edit_bar_gig_url(current_user.bar, @gig)%>
-<% end %>
-<%= link_to "Deletar", @gig,
-                       method: :delete,
-                       data: { confirm: "Você tem certeza?" } %>
-<% if current_user.band %>
-  <% if current_user.band.gigs.include?(@gig) %>
-    <%= link_to "Cancelar Inscricao!", gig_apply_url(@gig),
-                              method: :delete,
-                              data: { confirm: "Cancelar inscricao?"} %>
-
-  <% else %>
-
-    <%= link_to "Inscrever!", gig_applies_url(@gig),
-                              method: :post,
-                              data: { confirm: "Aplicar para esse Gig?"} %>
-  <% end %>
-<% end %>
+<%= @gig.band ? @gig.band.name : 'Nada Aqui' %>

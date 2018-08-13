@@ -1,5 +1,6 @@
-//= require rails-ujs
-//= require_tree .
-//= require jquery
 //= require popper
+//= require jquery
+//= require rails-ujs
 //= require bootstrap
+//= require_tree .
+//= require select2

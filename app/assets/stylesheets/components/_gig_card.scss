@@ -9,22 +9,27 @@
   border-radius: 5px 5px 0 0;
   color: white;
   height: 40px;
-  background-color: #3F3F3F;
+  background-color: $highlight;
 }
 
 .gig-card-titulo {
   font-size: 22px;
   font-weight: 900;
-  font-family: Sans-Serif;
+  text-transform: uppercase;
+  font-family: $headers-font;
+  font-weight: normal;
   padding-top: 7px;
   text-align: center;
 }
 
 .gig-card-body {
   padding-bottom: 24px;
-  background-color: #DEDEDE;
+  background-color: white;
+  color: black;
   text-align: center;
   border-radius: 0 0 5px 5px;
+  
+
 }
 
 .gig-card-genero {
@@ -47,11 +52,37 @@
 
 .btn-primary {
   justify-content: center;
-  background-color: #E8670B;
+  background-color: #48BEFF !important;
+  border: 1px solid #48BEFF !important;
   padding: .5rem 1rem;
   border: 1px solid transparent;
   line-height: 1.25;
   font-weight: 400;
   border-radius: 5px;
-  box-shadow: 1px 0.5px 5px 0 rgba(0, 1, 0, 0.4);
+}
+
+
+.btn-primary-card {
+     box-shadow: 0 5px rgba(72, 190, 255, 0.4), 0 10px rgba(72, 190, 255, 0.3),
+              0 15px rgba(72, 190, 255, 0.2), 0 20px rgba(72, 190, 255, 0.1),
+              0 25px rgba(72, 190, 255, 0.05),
+              -5px 5px 40px rgba(100, 0, 0, 0.4);
+}
+
+.gig-banner-content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+
+.gig-search {
+  display: flex;
+  justify-content: center;
+}
+
+.gig-search-path {
+margin-right: 16px;
+background-color: transparent;
+color: white;
 }

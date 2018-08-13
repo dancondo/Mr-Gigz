@@ -1,0 +1,12 @@
+<!-- components map_box
+ -->
+<div class="map_box">
+  <h3><%= gig.title %></h3>
+  <p><%= gig.bar.address %></p>
+  <p>
+    <% gig.gig_tags.each do |gig_tag| %>
+      <%= gig_tag.tag.genre %>
+    <% end %>
+  </p>
+  <%= link_to 'Ver Gig', gig, class: 'btn btn-primary' %>
+</div>

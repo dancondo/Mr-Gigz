@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_09_204429) do
+ActiveRecord::Schema.define(version: 2018_08_13_000308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,14 @@ ActiveRecord::Schema.define(version: 2018_08_09_204429) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "photo"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_bars_on_user_id"
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "gig_tags", force: :cascade do |t|
@@ -65,6 +72,7 @@ ActiveRecord::Schema.define(version: 2018_08_09_204429) do
     t.datetime "end_date"
     t.boolean "active", default: true
     t.bigint "band_id"
+    t.date "date"
     t.index ["band_id"], name: "index_gigs_on_band_id"
     t.index ["bar_id"], name: "index_gigs_on_bar_id"
   end
