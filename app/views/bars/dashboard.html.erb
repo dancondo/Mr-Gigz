@@ -7,16 +7,16 @@
       <div class="dashboard-box">
         <h2 id="month" class="text-center">
           <%= link_to "<", date: @date.prev_month %>
-          <%= @date.strftime("%B %Y") %>
+          <%= l(@date, format:  '%B %Y') %>
           <%= link_to ">", date: @date.next_month %>
         </h2>
 
         <%= calendar @date do |date| %>
           <% if @gigs_by_date[date] %>
-            <%= link_to @gigs_by_date[date], class: 'gig-today' do %>
+            <%#= link_to @gigs_by_date[date], class: 'gig-today' do %>
               <%= date.day %>
               <i class="fas fa-music"></i>
-            <% end %>
+            <%# end %>
           <% else %>
             <%= date.day %>
           <% end %>
@@ -38,7 +38,7 @@
               <div class="contact-section-part preview-message-content">
                 <h4><%= band.name %></h4>
                 <p><%= Message.where(band: band, bar: @bar).last.content %></p>
-                <p><%= Message.where(band: band, bar: @bar).last.created_at %></p>
+                <p><%= l Message.where(band: band, bar: @bar).last.created_at, format: :long %></p>
               </div>
             </div>
           <% end %>
