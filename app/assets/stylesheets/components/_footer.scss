@@ -21,3 +21,11 @@ a {
 #copyright-phrase {
   color: white;
 }
+@media (max-width: 540px) {
+  .fab-footer {
+    display: none;
+  }
+  #copyright-phrase {
+    display: none;
+  }
+}

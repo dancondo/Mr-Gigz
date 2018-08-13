@@ -1,5 +1,18 @@
-<ul>
-  <% @element.each do |e| %>
-    <li><%= link_to e.name, conversation_url(element_id: e.id) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <% @element.each do |e| %>
+        <%= link_to conversation_url(element_id: e.id), class: 'contact-coversation-link' do %>
+          <div class="contact-section-part contact-message">
+            <%= image_tag e.photo.url, class: 'contact-photo' %>
+            <div class="contact-section-part preview-message-content">
+              <h4><%= e.name %></h4>
+              <p><%= current_user.role == 'bar' ? Message.where(band: e, bar: current_user.bar).last.content : Message.where(band: current_user.band, bar: e).last.content %> </p>
+              <p><%= current_user.role == 'bar' ? Message.where(band: e, bar: current_user.bar).last.created_at : Message.where(band: current_user.band, bar: e).last.created_at %> </p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
