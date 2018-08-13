@@ -11,7 +11,7 @@ import '../plugins/flatpickr'
 import '../plugins/tokenizer'
 
 
+
 formCheck();
 scrollLastMessageIntoView();
 popOver();
-highlightGig();
