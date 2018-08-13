@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
   get 'bars/dashboard', to: 'bars#dashboard', as: :bar_dashboard
+  get 'bands/dashboard', to: 'bands#dashboard', as: :band_dashboard
   resources :bars do
     resources :gigs, only: [:new, :create, :edit, :update]
   end
