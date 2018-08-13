@@ -1,36 +1,42 @@
-<div class = "container">
-  <div class="row bar-name-div">
-    <div class="col-xs-12">
-      <h1 class="bar-name"><%= @gig.title %></h1>
+<% if @gig.band %>
+
+  <div class = "container">
+    <div class="row bar-name-div">
+      <div class="col-xs-12">
+        <h1 class="bar-name"><%= @gig.title %></h1>
+      </div>
     </div>
+
+
+    <div class="row">
+
+      <div class="col-xs-12 col-md-8 mr-2-sm">
+        <div class="row">
+          <%= render 'info_bar' %>
+        </div>
+        <div class="row mt-2">
+          <%= render 'info_band' %>
+        </div>
+
+      </div>
+
+      <div class="col-xs-12 col-md-4 mt-2-xs">
+        <div class="row">
+          <%= render 'info_map' %>
+        </div>
+
+        <div class="row">
+          <%= render 'call_to_action' %>
+        </div>
+
+      </div>
+    </div>
+
+    <%= @gig.band ? @gig.band.name : 'Nada Aqui' %>
   </div>
 
+<% else %>
 
-  <div class="row">
+  <%= render 'show_only_bar' %>
 
-    <div class="col-xs-12 col-md-8 mr-2-sm">
-      <div class="row">
-        <%= render 'info_bar' %>
-      </div>
-      <div class="row mt-2">
-        <%= render 'info_band' %>
-      </div>
-
-    </div>
-
-    <div class="col-xs-12 col-md-4 mt-2-xs">
-      <div class="row">
-        <%= render 'info_map' %>
-      </div>
-
-      <div class="row">
-        <%= render 'call_to_action' %>
-      </div>
-
-    </div>
-  </div>
-
-  <%= @gig.band ? @gig.band.name : 'Nada Aqui' %>
-</div>
-
-
+<% end %>
