@@ -1,4 +1,13 @@
 // Specific CSS for your home-page
+html {
+  position: relative;
+}
+
+body {
+  margin-bottom: 105px !important;
+  background-color: $background !important;
+  color: white !important;
+}
 
 section {
   padding-top: 80px;
@@ -7,9 +16,26 @@ section {
   padding-bottom: 80px;
 }
 
+.last-gigs {
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  height: 150vh;
+}
 
-.last-gigs {  
-background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+.anuncios-recentes {
+  margin-bottom: 64px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ver-mais {
+  padding-top: 15px;
+  text-align: right;
+}
+
+.gigs-da-semana {
+  text-align: center;
+  padding-bottom: 56px;
+  text-transform: uppercase;
 }
 
 .home-gigs-map {
@@ -29,17 +55,6 @@ background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
 .section-como-funciona {
   background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
   padding-top: 56px;
-}
-
-
-html {
-  position: relative;
-}
-
-body {
-  margin-bottom: 105px !important;
-  background-color: $background !important;
-  color: white !important;
 }
 
 a:hover {
