@@ -1,12 +1,29 @@
 // Form design
+
+.form-margin {
+  margin-top: 10vh;
+}
+
+.form-margin-role {
+  margin-top: 30vh;
+
+}
+
+.form-margin-banda-bar {
+  margin-top: 5vh;
+}
+
 .form-post {
   background: rgba(255,255,255,0.2);
-  margin-top: 100px;
-  margin-bottom: 1000px;
+  margin-top: auto;
+  margin-bottom: auto;
   color: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 10px 60px -5px black;
+ 
+
+
 
   h1 {
     text-align: center;
