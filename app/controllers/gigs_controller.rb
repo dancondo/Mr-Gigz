@@ -69,6 +69,15 @@ class GigsController < ApplicationController
     redirect_to @gig
   end
 
+  def select_band_via_chat
+    params[:gig][:gig_ids].each do |gig_id|
+      next if gig_id.empty?
+      gig =  Gig.find(gig_id)
+      gig.update(band_id: params[:band_id], active: false)
+    end
+    redirect_to conversation_url(element_id: params[:band_id])
+  end
+
   private
 
   def set_gig

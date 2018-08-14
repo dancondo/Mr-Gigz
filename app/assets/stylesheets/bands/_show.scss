@@ -1,5 +1,6 @@
 .container-show-band {
   margin-top: 16px;
+
 }
 
 
@@ -9,7 +10,6 @@
 	margin-left: auto;
 	display: flex;
 	justify-content: space-around;
-  border-style: solid;
 }
 
 .fab-show {
@@ -17,28 +17,30 @@
 }
 
 .user-show-main {
+
   h1 {
     text-align: center;
   }
 
   h2 {
-  	margin-top: none;
+  	font-family: $headers-font;
+    margin-top: none;
+    padding: 15px;
   }
 }
 
-
 .bands-show-image-border {
-	border: solid $highlight 3px;
+	background-color: rgba(255, 255, 255, 0.3);
+  color: white;
 	margin-bottom: 32px;
 	padding: 16px;
 	border-radius: 3px;
 	margin-left: 4px;
 	margin-right: 4px;
-
 }
 
 .bands-show-text {
-    margin-bottom: 48px;
+  margin-bottom: 18px;
 }
 
 .image-band-show {
@@ -59,10 +61,11 @@
 .fab-show {
    margin-right: 8px;
    font-size: 40px;
-   color: white
-    	}
-
-
+   color: white;
+   font-size: 30px;
+   padding-bottom: 1px;
+   padding-top: 15px;
+}
 
 .bands-show-name {
 	border: solid black 1px;
@@ -73,8 +76,6 @@
 	text-align: center;
 
 }
-
-
 
 .bands-show-music-name {
 	display: flex;
@@ -126,9 +127,13 @@
 	margin-right: 4px;
 }
 
-.bands-show-description {
-	margin-bottom: 48px;
+.band-show-description {
+	padding-right: 20px;
+  padding-left: 20px;
+  text-align: justify;
+  font-size: 20px;
 }
+
 
 .bands-show-action {
  display: flex;
@@ -153,3 +158,4 @@
 .mini-p {
 	margin-right: 8px;
 }
+

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
 
-    <h1 class="dashboard-box dashboard-main-title">Bem Vindo! <%= @bar.name %></h1>
+    <h1 class="dashboard-box dashboard-main-title">Bem Vindo! <%= @band.name %></h1>
 
     <div class='col-sm-12 col-md-5 dashboard-col'>
 
@@ -9,16 +9,16 @@
         <div class="contact-dashboard dashboard-box">
           <h2>Contatos</h2>
 
-          <% @bands.each do |band| %>
+          <% @bars.each do |bar| %>
 
-            <%= link_to conversation_url(element_id: band.id), class: 'contact-coversation-link' do %>
+            <%= link_to conversation_url(element_id: bar.id), class: 'contact-coversation-link' do %>
             <div class="contact-section-part contact-message">
-              <%= image_tag band.photo.url, class: 'contact-photo' %>
+              <%= image_tag bar.photo.url, class: 'contact-photo' %>
               <div class="contact-section-part preview-message-content">
-                <h4><%= band.name %></h4>
+                <h4><%= bar.name %></h4>
                 <div class="hide-on-mobile">
-                  <p><%= Message.where(band: band, bar: @bar).last.content[0..30] %></p>
-                  <p class="message-date-preview"><%= l Message.where(band: band, bar: @bar).last.created_at, format: :long %></p>
+                  <p><%= Message.where(bar: bar, band: @band).last.content[0..30] %></p>
+                  <p class="message-date-preview"><%= l Message.where(bar: bar, band: @band).last.created_at, format: :long %></p>
                 </div>
               </div>
             </div>
@@ -55,17 +55,16 @@
     <div class="col-sm-12 dashboard-col">
       <div class="gigs-dashboard gig-dashboard-table-container">
 
-        <h3>Seus Anuncios</h3>
+        <h3>Seus Gigs</h3>
 
         <table class="dashboard-gig-table">
           <thead>
             <tr>
               <td>Titulo</td>
               <td>Data</td>
+              <td>Bar</td>
               <td>Tags</td>
               <td>Cache</td>
-              <td>Status</td>
-              <td>Aplicacoes</td>
               <td></td>
             </tr>
           </thead>
@@ -75,13 +74,12 @@
             <tr>
               <td><%= gig.title[0..9] %><%= '(...)' if gig.title.length > 10 %></td>
               <td><%= gig.date %></td>
+              <td><%= gig.bar.name %></td>
               <td>
                 <div class="btn btn-secondary"><%= gig.tags.first.genre if gig.tags %></div>
               </td>
               <td class="price-table">R$<%= gig.cache %></td>
-              <td><%= gig.active ? 'Ativo' : 'Finalizado' %></td>
-              <td><%= gig.applies.count %></td>
-              <td><%= link_to 'Ver Aplicacoes', gig_applies_url(gig), class: 'btn btn-primary' %></td>
+              <td><%= link_to 'Ver Gig', gig, class: 'btn btn-primary' %></td>
             </tr>
             <% end %>
           </tbody>
@@ -90,16 +88,48 @@
       </div>
     </div>
 
+
     <div class="col-sm-12 dashboard-col">
       <div class="gigs-dashboard gig-dashboard-table-container">
-        <div class="dashboard-form">
-          <div class="new-gig collapsable">
-            <span class="text-center">Novo Gig<i class="fas fa-plus"></i></span>
-          </div>
-          <div class="hidden-content">
-            <%= render 'gigs/plain_form', gig: @gig, bar: @bar %>
-          </div>
-        </div>
+
+        <h3>Suas Aplicacoes</h3>
+
+        <table class="dashboard-gig-table">
+          <thead>
+            <tr>
+              <td>Titulo</td>
+              <td>Data</td>
+              <td>Bar</td>
+              <td>Tags</td>
+              <td>Cache</td>
+              <td></td>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% if @applies %>
+              <% @applies.each do |apply| %>
+                <% next unless apply %>
+                <tr>
+                  <td><%= apply.gig.title[0..9] %><%= '(...)' if apply.gig.title.length > 10 %></td>
+                  <td><%= apply.gig.date %></td>
+                  <td>
+                    <div class="btn btn-secondary"><%= apply.gig.tags.first.genre if apply.gig.tags %></div>
+                  </td>
+                  <td class="price-table">R$<%= apply.gig.cache %></td>
+                  <td><%= apply.gig.active ? 'Ativo' : 'Finalizado' %></td>
+                  <td><%= link_to 'Ver Gig', gig_url(apply.gig), class: 'btn btn-primary' %></td>
+                </tr>
+              <% end %>
+            <% else %>
+              <tr>
+                <td colspan="5">Voce nao aplicou para nenhum gig, que tal descobrir? </td>
+                <td><%= link_to 'Descobrir', gigs_url, class: 'btn btn-primary' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
       </div>
     </div>
 

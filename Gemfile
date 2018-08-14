@@ -32,7 +32,7 @@ gem "select2-rails"
 
 # Geocode
 
-gem 'geocoder'
+
 
 # Internacionalization 118n
 
