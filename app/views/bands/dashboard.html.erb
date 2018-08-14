@@ -78,7 +78,11 @@
               <td><%= gig.date %></td>
               <td><%= gig.bar.name %></td>
               <td>
-                <div class="btn btn-secondary"><%= gig.tags.first.genre if gig.tags %></div>
+              <% unless gig.tags == [] %>
+                <div class="btn btn-secondary">
+                  <%= gig.tags.first.genre %>
+                </div>
+              <% end %>
               </td>
               <td class="price-table">R$<%= gig.cache %></td>
               <td><%= link_to 'Ver Gig', gig, class: 'btn btn-primary' %></td>
@@ -116,7 +120,11 @@
                   <td><%= apply.gig.title[0..9] %><%= '(...)' if apply.gig.title.length > 10 %></td>
                   <td><%= apply.gig.date %></td>
                   <td>
-                    <div class="btn btn-secondary"><%= apply.gig.tags.first.genre if apply.gig.tags %></div>
+                    <% unless gig.tags == [] %>
+                      <div class="btn btn-secondary">
+                        <%= gig.tags.first.genre %>
+                      </div>
+                    <% end %>
                   </td>
                   <td class="price-table">R$<%= apply.gig.cache %></td>
                   <td><%= apply.gig.active ? 'Ativo' : 'Finalizado' %></td>
