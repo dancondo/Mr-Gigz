@@ -76,7 +76,11 @@
               <td><%= gig.title[0..9] %><%= '(...)' if gig.title.length > 10 %></td>
               <td><%= gig.date %></td>
               <td>
-                <div class="btn btn-secondary"><%= gig.tags.first.genre if gig.tags %></div>
+              <% unless gig.tags == [] %>
+                <div class="btn btn-secondary">
+                  <%= gig.tags.first.genre %>
+                </div>
+              <% end %>
               </td>
               <td class="price-table">R$<%= gig.cache %></td>
               <td><%= gig.active ? 'Ativo' : 'Finalizado' %></td>
