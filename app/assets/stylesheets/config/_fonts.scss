@@ -1,9 +1,8 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Chivo:400,700,900|Overpass:400,600,700');
-@import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
-// Define fonts for body and headers
-$headers-font:'Chivo', 'sans-serif';
-$body-font:'Overpass', 'sans-serif';
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700|Unica+One');
+
+$body-font:'Oswald', 'sans-serif';
+$headers-font:'Unica One', cursive;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
