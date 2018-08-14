@@ -11,7 +11,14 @@ $light-gray: #F4F4F4;
 
 // Palette
 
-$background: #2b2e5b;
+$background: #232323;
+$call-action: #E82B62;
+$light-white: #FFFCED;
+$transparent: rgba(255, 255, 255, .2);
+$almost-transparent: rgba(255, 255, 255, .5);
+
+// NOT USED
+
 $main: #E8670B;
 $main-text: #000000;
 $highlight: rgba(10, 0, 0, 0.7);
@@ -20,6 +27,5 @@ $detail: #FFFFFF;
 $price: #56E39F;
 $underline: #e45180;
 $button-color: #d9d9d9;
-$transparent: rgba(255, 255, 255, .2);
 
 // BAR/BANDS CARD COLORS
