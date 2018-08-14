@@ -21,14 +21,22 @@
 <% if @messages.nil? || current_user.band %>
 
   <div class="form-wrapper">
-    <%= render 'messages/form', message: @message %>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">
+          <%= render 'messages/form', message: @message %>
+        </div>
+      </div>
+    </div>
   </div>
 
 <% else %>
   <div class="form-wrapper">
     <div class="container">
       <div class="row">
-        <%= render 'messages/form_redux', message: @message %>
+        <div class="col-xs-12 col-md-6 offset-sm-2 col-no-padding">
+          <%= render 'messages/form', message: @message %>
+        </div>
         <%= render 'messages/select_band', gigs: @gigs %>
       </div>
     </div>
