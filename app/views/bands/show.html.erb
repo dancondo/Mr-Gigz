@@ -1,46 +1,48 @@
-<div class="container">
+<div class="navbar">
 
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <div class="band-infos-container">
-        <div class="band-show-photo">
-          <% if @band.photo.url %>
-            <%= image_tag @band.photo.url, class: 'image-band-show';%>
-          <% end %>
-        </div>
-        <div class="band-show-name">
-          <h2><%= @band.name %></h2>
-          <div class="band-min-price"><h4>A partir de R$<%=@band.minimum_price %></h4></div>
-        </div>
-        <div class="band-show-description">
-          <p><%= @band.description %></p>
-        </div>
-        <div class="band-show-action">
-          <div class="band-show-media">
-            <a href="#"><i class="fab fa-instagram fab-show"></i></a>
-            <a href="#"><i class="fab fa-facebook fab-show"></i></a>
-            <a href="#"><i class="fab fa-twitter fab-show"></i></a>
-            <a href="#"><i class="fab fa-youtube fab-show"></i></a>
+</div>
+
+<div class="background-page">
+
+  <div class="container">
+    <img src="..." alt="..." class="rounded">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="band-infos-container">
+            <div class="band-show-photo">
+              <% if @band.photo.url %>
+                <%= image_tag @band.photo.url, class: 'image-band-show';%>
+              <% end %>
+            </div>
+            <div class="band-show-name">
+              <h2><%= @band.name %></h2>
+              <div class="band-min-price"><h4>A partir de R$<%=@band.minimum_price %></h4></div>
+              </div>
+            <div class="band-show-description">
+              <p><%= @band.description %></p>
+            </div>
+            <div class="band-show-action">
+              <div class="band-show-media">
+                <a href="#"><i class="fab fa-instagram fab-show"></i></a>
+                <a href="#"><i class="fab fa-facebook fab-show"></i></a>
+                <a href="#"><i class="fab fa-twitter fab-show"></i></a>
+                <a href="#"><i class="fab fa-youtube fab-show"></i></a>
+              </div>
+              <% if current_user.bar %>
+              <%= link_to 'Mensagem', conversation_url(element_id: @band.id), class: 'btn btn-primary'%>
+              <% end %>
+            </div>
           </div>
-          <% if current_user.bar %>
-          <%= link_to 'Mensagem', conversation_url(element_id: @band.id), class: 'btn btn-primary'%>
-          <% end %>
         </div>
-      </div>
-    </div>
 
-    <div class="col-sm-12 col-md-4">
-      <div class="row">
-        <div class="band-show-video">
-          <h3>Vídeo</h3>
-          <iframe width="100%" height="250"src="https://www.youtube.com/embed/Z8uvPLsah0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="col-sm-12 col-md-6">
+          <div class="row">
+            <div class="band-show-video">
+              <iframe width="100%" height="250"src="https://www.youtube.com/embed/Z8uvPLsah0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="band-repertorio">
-          <h3>Repertório</h3>
-        </div>
-      </div>
-   </div>
+      </image>
+    </div>
   </div>
 </div>
