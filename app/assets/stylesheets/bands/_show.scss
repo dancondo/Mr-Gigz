@@ -1,161 +1,54 @@
-.container-show-band {
-  margin-top: 16px;
-
+.band-infos-container {
+  border-radius: 1px solid white;
 }
 
-
-.bands-show-container-bottom {
-	max-width: 1140px;
-	margin-right: auto;
-	margin-left: auto;
-	display: flex;
-	justify-content: space-around;
-}
-
-.fab-show {
-	font-size: 35px;
-}
-
-.user-show-main {
-
-  h1 {
-    text-align: center;
+.band-show-photo {
+  img {
+    width: 100%;
+    height: 100%;
   }
+}
 
+.band-show-name {
+  text-align: center;
+  padding: 15px;
   h2 {
-  	font-family: $headers-font;
-    margin-top: none;
-    padding: 15px;
+    letter-spacing: 3px;
+  }
+
+  h4 {
+    padding-bottom: 6px;
+    margin-top: -8px;
+    font-size: 17px;
   }
 }
 
-.bands-show-image-border {
-	background-color: rgba(255, 255, 255, 0.3);
-  color: white;
-	margin-bottom: 32px;
-	padding: 16px;
-	border-radius: 3px;
-	margin-left: 4px;
-	margin-right: 4px;
-}
-
-.bands-show-text {
-  margin-bottom: 18px;
-}
-
-.image-band-show {
-  width: 100%;
-  margin-bottom: 16px;
-  margin-top: 16px;
-  border-radius: 8px;
-  border-color: #bfbdbd;
-}
-
-.bands-show-social-logo {
- display: flex;
- justify-content: space-between;
- padding-bottom: 18px;
- padding-left: 64px;
-}
-
-.fab-show {
-   margin-right: 8px;
-   font-size: 40px;
-   color: white;
-   font-size: 30px;
-   padding-bottom: 1px;
-   padding-top: 15px;
-}
-
-.bands-show-name {
-	border: solid black 1px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	margin-bottom: 16px;
-	text-align: center;
-
-}
-
-.bands-show-music-name {
-	display: flex;
-	align-items: center;
-	padding-bottom: 48px;
-	h5 {
-	text-align: center;
-}
-
-}
-
-.bands-show-player {
-	display: flex;
-	align-items: center;
-}
-
-.bands-show-tags {
-	display: flex;
-	align-items: center;
-
-}
-
-.bands-show-video {
-	border: solid $highlight 3px;
-	margin-bottom: 32px;
-	padding: 16px;
-	border-radius: 3px;
-	margin-left: 4px;
-	margin-right: 4px;
-
-}
-
-.bands-show-tags {
-	margin-bottom: 32px;
-	padding: 16px;
-	border: solid $highlight 3px;
-	border-radius: 3px;
-	margin-left: 4px;
-	margin-right: 4px;
-}
-
-.bands-show-repertories {
-	border: solid $highlight 3px;
-	border-radius: 3px;
-	margin-bottom: 16px;
-	padding: 16px;
-	border-radius: 3px;
-	margin-left: 4px;
-	margin-right: 4px;
+.band-min-price {
+  border-bottom: 0.1px solid white;
 }
 
 .band-show-description {
-	padding-right: 20px;
-  padding-left: 20px;
-  text-align: justify;
-  font-size: 20px;
+  padding: 15px;
 }
 
-
-.bands-show-action {
- display: flex;
- justify-content: space-around;
-	margin-bottom: 16px;
+.band-show-action {
+  display:flex;
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+  .band-show-media {
+    font-size: 23px;
+  }
 }
 
-.bands-show-buttons-bottom {
-	display: flex;
-	justify-content: space-around;
+.band-show-video {
+  h3 {
+    padding-left: 4px;
+  }
 }
 
-.bands-show-tags-title {
-	margin-right: 16px;
+.band-repertorio {
+  h3 {
+    padding-left: 4px;
+  }
 }
-
-.bands-show-action {
-	display: flex;
-    justify-content: space-around;
-}
-
-.mini-p {
-	margin-right: 8px;
-}
-
