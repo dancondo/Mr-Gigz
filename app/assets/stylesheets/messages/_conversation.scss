@@ -104,3 +104,39 @@
   padding-top: 0;
   margin-top: 0;
 }
+.message-btn {
+  cursor: pointer;
+}
+.my-form-message {
+  display: flex;
+  align-items: flex-start;
+}
+.input-text-message {
+  width: 3000px;
+}
+.center-message {
+  width: 100%;
+  margin: 0 auto
+}
+.longer-message-plus {
+  width: 100%;
+}
+.message-padding {
+  padding-top: 8px;
+}
+.input-group {
+  width: 500px;
+}
+
+.max-width-form {
+  width: 100% !important;
+  display: flex;
+  flex-direction: row !important;
+}
+.message-form-width {
+  width: 100% !important;
+}
+.margin-to-center {
+  margin: 0 auto;
+  width: 400px;
+}

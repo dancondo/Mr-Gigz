@@ -1,15 +1,14 @@
-<div class="form-post plain">
-	<%= simple_form_for(@message, remote: true) do |f| %>
-	<div class="row">
-		<div class="col-xs-12 col-sm-12">
-			<div class="form-group">
-				<%= f.input :content, label: "Nova Mensagem" %>
-			</div>
-		</div>
-	</div>
-		<%= hidden_field_tag(:element_id, @element_id) %>
-	<div class="form-group caixa-bttn send-message">
-		<%= f.submit 'Enviar', class: "btn btn-primary" %>
-		<% end %>
-	</div>
+<div class="form-post plain message-flex">
+	<%= simple_form_for(@message, remote: true, html: {class: 'my-form-message'}) do |f| %>
+
+		<div class="form-group max-width-form">
+			<textarea class="form-control text required message-form-width" rows="1" placeholder="Nova Mensagem" name="message[content]" id="message_content"></textarea>
+		    <%= hidden_field_tag(:element_id, @element_id) %>
+        <%= button_tag type: 'submit', class: "btn-primary message-btn" do %>
+          <i class="far fa-paper-plane" aria-hidden="true"></i>
+        <% end %>
+    </div>
+
+  <% end %>
 </div>
+
