@@ -12,7 +12,8 @@
     </div>
 
     <div class="message-content">
-      <%= m.content %>
+      <p class="content-text"><%= m.content %></p>
+      <p class="creation-date-msg"><%= l m.created_at ,format: :short %></p>
     </div>
 
   </li>
@@ -22,7 +23,8 @@
   <li class="counterpart-message message">
 
     <div class="message-content">
-      <%= m.content %>
+      <p class="content-text"><%= m.content %></p>
+      <p class="creation-date-msg"><%= l m.created_at ,format: :short %></p>
     </div>
 
     <div class="message-photo">

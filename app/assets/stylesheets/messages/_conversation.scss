@@ -27,9 +27,10 @@
   border-radius: 16px;
   width: 60%;
   font-size: 16px;
+  position: relative;
 }
 .message-content {
-  padding: 10px;
+  padding: 0;
   text-align: left;
 }
 .message-photo {
@@ -55,4 +56,14 @@
 }
 .padding-left-none {
   padding-left: 0;
+}
+.form-wrapper {
+  background-color: $transparent;
+}
+.creation-date-msg{
+  font-size: 8px;
+}
+.content-text{
+  font-size: 16px;
+  margin-bottom: 0;
 }
