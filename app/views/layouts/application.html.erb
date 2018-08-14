@@ -15,7 +15,10 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
 
-    <%= render 'shared/footer' %>
+    <% unless current_page?(conversation_url) %>
+      <%= render 'shared/footer' %>
+    <% end %>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}&language=pt-BR" %>

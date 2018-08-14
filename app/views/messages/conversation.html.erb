@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container distance-from-box">
   <div class="row">
     <div class="col-sm-12 col-md-8 offset-md-2 col-no-padding">
       <div class="messages_container">
 
-        <h1>Conversa com <%=link_to @element.name, @element %></h1>
+        <h1 class="title-message">Conversa com <%=link_to @element.name, @element %></h1>
 
         <ul class="messages-all">
         <% @messages.each do |m| %>
@@ -20,15 +20,39 @@
 
 <% if @messages.nil? || current_user.band %>
 
-  <%= render 'messages/form', message: @message %>
+  <div class="form-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-10 offset-md-1 col-no-padding">
+          <div class="center-message">
+            <%= render 'messages/form', message: @message %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <% else %>
   <div class="form-wrapper">
     <div class="container">
       <div class="row">
-        <%= render 'messages/form_redux', message: @message %>
-        <%= render 'messages/select_band', gigs: @gigs %>
+        <div class="col-sm-12 col-md-10 offset-md-1 col-no-padding">
+
+          <div class="center-message">
+            <%= render 'messages/form', message: @message %>
+          </div>
+
+          <div class="new-gig collapsable">
+            <span class="text-center">Contratar Banda<i class="fas fa-plus"></i></span>
+          </div>
+
+          <div class="hidden-content margin-to-center">
+            <%= render 'messages/select_band', gigs: @gigs %>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
 <% end %>
+

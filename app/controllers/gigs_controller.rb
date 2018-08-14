@@ -70,11 +70,11 @@ class GigsController < ApplicationController
   end
 
   def select_band_via_chat
-    params[:gig][:gig_ids].each do |gig_id|
-      next if gig_id.empty?
-      gig =  Gig.find(gig_id)
-      gig.update(band_id: params[:band_id], active: false)
-    end
+    gig =  Gig.find(params[:gig])
+    band = Band.find(params[:band_id])
+    bar = current_user.bar
+    message = Message.create!(sender: current_user.role, bar: bar, band: band, gig: gig, content: "Parabens! O bar #{bar.name} selecionou a banda #{band.name} para o gig #{gig.title}!")
+    gig.update(band: band, active: false)
     redirect_to conversation_url(element_id: params[:band_id])
   end
 

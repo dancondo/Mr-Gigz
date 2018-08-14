@@ -1,6 +1,7 @@
 class Message < ApplicationRecord
   belongs_to :bar
   belongs_to :band
+  belongs_to :gig, optional: true
   # belongs_to :conversation
   validates :content, presence: true, allow_blank: false
   # after_create :broadcast_message

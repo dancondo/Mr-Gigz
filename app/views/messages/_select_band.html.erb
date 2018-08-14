@@ -1,26 +1,23 @@
-<div class="col-xs-12 col-sm-4 col-no-padding">
-  <div class="form-post plain">
-    <%= simple_form_for(@element, url: :select_band_via_chat, method: :patch) do |f| %>
-    <div class="row">
-      <div class="col-xs-12 col-sm-12">
+<div class="form-post plain select-band-form">
+  <%= simple_form_for(@element, url: :select_band_via_chat, method: :patch) do |f| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
 
-        <div class="form-group">
-          <label for="select_gig">Atribuir banda ao Gig</label>
-          <input type="hidden" name="gig[gig_ids][]" value="">
-          <select class="form-control" name="gig[gig_ids][]" id="">
-          <% @gigs.each do |gig| %>
-              <option value="<%= gig.id %>" label="<%= gig.title %>"></option>
-          <% end %>
-          </select>
-        </div>
+      <div class="form-group no-margin-bottom-form">
+        <input type="hidden" name="gig" value="">
+        <select class="form-control" name="gig" id="">
+          <option value="" disabled selected>Selecione Gig</option>
+        <% @gigs.each do |gig| %>
+          <option value="<%= gig.id %>" label="<%= gig.title %>"></option>
+        <% end %>
+        </select>
       </div>
     </div>
-    <div class="form-group">
-      <%= hidden_field_tag(:band_id, @element.id) %>
-    </div>
-    <div class="form-group caixa-bttn">
-      <%= f.submit 'Enviar', class: "btn btn-primary" %>
-      <% end %>
-    </div>
+  <div class="form-group">
+    <%= hidden_field_tag(:band_id, @element.id) %>
   </div>
+</div>
+  <%= f.submit 'Contratar', class: "btn btn-primary btn-block btn-select-gig",
+                data: { confirm: 'voce tem certeze?'} %>
+  <% end %>
 </div>

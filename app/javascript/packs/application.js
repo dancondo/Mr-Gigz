@@ -25,6 +25,7 @@ scrollLastMessageIntoView();
 popOver();
 collapser();
 scrollButton();
+
 scrollButtonMap();
 scrollButtonFunciona();
 scrollButtonAboutUS();
