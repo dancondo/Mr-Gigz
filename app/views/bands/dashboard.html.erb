@@ -13,7 +13,9 @@
 
             <%= link_to conversation_url(element_id: bar.id), class: 'contact-coversation-link' do %>
             <div class="contact-section-part contact-message">
-              <%= image_tag bar.photo.url, class: 'contact-photo' %>
+              <% if bar.photo.url %>
+                <%= image_tag bar.photo.url, class: 'contact-photo' %>
+              <% end %>
               <div class="contact-section-part preview-message-content">
                 <h4><%= bar.name %></h4>
                 <div class="hide-on-mobile">
