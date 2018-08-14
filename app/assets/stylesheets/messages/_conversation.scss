@@ -23,20 +23,22 @@
 .message{
   display: flex;
   align-items: center;
-  margin: 15px;
-  border-radius: 10px;
-  width: 70%;
-  font-size: 30px;
+  margin: 5px;
+  border-radius: 16px;
+  width: 60%;
+  font-size: 16px;
 }
 .message-content {
-  padding: 15px;
+  padding: 10px;
   text-align: left;
 }
 .message-photo {
-  padding: 15px;
+  padding: 8px;
 
   .avatar-photo {
-    border-radius: 10px;
+    border-radius: 8px;
+    height: 40px;
+    width: 40px;
   }
 }
 .form-post {
@@ -50,4 +52,7 @@
   .message {
     width: 90%;
   }
+}
+.padding-left-none {
+  padding-left: 0;
 }
