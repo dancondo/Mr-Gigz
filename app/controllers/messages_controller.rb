@@ -26,6 +26,8 @@ class MessagesController < ApplicationController
       @messages = Message.where(bar: current_user.bar, band_id: params[:element_id])
       @element_id = params[:element_id]
       @element = Band.find(@element_id)
+      @bar = current_user.bar
+      @gigs = Gig.where(bar: @bar, active: true)
     else
       @messages = Message.where(band: current_user.band, bar: params[:element_id])
       @element_id = params[:element_id]
