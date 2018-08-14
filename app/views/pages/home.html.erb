@@ -20,7 +20,7 @@
       <!-- Last Gigs -->
       <section class="last-gigs">
         <div class="container">
-          <h5 style="margin-bottom: 64px;"><i class="fas fa-bomb"></i> Anuncios Urgentes</h5>
+          <h4 style="margin-bottom: 64px;"><i class="fas fa-bomb"></i> Anuncios Urgentes</h4>
           <div class="gigs-box-home">
             <div class="row">
              <% @gigs.last(4).each do |gig| %>
@@ -55,8 +55,8 @@
     <hr style="color: white; border: solid 1px; margin-top: 32px; border-radius: 2px;">
     <h6 style="text-align: right;">Ver todos + </h6>
   </div>
-  <div class="container">
-   <h5 style="margin-bottom: 64px;"><i class="fas fa-fire"></i> Ultimos anuncios</h5>
+  <div class="container home-gigs-urgentes">
+   <h4 style="margin-bottom: 64px;"><i class="fas fa-fire"></i> Ultimos anuncios</h4>
    <div class="gigs-box-home">
      <div class="row">
        <% @gigs.last(4).each do |gig| %>
@@ -90,27 +90,41 @@
    <hr style="color: white; border: solid 1px; margin-top: 32px; border-radius: 2px;">
    <h6 style="text-align: right;">Ver todos + </h6>
  </div>
+ <div class="scroll-btn-map">
+  <a href="#" class="scroll-down-map" address="true"></a>
+  <h5 style="text-align: center;">Ver a mapa  dos Gigz da semana </h5>
 </div>
+
+</div>
+
+
 </section>
 
 
 <!-- gigs-map -->
 <section class="home-gigs-map">
-  <div class="container">
-    <h2>Gigs da semana</h2>
+  <h1 style="text-align: center; padding-bottom: 56px;">Gigs da semana</h1>
+  <div class="container container-homepage-map">
+
     <div
     id="map"
     style="width: 100%;
     height: 600px;"
     data-markers="<%= @markers.to_json %>"
     ></div>
+
+
+  </div>
+  <div class="scroll-btn-funciona">
+    <a href="#" class="scroll-down-funciona" address="true"></a>
+    <h5 style="text-align: center;">Como funciona Mr.Gigz </h5>
   </div>
 
 </section>
 
 
 <!-- Como funciona? -->
-<section class="como-funciona">
+<section class="section-como-funciona">
   <div class="container como-funciona">
     <div class="page-header">
       <h2 id="timeline">Como Funciona</h2>
@@ -153,11 +167,27 @@
       </li>
     </ul>
   </div>
+</div>
+<div class="scroll-btn-about">
+  <a href="#" class="scroll-down-about" address="true"></a>
+  <h5 style="text-align: center;">Saber mais sobre nos </h5>
+</div>
 </section>
 
 <footer>
   <div class="container">
-    <h2>Sobre nos</h2>
+    <h1 style="padding-top: 40px; padding-bottom: 40px;">TEAM Mr.GIGZ</h1>
+    <p style="padding-top: 16px; padding-bottom: 16px; color: grey;"> Bla bla bla bla bla bla bla bla bla bla Bla bla bla bla bla bla bla bla bla bla Bla bla bla bla bla bla bla bla bla bla Bla bla bla bla bla bla bla bla bla bla Bla bla bla bla bla bla bla bla bla bla Bla bla bla bla bla bla bla bla bla bla Bla bla bla bla bla bla bla bla bla bla  </p>
+    <h2 style="padding-top: 32px; padding-bottom: 32px;">Andre</h2>
+    <p style="padding-top: 16px; padding-bottom: 16px; color: grey;"> Logistics professional with more than 10 years of expertise, decided to learn code for facing new challenges, career changing and entrepreneurship. </p>
+    <h2 style="padding-top: 32px; padding-bottom: 32px;">Danilo</h2>
+    <p style="padding-top: 16px; padding-bottom: 16px; color: grey;"> The past 5 years I have been doing liberal arts bachelors (International Relation at first and the Japanese Studies). However, I withdrew both of the courses in the half because I felt it wasn't what I wanted, I was looking for a more practical, and engaging that would give me the skills to solve real-life problems. After I withdraw University and come back to Brazil, I realized that liberal arts wouldn't have the methodology and give me the tools to do what I wanted, therefore, I decided to do an IT course to become a dev. At this moment I found Le Wagon, 400 meters away from my home, lucky me! </p>
+    <h2 style="padding-top: 32px; padding-bottom: 32px;">Luiz</h2>
+    <p style="padding-top: 16px; padding-bottom: 16px; color: grey;"> Trabalhei em uma agência de publicidade durante alguns meses, até conhecer o universo das Distributed Ledger Technologies e criptoativos. Fascinado pelo mercado, decidi abrir uma startup de consultoria e integração de redes em Blockchain com outros colegas. Rapidamente, percebi a necessidade de conhecer e estar inteirado à programação, tanto para o progresso da empresa, quanto para minha própria formação.
+
+Aqui estou :)</p>
+    <h2 style="padding-top: 32px; padding-bottom: 32px;">Oscar</h2>
+    <p style="padding-top: 16px; padding-bottom: 16px; color: grey;"> I'm graduated in marketing and communication. I worked as market analyst in France (SAD Marketing). Now, i would like to work in Brazil in a start-up or in the filed of culture, sport or institutions. I really want to improve my softwar development skills. </p>
   </div>
 </footer>
 
