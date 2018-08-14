@@ -1,4 +1,31 @@
 // Specific CSS for your home-page
+
+section {
+  padding-top: 32px;
+  padding-bottom: 48px;
+  height: 100vh;
+}
+
+
+.last-gigs {
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
+  asset-url('default-band-image.png') !important;
+    background-repeat: no-repeat;
+  background-size: cover !important;
+  margin-bottom: 64px;
+
+}
+
+.home-gigs-map {
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
+  asset-url('home-background-map.jpg') !important;
+    background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: 20% 80%;
+}
+
+
+
 html {
   position: relative;
 }
@@ -157,6 +184,73 @@ a:hover {
 // !!!! PARALLAX !!!!
 
 
-.container {
-  margin-top: 16px;
+// SCROLL BUTTON //
+
+.scroll-btn {
+  position: relative;
+  top: 224px;
 }
+
+.scroll-btn-map {
+  position: relative;
+  top: 224px;
+}
+.scroll-down {
+  margin-bottom: 16px;
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #FFF;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  }

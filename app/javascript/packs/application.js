@@ -10,9 +10,12 @@ import popOver from "./pop_over"
 import '../plugins/flatpickr'
 import '../plugins/tokenizer'
 
+import scrollButton from "./scroll_button"
+
 
 
 formCheck();
 scrollLastMessageIntoView();
 popOver();
 collapser();
+scrollButton();
