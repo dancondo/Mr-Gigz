@@ -1,4 +1,13 @@
-<% if m.sender == current_user.role %>
+<% if m.gig %>
+
+  <li class="gig-message">
+
+    <p><%= m.content %></p>
+    <%= link_to 'Ver Mais', m.gig %>
+
+  </li>
+
+<% elsif m.sender == current_user.role %>
 
   <li class="my-message message">
 

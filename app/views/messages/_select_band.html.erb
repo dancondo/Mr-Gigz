@@ -6,8 +6,8 @@
 
         <div class="form-group no-margin-bottom-form">
           <label for="select_gig">Selecione Gig para banda</label>
-          <input type="hidden" name="gig[gig_ids][]" value="">
-          <select class="form-control" name="gig[gig_ids][]" id="">
+          <input type="hidden" name="gig" value="">
+          <select class="form-control" name="gig" id="">
           <% @gigs.each do |gig| %>
             <option value="<%= gig.id %>" label="<%= gig.title %>"></option>
           <% end %>
