@@ -10,7 +10,8 @@ import popOver from "./pop_over"
 import '../plugins/flatpickr'
 import '../plugins/tokenizer'
 
-
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
 
 formCheck();
 scrollLastMessageIntoView();

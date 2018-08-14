@@ -1,11 +1,11 @@
 .navbar {
-  background-color: $highlight;
-  margin-bottom: 0 !important;
-  border-radius: 0 !important;
+  margin-bottom: 0;
+  border-radius: 0;
 }
 
 .nav-link i {
   color: white;
+  font-family: $headers-font;
 }
 
 li {
@@ -19,8 +19,12 @@ li {
 }
 
 .navbar-brand {
-  color: white;
   border-right: 2px solid white;
   margin: 0;
   padding-right: 10px;
 }
+
+.navbar-brand-dark {
+  color: #2d014c;
+}
+
