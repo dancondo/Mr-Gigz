@@ -12,13 +12,13 @@
   background-color: rgba(255,255,255,0.2);
 }
 .counterpart-message {
-  background-color: $main;
+  background-color: rgba($dark-blue, .9);
   float: right;
   justify-content: space-between;
   .message-content {
+    color: $silver;
     width: 100%;
     text-align: right;
-    color: white;
     padding: 8px 0 0 8px;
   }
 }
@@ -32,10 +32,12 @@
   position: relative;
 }
 .message-content {
+  color: $light-white;
   padding: 0;
   text-align: left;
   word-break: break-word;
   padding: 8px 8px 0 0;
+  font-family: $body-font;
 }
 .message-photo {
   padding: 8px;
@@ -106,6 +108,11 @@
 }
 .message-btn {
   cursor: pointer;
+  background-color: $call-action !important;
+  border-color: $call-action !important;
+  &:hover {
+    background-color: rgba($call-action, .8) !important;
+  }
 }
 .my-form-message {
   display: flex;
