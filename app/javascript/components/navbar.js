@@ -4,9 +4,10 @@ function initUpdateNavbarOnScroll() {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= window.innerHeight) {
         navbar.classList.add('navbar-brand-dark');
-        console.log('test');
+        navbar.classList.add('navbar-brand-logo');
       } else {
         navbar.classList.remove('navbar-brand-dark');
+        navbar.classList.remove('navbar-brand-logo');
       }
     });
   }
