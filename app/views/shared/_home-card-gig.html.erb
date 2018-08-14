@@ -1,0 +1,42 @@
+
+<div class="container">
+  <h2 style="text-decoration: overline #FFFFFF; margin-top: 64px;">Ultimos anuncios</h2>
+  <div class="gigs-box-home">
+    <ul class="list-inline-home">
+      <div class="row">
+        <% @gigs.last(3).each do |gig| %>
+       <div class="col-xs-12 col-sm-6 col-lg-4">
+         <li class="list-inline-item catalog">
+           <div class="top">
+             <div class="gig-card-top-home">
+               <p class="gig-card-titulo-home"><%= gig.title %></p>
+             </div>
+           </div>
+           <div class="gig-card-body-home">
+            <p class="gig-card-genero-home">
+              <% gig.gig_tags.each do |tag| %>
+              <spam><button type="button" class="btn btn-secondary"><%= tag.tag.genre %></button></spam>
+              <% end %>
+            </p>
+            <p class="gig-card-localizacao-home">
+             <i class="fa fa-map-marker-alt"></i>
+             São Paulo
+           </p>
+           <p class="gig-card-data-home">
+             <%= gig.start_date %>
+           </p>
+           <p class="gig-card-price-home">
+            R$<%= gig.cache %>,00 por 1 hora
+          </p>
+          <button type="button" class="btn btn-primary btn-primary-card" data-toggle="modal" data-target="#modal<%= gig.id %>">
+            Ver Gig
+          </button>
+          <%= render partial: 'modal', locals: {gig: gig} %>
+        </div>
+      </li>
+    </div>
+    <% end %>
+  </div>
+</ul>
+</div>
+</div>

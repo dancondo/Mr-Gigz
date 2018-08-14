@@ -1,51 +1,167 @@
-<div class="banner">
-  <div class="banner-content">
-    <h1>Bem-vindo ao Mr.Gigz</h1>
-    <p class="home-banner-h3">Escolha a melhor banda para o seu evento !</p>
-    <%= link_to 'Contratar', bands_path, class: 'bttn-dark' %>
+<!-- <div id="scroll-animate">
+  <div id="scroll-animate-main">
+    <div class="wrapper-parallax"> -->
+
+      <header>
+        <div class="banner">
+          <div class="banner-content">
+            <h1>Bem-vindo ao Mr.Gigz</h1>
+            <p class="home-banner-h3">Escolha a melhor banda para o seu evento !</p>
+            <%= link_to 'Contratar', bands_path, class: 'bttn-dark' %>
+            <div class="scroll-btn">
+              <a href="#" class="scroll-down" address="true"></a>
+              <h5>Ver os ultimos Gigz</h5>
+            </div>
+          </div>
+        </div>
+
+      </header>
+
+      <!-- Last Gigs -->
+      <section class="last-gigs">
+        <div class="container">
+          <h5 style="margin-bottom: 64px;"><i class="fas fa-bomb"></i> Anuncios Urgentes</h5>
+          <div class="gigs-box-home">
+            <div class="row">
+             <% @gigs.last(4).each do |gig| %>
+             <div class="col-xs-6 col-sm-6 col-lg-3 gig-card-home-effect">
+              <div class="gig-card-body-home">
+               <div class="gig-card-top-home urgente">
+                 <%= gig.title %>
+               </div>
+               <p class="gig-card-genero-home">
+                <% gig.gig_tags.each do |tag| %>
+                <spam><button type="button" class="btn btn-secondary home-card-gig-bttn"><%= tag.tag.genre %></button></spam>
+                <% end %>
+              </p>
+              <p class="gig-card-localizacao-home">
+               <i class="fa fa-map-marker-alt"></i>
+               São Paulo
+             </p>
+             <p class="gig-card-data-home">
+               <%= gig.start_date %>
+             </p>
+             <p class="gig-card-price-home">
+              R$<%= gig.cache %>,00 por 1 hora
+            </p>
+            <button type="button" class="btn btn-primary btn-primary-card" data-toggle="modal" data-target="#modal<%= gig.id %>">
+              Ver Gig
+            </button>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <hr style="color: white; border: solid 1px; margin-top: 32px; border-radius: 2px;">
+    <h6 style="text-align: right;">Ver todos + </h6>
   </div>
+  <div class="container">
+   <h5 style="margin-bottom: 64px;"><i class="fas fa-fire"></i> Ultimos anuncios</h5>
+   <div class="gigs-box-home">
+     <div class="row">
+       <% @gigs.last(4).each do |gig| %>
+       <div class="col-xs-6 col-sm-6 col-lg-3 gig-card-home-effect">
+         <div class="gig-card-body-home">
+           <div class="gig-card-top-home">
+             <%= gig.title %>
+           </div>
+           <p class="gig-card-genero-home">
+             <% gig.gig_tags.each do |tag| %>
+             <spam><button type="button" class="btn btn-secondary"><%= tag.tag.genre %></button></spam>
+             <% end %>
+           </p>
+           <p class="gig-card-localizacao-home">
+            <i class="fa fa-map-marker-alt"></i>
+            São Paulo
+          </p>
+          <p class="gig-card-data-home">
+           <%= gig.start_date %>
+         </p>
+         <p class="gig-card-price-home">
+           R$<%= gig.cache %>,00 por 1 hora
+         </p>
+         <button type="button" class="btn btn-primary btn-primary-card" data-toggle="modal" data-target="#modal<%= gig.id %>">
+           Ver Gig
+         </button>
+       </div>
+     </div>
+     <% end %>
+   </div>
+   <hr style="color: white; border: solid 1px; margin-top: 32px; border-radius: 2px;">
+   <h6 style="text-align: right;">Ver todos + </h6>
+ </div>
 </div>
+</section>
+
+
+<!-- gigs-map -->
+<section class="home-gigs-map">
+  <div class="container">
+    <h2>Gigs da semana</h2>
+    <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    ></div>
+  </div>
+
+</section>
+
+
 <!-- Como funciona? -->
-<div class="container como-funciona">
-  <div class="page-header">
-    <h1 id="timeline">Como Funciona</h1>
+<section class="como-funciona">
+  <div class="container como-funciona">
+    <div class="page-header">
+      <h2 id="timeline">Como Funciona</h2>
+    </div>
+    <ul class="timeline">
+      <li>
+        <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4 class="timeline-title">Cadastro</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.</p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-badge warning"><i class="fas fa-search-plus"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4 class="timeline-title">Busca</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.</p>
+          </div>
+        </div>
+
+      </li>
+      <li>
+        <div class="timeline-badge danger"><i class="fas fa-music"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4 class="timeline-title">Contrato</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.</p>
+          </div>
+
+        </div>
+      </li>
+    </ul>
   </div>
-  <ul class="timeline">
-    <li>
-      <div class="timeline-badge"><i class="far fa-check-square"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Cadastro</h4>
-        </div>
-        <div class="timeline-body">
-          <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.</p>
-        </div>
+</section>
 
-      </div>
-    </li>
-    <li class="timeline-inverted">
-      <div class="timeline-badge warning"><i class="fas fa-search-plus"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Busca</h4>
-        </div>
-        <div class="timeline-body">
-          <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.</p>
-        </div>
-      </div>
+<footer>
+  <div class="container">
+    <h2>Sobre nos</h2>
+  </div>
+</footer>
 
-    </li>
-    <li>
-      <div class="timeline-badge danger"><i class="fas fa-music"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Contrato</h4>
-        </div>
-        <div class="timeline-body">
-          <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.</p>
-        </div>
 
-      </div>
-    </li>
-  </ul>
-</div>
+<!-- </div>
+  </div>
+</div> -->
