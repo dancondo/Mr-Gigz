@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12 col-md-8 offset-md-2 col-no-padding">
       <div class="messages_container">
 
-        <h1>Conversa com <%= @element.name %></h1>
+        <h1>Conversa com <%=link_to @element.name, @element %></h1>
 
         <ul class="messages-all">
         <% @messages.each do |m| %>
@@ -23,10 +23,12 @@
   <%= render 'messages/form', message: @message %>
 
 <% else %>
-  <div class="container">
-    <div class="row">
-      <%= render 'messages/form_redux', message: @message %>
-      <%= render 'messages/select_band', gigs: @gigs %>
+  <div class="form-wrapper">
+    <div class="container">
+      <div class="row">
+        <%= render 'messages/form_redux', message: @message %>
+        <%= render 'messages/select_band', gigs: @gigs %>
+      </div>
     </div>
   </div>
 <% end %>
