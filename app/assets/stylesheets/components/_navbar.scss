@@ -3,14 +3,12 @@
   border-radius: 0;
 }
 
-.nav-link i {
-  color: white;
-  font-family: $headers-font;
-}
-
 li {
   margin-left: 10px;
   margin-right: 10px;
+  font-size: 18px;
+  color: white;
+  font-family: $headers-font;
 
   &:before {
     padding-right: 20px;
@@ -18,13 +16,21 @@ li {
   }
 }
 
+.nav-link:hover {
+  border-bottom: 2px solid white;
+}
+
 .navbar-brand {
-  border-right: 2px solid white;
-  margin: 0;
+  margin: 0 0 0 20px;
   padding-right: 10px;
+  visibility: hidden;
 }
 
 .navbar-brand-dark {
-  background-color: #2d014c;
+  background-color: $highlight;
+  transition: ease 0.3s;
 }
 
+.navbar-brand-logo p {
+  visibility: visible !important;
+}
