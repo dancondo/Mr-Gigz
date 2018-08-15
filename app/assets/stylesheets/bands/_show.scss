@@ -1,5 +1,3 @@
-
-
 .bands-container {
   position: relative;
   width: 80%;
@@ -8,6 +6,17 @@
 
   h4 {
     color: rgba(255,255,255,0.5);
+  }
+}
+
+.card-body-text {
+  h4 {
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .band-description {
+    padding: 10px;
   }
 }
 
@@ -21,12 +30,8 @@
   position: fixed;
 }
 
-
-
 .band-show-video {
-  margin-top: 0px;
-  margin-left: 48px;
-  margin-right: 8px;
+
 }
 
 iframe {
@@ -45,12 +50,6 @@ iframe {
  margin-left: 32px;
  height: 100%;
 }
-
-
-
-
-
-
 
 .band-name-div {
   display: block;
