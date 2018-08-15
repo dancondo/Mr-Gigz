@@ -42,10 +42,12 @@
 
           <%= calendar @date do |date| %>
             <% if @gigs_by_date[date] %>
-              <%#= link_to @gigs_by_date[date], class: 'gig-today' do %>
-                <%= date.day %>
-                <i class="fas fa-music"></i>
-              <%# end %>
+              <%= date.day %>
+              <% if @gigs_by_date[date].first.active %>
+                <a class="gig-popover" data-toggle="popover" title="<%= @gigs_by_date[date].first.title %>" data-content="Aplicacoes: <%= @gigs_by_date[date].first.applies.count %>"><i class="fas fa-music todo"></i></a>
+              <% else %>
+                <a class="gig-popover"data-toggle="popover" title="<%= @gigs_by_date[date].first.title %>" data-content="Banda Escolhida: <%= @gigs_by_date[date].first.band.name %>"><i class="fas fa-music done"></i></a>
+              <% end %>
             <% else %>
               <%= date.day %>
             <% end %>
