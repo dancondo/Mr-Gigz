@@ -26,36 +26,36 @@ a.bttn-dark {
 
 
 .bttn {
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  display:inline-block;
-  text-align:center;
-  width:130px;
-  font-weight:bold;
-  padding:14px 0px;
-  position:relative;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  width: 130px;
+  font-weight: bold;
+  padding: 14px 0px;
+  position: relative;
   box-shadow: 0 2px 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.1);
   &:before {
-    -webkit-transition:0.5s all ease;
-    transition:0.5s all ease;
-    position:absolute;
-    top:0;
-    left:50%;
-    right:50%;
-    bottom:0;
-    opacity:0;
-    content:'';
-    background-color:$primary;
-    z-index:-2;
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: $primary;
+    z-index: -2;
   }
   &:hover {
     &:before {
-      -webkit-transition:0.5s all ease;
-      transition:0.5s all ease;
-      left:0;
-      right:0;
-      opacity:1;
+      -webkit-transition: 0.5s all ease;
+      transition: 0.5s all ease;
+      left: 0;
+      right: 0;
+      opacity: 1;
     }
   }
   &:focus {
@@ -70,7 +70,7 @@ a.bttn-dark {
 
 .bttn-dark {
   font-size:18px;
-  letter-spacing:2px;
+  letter-spacing:8px;
   text-transform:uppercase;
   display:inline-block;
   text-align:center;

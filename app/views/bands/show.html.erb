@@ -10,9 +10,10 @@
       <div class="outter-card">
         <div class="card">
           <%= image_tag @band.photo.url, class: 'card-img-top';%>
-          <div class="card-body text">
+          <div class="card-body-text">
             <h4>A partir de R$ <%= @band.minimum_price %></h4>
-            <p><%= @band.description %></p></div>
+            <p class="separator-line"></p>
+            <p class="band-description"><%= @band.description %></p></div>
         </div>
       </div>
     </div>
