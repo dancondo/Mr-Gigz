@@ -6,6 +6,8 @@ class BarsController < ApplicationController
   end
 
   def show
+    @upcoming_gigs = Gig.where(bar: @bar, active: false).where.not(band: nil).order(:start_date)
+    @gig = Gig.where(date: Date.today)[0]
   end
 
   def new
