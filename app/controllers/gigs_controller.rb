@@ -30,7 +30,7 @@ class GigsController < ApplicationController
     @gig.bar = @bar
     @gig.date = gig_params[:start_date].to_date
     if @gig.save
-      redirect_to gigs_url
+      redirect_to @gig
     else
       render :new
     end
