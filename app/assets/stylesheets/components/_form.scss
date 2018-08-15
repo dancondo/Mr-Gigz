@@ -1,5 +1,7 @@
 // Form design
 
+.simple
+
 .form-margin {
   margin-top: 10vh;
 }
@@ -15,15 +17,12 @@
 
 .form-post {
   background: rgba(255,255,255,0.2);
-  margin-top: auto;
-  margin-bottom: auto;
-  color: white;
-  padding: 20px;
+  justify-content: center;
+  color: $light-white;
+  font-family: $body-font;
+  padding: 200px;
   border-radius: 10px;
   box-shadow: 0 10px 60px -5px black;
-
-
-
 
   h1 {
     text-align: center;
