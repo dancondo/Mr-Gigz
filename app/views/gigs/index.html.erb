@@ -3,7 +3,7 @@
     <h1>CANDIDATE-SE A UM GIG !</h1>
     <p>
       <%= form_tag gigs_path, method: :get, class: 'form-inline gig-banner-form-search ' do %>
-      <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control gig-search-path genre-selector'%>
+      <%= select_tag :tags, options_from_collection_for_select(@tags, 'id', 'genre', params[:tags]), multiple: true,class: 'tags-form form-control gig-search-path genre-selector'%>
       <%= submit_tag "Buscar", class:"bttn-dark gig-banner-btn-search",  style: "background-color: transparent; color: white;" %>
       <% end %>
     </p>

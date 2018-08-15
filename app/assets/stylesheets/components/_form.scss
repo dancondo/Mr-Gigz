@@ -23,10 +23,6 @@
   padding: 200px;
   border-radius: 10px;
   box-shadow: 0 10px 60px -5px black;
- 
- 
-
-
 
   h1 {
     text-align: center;
@@ -102,4 +98,7 @@ label {
 .select-band-form {
   width: 400px;
   align-self: center;
+}
+.select2-selection__choice {
+  color: $background;
 }
