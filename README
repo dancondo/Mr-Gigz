@@ -23,16 +23,3 @@
   -Put extra information about how the website works for bands
 }
 
-#wrapper { ANDRE
-  max-width: 800px;
-  max-height:640px;
-  margin: 56px auto;
-  background-color: rgb (56, 34, 93);
-  opacity: 1.0;
-  border-radius: 0.5%;
-  display: flex;
-  position: absolute;
-  left: 0;
-  right: 0;
-
-}
