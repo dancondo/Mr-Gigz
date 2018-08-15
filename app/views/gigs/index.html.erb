@@ -16,20 +16,20 @@
     <div class="col-xs-12 col-sm-12 col-lg-6 col-no-padding">
       <div class="row gigs-card">
         <div class="col-sm-12 ">
-          <%= link_to gig[0] do %>
+          <%= link_to gig do %>
           <div class="row">
             <div class="col-xs-6 col-sm-6 col-lg-6 photo-container">
-              <% if gig[0].bar.photo.url %>
-              <%= image_tag(gig[0].bar.photo.url, class: "photo") %>
+              <% if gig.bar.photo.url %>
+              <%= image_tag(gig.bar.photo.url, class: "photo") %>
               <% end %>
               <p class="gig-card-price">
-                R$<%= gig[0].cache %>,00 por 1 hora
+                R$<%= gig.cache %>,00 por 1 hora
               </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-lg-6 gig-card-details">
               <div class="description">
-                <h3 class="index-gig-title gig-text-center"><%= gig[0].title[0..20] %></h3>
-                <h4 class="gig-text-center"><%= gig[0].bar.name %></h4>
+                <h3 class="index-gig-title gig-text-center"><%= gig.title[0..20] %></h3>
+                <h4 class="gig-text-center"><%= gig.bar.name %></h4>
                  <p class="gig-card-localizacao gig-text-center">
                 <i class="fa fa-map-marker-alt"></i>
                 São Paulo
@@ -42,7 +42,7 @@
               <p class="gig-text-center">
                 <p class="separator-line"></p>
                 <h5>Gênero(s) procurado(s):</h5>
-                <% gig[0].gig_tags.each do |tag| %>
+                <% gig.gig_tags.each do |tag| %>
                   <spam><button type="button" class="btn btn-secondary"><%= tag.tag.genre %></button></spam>
                 <% end %>
               </p>

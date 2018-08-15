@@ -7,14 +7,31 @@ class GigsController < ApplicationController
 
     if params[:tags]
       @select_tags = params[:tags].map { |tag| Tag.find(tag) }
-      @gigs = {}
+      hash_gigs = {}
       @select_tags.map { |tag| tag.gig_tags.map do|gig_tag|
-        @gigs[gig_tag.gig] && gig_tag.gig.active ? @gigs[gig_tag.gig] += 1 : @gigs[gig_tag.gig] = 1
+        if hash_gigs[gig_tag.gig] && gig_tag.gig.active
+          if gig_tag.gig.gig_tags.count > @select_tags.count
+            hash_gigs[gig_tag.gig] -= 4 * (@select_tags.count - gig_tag.gig.gig_tags.count)
+          elsif gig_tag.gig.gig_tags.count < @select_tags.count
+            hash_gigs[gig_tag.gig] -= 3 * (@select_tags.count - gig_tag.gig.gig_tags.count)
+          else
+            hash_gigs[gig_tag.gig] += 10
+          end
+        else
+          if gig_tag.gig.gig_tags.count > @select_tags.count
+            hash_gigs[gig_tag.gig] = 5 * (@select_tags.count - gig_tag.gig.gig_tags.count)
+          elsif gig_tag.gig.gig_tags.count < @select_tags.count
+            hash_gigs[gig_tag.gig] = 3 * (@select_tags.count - gig_tag.gig.gig_tags.count)
+          else
+            hash_gigs[gig_tag.gig] = 10
+          end
+        end
       end
       }
-      @gigs = @gigs.sort_by { |k, v| v }.reverse
+      @gigs = []
+      hash_gigs.sort_by { |k, v| v }.reverse.each { |e| @gigs << e[0] }
     else
-      @gigs = Gig.where(active: true)
+      @gigs = Gig.where(active: true).map
     end
   end
 
