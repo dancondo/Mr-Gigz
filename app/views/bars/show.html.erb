@@ -1,4 +1,4 @@
-<% unless @bar.name %>
+<% unless @bar.name && current_user.bar == @bar %>
 
     <%= render 'form' %>
 
