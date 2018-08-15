@@ -1,11 +1,11 @@
-<div class = "container margin-set">
   <div class="row band-name-div">
-      <div class="col-xs-12">
-        <h1 class="band-name"><%= @band.name %></h1>
-      </div>
+    <div class="col-xs-12">
+      <h1 class="band-name"><%= @band.name %></h1>
+    </div>
   </div>
 
-  <div class="row band-name-div">
+<div class = "container margin-set">
+  <div class="row">
     <div class="col-xs-12 col-md-6">
       <div class="outter-card">
         <div class="card">
@@ -13,50 +13,39 @@
           <div class="card-body text">
             <h4>A partir de R$ <%= @band.minimum_price %></h4>
             <p><%= @band.description %></p></div>
-          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-  <div class="container">
-    <img src="..." alt="..." class="rounded">
-      <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <div class="band-infos-container">
 
-            <div class="band-show-action">
-              <div class="band-show-media">
-                <a href="#"><i class="fab fa-instagram fab-show"></i></a>
-                <a href="#"><i class="fab fa-facebook fab-show"></i></a>
-                <a href="#"><i class="fab fa-twitter fab-show"></i></a>
-                <a href="#"><i class="fab fa-youtube fab-show"></i></a>
-              </div>
-              <% if current_user.bar %>
-              <%= link_to 'Mensagem', conversation_url(element_id: @band.id), class: 'btn btn-primary'%>
-              <% end %>
-            </div>
-          </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="band-show-video">
+        <iframe width="100%" height="250"src="https://www.youtube.com/embed/Z8uvPLsah0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <div class="band-tag">
+        <ul>
+          <li>
+            <% @band.tags.each do |t| %>
+              <%= t.genre %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+
+
+
+      <div class="band-show-action">
+        <div class="band-show-media">
+          <a href="#"><i class="fab fa-instagram fab-show"></i></a>
+          <a href="#"><i class="fab fa-facebook fab-show"></i></a>
+          <a href="#"><i class="fab fa-twitter fab-show"></i></a>
+          <a href="#"><i class="fab fa-youtube fab-show"></i></a>
         </div>
-
-        <div class="col-sm-12 col-md-6">
-          <div class="row">
-            <div class="band-show-video">
-              <iframe width="100%" height="250"src="https://www.youtube.com/embed/Z8uvPLsah0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-          <div class="navegador-tag">
-            <a class="btn btn-primary" href="#" role="button">Link</a>
-            <button class="btn btn-primary" type="submit">Button</button>
-            <input class="btn btn-primary" type="button" value="Input">
-            <input class="btn btn-primary" type="submit" value="Submit">
-            <input class="btn btn-primary" type="reset" value="Reset">
-          </div>
-          <div>
-            <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
-          </div>
-        </div>
-      </image>
+          <% if current_user.bar %>
+            <%= link_to 'Mensagem', conversation_url(element_id: @band.id), class: 'btn btn-primary'%>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
