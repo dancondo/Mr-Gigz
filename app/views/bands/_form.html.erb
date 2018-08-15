@@ -2,25 +2,25 @@
 	<div class="row row-form">
 		<div class="col-xs-12 col-sm-12 form-margin-banda-bar">
 			<div class="form-post">
-				<h1>Cria sua Banda !</h1>
+				<h1>Crie sua Banda !</h1>
 				<%= simple_form_for(@band) do |f| %>
 				<div class="row">
 					<div class="col-xs-12 col-sm-12">
 						<div class="form-group">
-							<%= f.input :name, label: 'Nome', placeholder: "Nome da banda" %>
+							<%= f.input :name, label: 'Nome:' %>
 						</div>
 					</div>
 				</div>
 
         <div class="form-group">
-          <%= f.association :tags, label: 'Estilo da Banda (escolhe seu estilo)', label_method: :genre, value_method: :id, input_html: { class: 'form-control tags-form' } %>
+          <%= f.association :tags, label: 'Estilo da Banda:', label_method: :genre, value_method: :id, input_html: { class: 'form-control tags-form' } %>
         </div>
 
 				<div class="form-group">
-					<%= f.input :description, label: 'Descricao', placeholder: "Descreve sua banda ..." %>
+					<%= f.input :description, label: 'Descrição:', placeholder: "Descreva sua banda ..." %>
 				</div>
 				<div class="form-group">
-					<%= f.input :minimum_price, label: 'Préco minimo', placeholder: "Qual é seu précio minimo ?" %>
+					<%= f.input :minimum_price, label: 'Preço mínimo:', placeholder: "Qual é seu preço mínimo ?" %>
 				</div>
 				<div class="form-group">
 					<%= f.input :photo %>
