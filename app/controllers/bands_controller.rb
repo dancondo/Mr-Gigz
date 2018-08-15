@@ -14,7 +14,6 @@ class BandsController < ApplicationController
   end
 
   def show
-    @conversation = Conversation.new
   end
 
   def dashboard
@@ -86,7 +85,7 @@ class BandsController < ApplicationController
   end
 
   def band_params
-    params.require(:band).permit(:name, :photo, :description, :minimum_price,
+    params.require(:band).permit(:name, :user_id, :photo, :description, :minimum_price,
                                  tag_ids: [])
   end
 
