@@ -26,6 +26,13 @@ section {
   text-align: center;
 }
 
+.separator-line-home {
+  color: white;
+  border: solid 1px;
+  margin-top: 24px;
+  border-radius: 2px;
+}
+
 .ver-mais {
   padding-top: 15px;
   text-align: right;
@@ -46,7 +53,7 @@ section {
 }
 
 .container-homepage-map {
-    display: flex;
+  display: flex;
   justify-content: center;
   align-content: center;
 }
@@ -201,6 +208,10 @@ a:hover {
   font-size: 50px;
 }
 
+#map {
+  width: 100%;
+  height: 600px;
+}
 
 // SCROLL BUTTON first page //
 
