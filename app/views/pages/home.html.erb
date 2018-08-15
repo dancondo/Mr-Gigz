@@ -1,46 +1,84 @@
-<!-- <div id="scroll-animate">
-  <div id="scroll-animate-main">
-    <div class="wrapper-parallax"> -->
+<div class="banner">
+  <div class="banner-content">
+    <h1>Bem-vindo ao Mr.Gigz</h1>
+    <p class="home-banner-h3">Encontre palcos para seu talento !</p>
+    <%= link_to ' Ver Gigz', bands_path, class: 'bttn-dark' %>
+  </div>
+  <div class="banner-scroll-btn scroll-btn">
+    <a href="#" class="scroll-down" address="true"></a>
+    <h5>Últimos Gigz</h5>
+  </div>
+</div>
 
-      <header>
-        <div class="banner">
-          <div class="banner-content">
-            <h1>Bem-vindo ao Mr.Gigz</h1>
-            <p class="home-banner-h3">Encontre palcos para seu talento !</p>
-            <%= link_to ' Ver Gigz', bands_path, class: 'bttn-dark' %>
-          </div>
-          <div class="banner-scroll-btn scroll-btn">
-            <a href="#" class="scroll-down" address="true"></a>
-            <h5>Últimos Gigz</h5>
-          </div>
-        </div>
-      </header>
 
-      <!-- Last Gigs -->
-      <section class="last-gigs">
-        <div class="container">
-          <h4 class="anuncios-recentes"><i class="fas fa-bomb icone-color"></i> Procura-se bandas para HOJE</h4>
-          <div class="gigs-box-home">
-            <div class="row">
-             <% @gigs.last(4).each do |gig| %>
-             <div class="col-xs-6 col-sm-6 col-lg-3 gig-card-home-effect">
-              <div class="gig-card-body-home">
-               <div class="gig-card-top-home urgente">
-                 <%= gig.title %>
-               </div>
-               <p class="gig-card-genero-home">
+<!-- Last Gigs -->
+<div class="container home-cards-container">
+  <div class="bandas-hoje">
+    <h4 class="anuncios-recentes"><i class="fas fa-bomb icone-color"></i> Procura-se bandas para HOJE</h4>
+    <div class="gigs-box-home">
+      <div class="row">
+        <% @gigs.last(4).each do |gig| %>
+        <div class="col-xs-6 col-sm-6 col-lg-3">
+          <div class="gig-card-home-effect">
+            <div class="gig-card-body-home">
+              <div class="gig-card-top-home urgente">
+                <%= gig.title %>
+              </div>
+              <p class="gig-card-genero-home">
                 <% gig.gig_tags.each do |tag| %>
                 <spam><button type="button" class="btn btn-secondary home-card-gig-bttn"><%= tag.tag.genre %></button></spam>
                 <% end %>
               </p>
               <p class="gig-card-localizacao-home">
-               <i class="fa fa-map-marker-alt"></i>
-               São Paulo
-             </p>
-             <p class="gig-card-data-home">
-               <%= gig.start_date %>
-             </p>
-             <p class="gig-card-price-home">
+                <i class="fa fa-map-marker-alt"></i>
+                São Paulo
+              </p>
+              <p class="gig-card-data-home">
+                <%= gig.start_date %>
+              </p>
+              <p class="gig-card-price-home">
+                R$<%= gig.cache %>,00 por 1 hora
+              </p>
+              <button type="button" class="btn btn-primary btn-primary-card" data-toggle="modal" data-target="#modal<%= gig.id %>">
+                Ver Gig
+              </button>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <h6 class="ver-mais"><i class="fas fa-plus"></i> Ver mais</h6>
+    <hr class="separator-line-home">
+  </div>
+</div>
+
+    <!-- Últimos anúncios -->
+
+<div class="container home-gigs-urgentes">
+  <h4 class="anuncios-recentes"><i class="fas fa-fire icone-color"></i> Últimos anúncios</h4>
+  <div class="gigs-box-home">
+    <div class="row">
+      <% @gigs.last(4).each do |gig| %>
+      <div class="col-xs-6 col-sm-6 col-lg-3">
+        <div class="gig-card-home-effect">
+          <div class="gig-card-body-home">
+            <div class="gig-card-top-home">
+              <%= gig.title %>
+            </div>
+            <p class="gig-card-genero-home">
+              <% gig.gig_tags.each do |tag| %>
+              <spam><button type="button" class="btn btn-secondary"><%= tag.tag.genre %></button></spam>
+              <% end %>
+            </p>
+            <p class="gig-card-localizacao-home">
+              <i class="fa fa-map-marker-alt"></i>
+              São Paulo
+            </p>
+            <p class="gig-card-data-home">
+              <%= gig.start_date %>
+            </p>
+            <p class="gig-card-price-home">
               R$<%= gig.cache %>,00 por 1 hora
             </p>
             <button type="button" class="btn btn-primary btn-primary-card" data-toggle="modal" data-target="#modal<%= gig.id %>">
@@ -48,82 +86,36 @@
             </button>
           </div>
         </div>
-        <% end %>
       </div>
+      <% end %>
     </div>
-    <h6 class="ver-mais"><i class="fas fa-plus"></i> Ver mais</h6>
-    <hr style="color: white; border: solid 1px; margin-top: 24px; border-radius: 2px;">
+    <h6 class="ver-mais"><i class="fas fa-plus"></i> Ver mais </h6>
   </div>
-  <div class="container home-gigs-urgentes">
-   <h4 class="anuncios-recentes"><i class="fas fa-fire icone-color"></i> Últimos anúncios</h4>
-   <div class="gigs-box-home">
-     <div class="row">
-       <% @gigs.last(4).each do |gig| %>
-       <div class="col-xs-6 col-sm-6 col-lg-3 gig-card-home-effect">
-         <div class="gig-card-body-home">
-           <div class="gig-card-top-home">
-             <%= gig.title %>
-           </div>
-           <p class="gig-card-genero-home">
-             <% gig.gig_tags.each do |tag| %>
-             <spam><button type="button" class="btn btn-secondary"><%= tag.tag.genre %></button></spam>
-             <% end %>
-           </p>
-           <p class="gig-card-localizacao-home">
-            <i class="fa fa-map-marker-alt"></i>
-            São Paulo
-          </p>
-          <p class="gig-card-data-home">
-           <%= gig.start_date %>
-         </p>
-         <p class="gig-card-price-home">
-           R$<%= gig.cache %>,00 por 1 hora
-         </p>
-         <button type="button" class="btn btn-primary btn-primary-card" data-toggle="modal" data-target="#modal<%= gig.id %>">
-           Ver Gig
-         </button>
-       </div>
-     </div>
-     <% end %>
-   </div>
-   <h6 class="ver-mais"><i class="fas fa-plus"></i> Ver mais </h6>
-   <hr style="color: white; border: solid 1px; margin-top: 24px; border-radius: 2px;">
- </div>
- <div class="scroll-btn-map">
-  <a href="#" class="scroll-down-map" address="true"></a>
-  <h5 style="text-align: center;">Ver a mapa  dos Gigz da semana </h5>
 </div>
-</div>
-</section>
+
 
 
 <!-- gigs-map -->
+
 <section class="home-gigs-map">
-  <h1 class="gigs-da-semana">Gigs da semana</h1>
-  <div class="container container-homepage-map">
-
-    <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    ></div>
-
-
+  <div class="container map-container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="gigs-da-semana">Gigs da semana</h1>
+        <div class="container-homepage-map">
+          <div id="map" data-markers="<%= @markers.to_json %>"></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="scroll-btn-funciona">
-    <a href="#" class="scroll-down-funciona" address="true"></a>
-    <h5 style="text-align: center;">Como funciona Mr.Gigz </h5>
-  </div>
-
 </section>
 
-
 <!-- Como funciona? -->
+
 <section class="section-como-funciona">
   <div class="container como-funciona">
     <div class="page-header">
-      <h2 id="timeline">Como Funciona</h2>
+      <h2 id="como-funciona">Como Funciona</h2>
     </div>
     <ul class="timeline">
       <li>
@@ -147,7 +139,6 @@
             <p>Nosso sistema de busca permite que o usuário encontre o bar ou banda que mais se adequa ao seu perfil, segmentando a pesquisa por gêneros e tags.</p>
           </div>
         </div>
-
       </li>
       <li>
         <div class="timeline-badge danger"><i class="fas fa-music"></i></div>
@@ -160,10 +151,8 @@
               <p>Sem nenhuma interferência ou royalties.</p>
             </p>
           </div>
-
         </div>
       </li>
     </ul>
   </div>
-</div>
 </section>

@@ -13,6 +13,16 @@
 
 }
 
+@media (max-width: 575.98px) {
+  .banner {
+    height: auto;
+  }
+
+  .banner-scroll-btn {
+    visibility: hidden;
+  }
+}
+
 .banner-content {
   background-color: rgba($call-action, 0.8);
   border-radius: 0px 10px 10px 0px;
@@ -53,7 +63,7 @@
   background-position: 20% 80%;
   background-attachment: fixed;
   margin-bottom: 64px;
- 
+
 }
 
 .gig-banner-content {
@@ -73,7 +83,7 @@
     font-weight: thin;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   }
-  
+
   .gig-banner-form-search {
     position: relative;
     left: 16%;
@@ -113,7 +123,7 @@
     font-weight: thin;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   }
-  
+
   .band-banner-form-search {
     position: relative;
     left: 16%;
