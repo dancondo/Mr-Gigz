@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :gigs, only: [:index, :show, :destroy] do
     resources :applies, only: [:index, :create, :destroy]
   end
+  get 'bands/suggestions', to: 'bands#suggestions', as: :suggestions
   resources :bands
 
   resources :messages, only: [:create, :index]
@@ -20,6 +21,5 @@ Rails.application.routes.draw do
   resources :roles, only: [:new, :create]
   devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" }
   root to: 'pages#home'
-  get 'pages/band_home', to: 'pages#band_home', as: 'sou_banda'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

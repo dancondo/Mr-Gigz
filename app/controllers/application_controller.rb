@@ -3,10 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def after_sign_in_path_for(resource)
-    if resource.role == 'band'
-      sou_banda_path
-    else
-      root_path
-    end
+    root_path
   end
 end

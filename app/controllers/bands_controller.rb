@@ -17,10 +17,6 @@ class BandsController < ApplicationController
     @conversation = Conversation.new
   end
 
-  def new
-    @band = Band.new
-  end
-
   def dashboard
     @band = current_user.band
     @bars = Message.where(band: @band).map{ |m| Bar.find(m.bar_id) }.uniq
@@ -30,6 +26,15 @@ class BandsController < ApplicationController
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
+  def suggestions
+    @tags = params[:tags].map { |tag| Tag.find(tag) }
+    @bands = []
+    @tags.map { |tag| tag.my_tags.map { |my_tag| @bands << my_tag.band unless @bands.include?(my_tag.band) } }[0]
+  end
+
+  def new
+    @band = Band.new
+  end
 
   def create
     @band = Band.new(band_params)

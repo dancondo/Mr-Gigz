@@ -1,0 +1,34 @@
+<div class="band_banner">
+  <div class="band-banner-content">
+    <h1>Nossas Sugestoes</h1>
+    <div class="row band-search">
+       <p>
+        <% @tags.each do |tag| %>
+        <%= tag.genre %>
+       </p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="bands-container">
+  <div class="row">
+    <% @bands.each do |band| %>
+
+    <div class="col-xs-10 col-lg-5 bands-card">
+
+      <div class="band-index-card-blog alt">
+        <div class="card-photo" style="background-image: url(<%= band.photo.url %>)"></div>
+        <div class="description">
+          <h1><%= band.name %></h1>
+          <p><%= band.description %></p>
+          <h6 class="band-show-card-price-title">R$<%= band.minimum_price %>,00 por 1 hora</h6>
+          <%= link_to 'Ver Banda', band, class: 'bttn-pink' %>
+        </div>
+      </div>
+  </div>
+  <div class="col-xs-1 col-lg-1"></div>
+
+  <%end%>
+</div>
+</div>
