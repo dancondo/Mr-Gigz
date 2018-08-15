@@ -10,20 +10,14 @@ class GigsController < ApplicationController
       hash_gigs = {}
       @select_tags.map { |tag| tag.gig_tags.map do|gig_tag|
         if hash_gigs[gig_tag.gig] && gig_tag.gig.active
+            hash_gigs[gig_tag.gig] += 20
+        elsif gig_tag.gig.active
           if gig_tag.gig.gig_tags.count > @select_tags.count
-            hash_gigs[gig_tag.gig] -= 4 * (@select_tags.count - gig_tag.gig.gig_tags.count)
+            hash_gigs[gig_tag.gig] = 20 * (@select_tags.count - gig_tag.gig.gig_tags.count)
           elsif gig_tag.gig.gig_tags.count < @select_tags.count
-            hash_gigs[gig_tag.gig] -= 3 * (@select_tags.count - gig_tag.gig.gig_tags.count)
+            hash_gigs[gig_tag.gig] = 10 * (@select_tags.count - gig_tag.gig.gig_tags.count)
           else
-            hash_gigs[gig_tag.gig] += 10
-          end
-        else
-          if gig_tag.gig.gig_tags.count > @select_tags.count
-            hash_gigs[gig_tag.gig] = 5 * (@select_tags.count - gig_tag.gig.gig_tags.count)
-          elsif gig_tag.gig.gig_tags.count < @select_tags.count
-            hash_gigs[gig_tag.gig] = 3 * (@select_tags.count - gig_tag.gig.gig_tags.count)
-          else
-            hash_gigs[gig_tag.gig] = 10
+            hash_gigs[gig_tag.gig] = 30
           end
         end
       end
