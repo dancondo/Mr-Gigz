@@ -1,17 +1,26 @@
-<div class = "container margin-set container-margin-separator">
-  <h1 class="band-name"><%= @band.name %></h1>
-  <div class="row">
-    <div class="col-xs-12 col-md-8">
-      <div class="outter-card">
-        <div class="card">
-          <%= image_tag @band.photo.url, class: 'card-img-top';%>
-          <div class="card-body-text">
-          <h4>A partir de R$ <%= @band.minimum_price %></h4>
-          <p class="separator-line"></p>
-          <p class="band-description"><%= @band.description %></p></div>
+<% unless @band.name == nil && current_user.band == @band %>
+  <div class="row band-name-div">
+    <div class="col-xs-12">
+      <h1 class="band-name"><%= @band.name %></h1>
+    </div>
+  </div>
+
+  <div class = "container margin-set container-margin-separator">
+    <div class="row">
+      <div class="col-xs-12 col-md-8">
+        <div class="outter-card">
+          <div class="card">
+            <% if @band.photo.url %>
+              <%= image_tag @band.photo.url, class: 'card-img-top';%>
+            <% end %>
+            <div class="card-body-text">
+              <h4>A partir de R$ <%= @band.minimum_price %></h4>
+              <p class="separator-line"></p>
+              <p class="band-description"><%= @band.description %></p></div>
+          </div> <<<<<<<< DIVVVVVV
+
         </div>
       </div>
-    </div>
 
     <div class="col-xs-12 col-md-4">
       <div class="band-show-video">
@@ -30,10 +39,12 @@
           </ul>
           <p class="separator-line"></p>
           <div class="band-show-media">
+
             <a href="#"><i class="fab fa-instagram fab-show"></i></a>
             <a href="#"><i class="fab fa-facebook fab-show"></i></a>
             <a href="#"><i class="fab fa-twitter fab-show"></i></a>
             <a href="#"><i class="fab fa-youtube fab-show"></i></a>
+
           </div>
           <% if current_user.bar %>
           <p class="separator-line"></p>
@@ -42,7 +53,13 @@
             <%= link_to 'Mensagem', conversation_url(element_id: @band.id), class: 'btn btn-primary'%>
           </div>
           <% end %>
+
         </div>
       </div>
     </div>
   </div>
+
+<% else %>
+  <%= render 'form' %>
+<% end %>
+

@@ -1,0 +1,31 @@
+<table class="dashboard-gig-table">
+  <thead>
+    <tr>
+      <td>Titulo</td>
+      <td>Banda</td>
+      <td>Data</td>
+      <td>Tags</td>
+      <td>Cache</td>
+      <td></td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @upcoming_gigs.each do |gig| %>
+    <tr>
+      <td><%= gig.title[0..9] %><%= '(...)' if gig.title.length > 10 %></td>
+      <td><%= gig.band.name %></td>
+      <td><%= l(gig.date) unless gig.date.nil?  %></td>
+      <td>
+      <% unless gig.tags == [] %>
+        <div class="btn btn-secondary">
+          <%= gig.tags.first.genre %>
+        </div>
+      <% end %>
+      </td>
+      <td class="price-table">R$<%= gig.cache %></td>
+      <td><%= link_to 'Ver Gig', gig, class: 'btn btn-action' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

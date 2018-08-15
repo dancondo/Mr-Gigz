@@ -8,19 +8,18 @@
             <h1>Bem-vindo ao Mr.Gigz</h1>
             <p class="home-banner-h3">Encontre palcos para seu talento !</p>
             <%= link_to ' Ver Gigz', bands_path, class: 'bttn-dark' %>
-            <div class="scroll-btn">
-              <a href="#" class="scroll-down" address="true"></a>
-              <h5>Últimos Gigz</h5>
-            </div>
+          </div>
+          <div class="banner-scroll-btn scroll-btn">
+            <a href="#" class="scroll-down" address="true"></a>
+            <h5>Últimos Gigz</h5>
           </div>
         </div>
-
       </header>
 
       <!-- Last Gigs -->
       <section class="last-gigs">
         <div class="container">
-          <h4 class="anuncios-recentes"><i class="fas fa-bomb"></i> Procura-se bandas para HOJE</h4>
+          <h4 class="anuncios-recentes"><i class="fas fa-bomb icone-color"></i> Procura-se bandas para HOJE</h4>
           <div class="gigs-box-home">
             <div class="row">
              <% @gigs.last(4).each do |gig| %>
@@ -56,7 +55,7 @@
     <hr style="color: white; border: solid 1px; margin-top: 24px; border-radius: 2px;">
   </div>
   <div class="container home-gigs-urgentes">
-   <h4 class="anuncios-recentes"><i class="fas fa-fire"></i> Últimos anúncios</h4>
+   <h4 class="anuncios-recentes"><i class="fas fa-fire icone-color"></i> Últimos anúncios</h4>
    <div class="gigs-box-home">
      <div class="row">
        <% @gigs.last(4).each do |gig| %>
@@ -158,7 +157,7 @@
           </div>
           <div class="timeline-body">
             <p>Assim que o músico ou banda encontra um gig que lhe interesse, basta que o(a) mesmo(a) clique no botão para se candidatar e no mesmo instante o anunciante terá conhecimento dos artistas dispostos a tocar em seu estabelecimento.
-            <p>Sem nenhuma interferência ou royalties.</p>
+              <p>Sem nenhuma interferência ou royalties.</p>
             </p>
           </div>
 
