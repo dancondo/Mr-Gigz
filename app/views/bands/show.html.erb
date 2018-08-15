@@ -6,7 +6,7 @@
 
 <div class = "container margin-set">
   <div class="row">
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-12 col-md-8">
       <div class="outter-card">
         <div class="card">
           <%= image_tag @band.photo.url, class: 'card-img-top';%>
@@ -18,30 +18,31 @@
     </div>
 
 
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-12 col-md-4">
       <div class="band-show-video">
         <iframe width="100%" height="250"src="https://www.youtube.com/embed/Z8uvPLsah0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
 
       <div class="band-tag">
-        <ul>
-          <li>
-            <% @band.tags.each do |t| %>
-              <%= t.genre %>
-            <% end %>
-          </li>
-        </ul>
-      </div>
-
-
-
-      <div class="band-show-action">
-        <div class="band-show-media">
+        <div class="outter-card-tag">
+          <ul>
+            <li class="list-group">
+              <% @band.tags.each do |t| %>
+                <button type="button" class="btn btn-secondary"><%= t.genre %></button>
+              <% end %>
+            </li>
+          </ul>
+          <div class="band-show-media">
           <a href="#"><i class="fab fa-instagram fab-show"></i></a>
           <a href="#"><i class="fab fa-facebook fab-show"></i></a>
           <a href="#"><i class="fab fa-twitter fab-show"></i></a>
           <a href="#"><i class="fab fa-youtube fab-show"></i></a>
+          </div>
         </div>
+
+
+
+      <div class="band-show-action">
           <% if current_user.bar %>
             <%= link_to 'Mensagem', conversation_url(element_id: @band.id), class: 'btn btn-primary'%>
           <% end %>

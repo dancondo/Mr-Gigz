@@ -24,9 +24,7 @@
 
 
 .band-show-video {
-  margin-top: 0px;
-  margin-left: 48px;
-  margin-right: 8px;
+
 }
 
 iframe {
@@ -34,23 +32,6 @@ iframe {
   border: 16px solid #000;
   border-radius: 5px !important;
 }
-
-.navegador-tag {
-  margin-top: 96px;
-  margin-left: 32px;
-}
-
-.form-control-lg {
- margin-top: 24px;
- margin-left: 32px;
- height: 100%;
-}
-
-
-
-
-
-
 
 .band-name-div {
   display: block;
@@ -86,7 +67,7 @@ iframe {
 }
 
 .outter-card {
-  padding: 16px;
+  padding: 8px;
   background: #535353;
   border-radius: 5px 5px 0px 0px;
 }
@@ -95,9 +76,25 @@ iframe {
   display:flex;
   padding: 2px;
   justify-content: space-between;
+}
 
-  .band-show-media {
-    font-size: 23px;
-    align-items: right;
-  }
+
+.list-group {
+  width: 72%;
+}
+
+.outter-card-tag {
+  width: 100%;
+  padding: 8px;
+  background: #535353;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.btn {
+  margin-bottom: 8px;
+}
+
+.band-show-media {
+  text-align: right;
+  font-size: 16px;
 }
