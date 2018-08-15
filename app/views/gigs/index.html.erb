@@ -17,50 +17,45 @@
       <div class="row gigs-card">
         <div class="col-sm-12 ">
           <%= link_to gig do %>
-          <div class="row">
+          <div class="row index-gigs-card-highlight">
             <div class="col-xs-6 col-sm-6 col-lg-6 photo-container">
               <% if gig.bar.photo.url %>
               <%= image_tag(gig.bar.photo.url, class: "photo") %>
               <% end %>
-              <p class="gig-card-price">
-                R$<%= gig.cache %>,00 por 1 hora
-              </p>
             </div>
             <div class="col-xs-6 col-sm-6 col-lg-6 gig-card-details">
               <div class="description">
                 <h3 class="index-gig-title gig-text-center"><%= gig.title[0..20] %></h3>
                 <h4 class="gig-text-center"><%= gig.bar.name %></h4>
-                <p class="gig-card-localizacao gig-text-center">
-                  <i class="fa fa-map-marker-alt"></i>
+                
+                  <h5 class="gig-card-localizacao"><i class="fa fa-map-marker-alt"></i>
                   São Paulo
-                </p>
+                </h5>
+                <h5 class="gig-card-price">R$<%= gig.cache %>,00 por 1 hora</h5> 
+                  
               </div>
             </div>
           </div>
           <div class="row">
-            <div class= "col-xs-12 col-sm-12 col-lg-12 gig-card-description  ">
+            <div class= "col-xs-8 col-sm-8 col-lg-8 gig-card-description  ">
               <p class="gig-text-center">
-                <p class="separator-line"></p>
                 <h5>Gênero(s) procurado(s):</h5>
                 <% gig.gig_tags.each do |tag| %>
                 <spam><button type="button" class="btn btn-secondary"><%= tag.tag.genre %></button></spam>
                 <% end %>
               </p>
             </div>
-          </div>
-
-          <div class="row">
-            <div class= "col-xs-12 col-sm-12 col-lg-12 gig-card-action ">
+            <div class= "col-xs-4 col-sm-4 col-lg-4 gig-card-action ">
               <div class="gig-index-btn-ver-perfil"><button type="button" class="btn btn-primary btn-primary-card gig-index-btn-ver-perfil-margin" data-toggle="modal" data-target="#modal<%= gig.id %>">
                 Ver Gig
               </button></div>
             </div>
           </div>
-           </div>
-          <% end %>
-
         </div>
+        <% end %>
+
       </div>
-      <%end%>
     </div>
+    <%end%>
   </div>
+</div>
