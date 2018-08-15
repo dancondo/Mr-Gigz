@@ -24,7 +24,11 @@
 
     <div class="col-xs-12 col-md-4">
       <div class="band-show-video">
-        <iframe width="100%" height="250"src="https://www.youtube.com/embed/Z8uvPLsah0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <% if @band.youtube_video %>
+          <iframe width="100%" height="250"src="<%= @band.youtube_video %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <% else %>
+          <iframe width="100%" height="250"src="#" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <% end %>
       </div>
 
       <div class="band-tag">
