@@ -4,8 +4,12 @@
   margin-left: auto;
   margin-right: auto;
 
+  .band-show-title {
+    color: $light-white;
+  }
+
   h4 {
-    color: rgba(255,255,255,0.5);
+    color: $price;
   }
 }
 
@@ -18,13 +22,19 @@
 }
 
 .card-body-text {
+
   h4 {
     text-align: center;
-    padding-top: 10px;
+    padding: 16px;
+    color: $price;
   }
 
   .band-description {
-    padding: 10px;
+    padding: 16px;
+    color: $light-white;
+    font-size: 16px;
+    font-weight: normal;
+
   }
 }
 
@@ -72,15 +82,18 @@ iframe {
 .card {
   width: 100%;
   background: #919191;
+  box-shadow: 0 18px 35px rgba(0,0,0,.5), 0 8px 15px rgba(0,0,0,.5);
   img {
     height: 50vh;
+    padding: 8px;
   }
 }
 
 .outter-card {
-  padding: 8px;
+  padding: 16px;
   background: #535353;
   border-radius: 5px;
+  box-shadow: 0 18px 35px rgba(0,0,0,.5), 0 8px 15px rgba(0,0,0,.5);
 }
 
 .genre-list {
@@ -99,9 +112,10 @@ iframe {
 
 .outter-card-tag {
   width: 100%;
-  padding: 8px;
+  padding: 16px;
   background: #535353;
   border-radius: 5px;
+  box-shadow: 0 18px 35px rgba(0,0,0,.5), 0 8px 15px rgba(0,0,0,.5);
 
   .separator-line {
     margin-bottom: 0;
@@ -111,6 +125,7 @@ iframe {
     text-align: center;
     padding-top: 5px;
     margin: 0;
+    color: $light-white;
   }
 }
 
@@ -126,11 +141,26 @@ iframe {
   justify-content: center;
 
   a {
+    color: $light-white;
     padding: 0 15px 8px 15px;
     font-size: 25px;
   }
 
+  .fab {
+    color: $light-white;
+         &:hover {
+     text-shadow: 1px 1px 2px white;
+     }
+  }
+
+ 
+
   .btn-primary {
     float: left;
   }
+}
+
+.band-show-video {
+  margin-bottom: 24px;
+
 }

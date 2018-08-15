@@ -3,11 +3,11 @@
 
     <h1 class="dashboard-box dashboard-main-title">Bem Vindo! <%= @bar.name %></h1>
 
-    <div class='col-sm-12 col-md-5 dashboard-col'>
+    <div class='col-sm-12 col-md-5 dashboard-col '>
 
       <div class="col-sm-12 dashboard-no-padding-col">
         <div class="contact-dashboard dashboard-box">
-          <h2>Contatos</h2>
+          <h2 class="box-margin-separator">Contatos</h2>
 
           <% @bands.each do |band| %>
 
@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div class="col-sm-12 col-md-7 dashboard-col">
+    <div class="col-sm-12 col-md-7 dashboard-col ">
         <div class="dashboard-box dashboard-calendar">
           <h2 id="month" class="text-center">
             <%= link_to "<", date: @date.prev_month %>
@@ -56,7 +56,7 @@
     <div class="col-sm-12 dashboard-col">
       <div class="gigs-dashboard gig-dashboard-table-container">
 
-        <h3>Proximos Gigs</h3>
+        <h3 class="box-margin-separator">Proximos Gigs</h3>
 
         <%= render 'bars/bar_gigs' %>
 
@@ -66,7 +66,7 @@
     <div class="col-sm-12 dashboard-col">
       <div class="gigs-dashboard gig-dashboard-table-container">
 
-        <h3>Seus Anuncios</h3>
+        <h3 class="box-margin-separator">Seus Anuncios</h3>
 
         <table class="dashboard-gig-table">
           <thead>
