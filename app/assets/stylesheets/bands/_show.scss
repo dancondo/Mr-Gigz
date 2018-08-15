@@ -30,10 +30,6 @@
   position: fixed;
 }
 
-.band-show-video {
-
-}
-
 iframe {
   margin-top: 0px;
   border: 16px solid #000;
@@ -50,7 +46,7 @@ iframe {
   text-align: center;
   font-size: 49px;
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 .band-show-photo {
@@ -76,15 +72,18 @@ iframe {
 .outter-card {
   padding: 8px;
   background: #535353;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px;
 }
 
-.band-show-action {
-  display:flex;
-  padding: 2px;
-  justify-content: space-between;
+.genre-list {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0 0 0;
 }
 
+.list-title {
+  padding: 0 0 5px 0 !important;
+}
 
 .list-group {
   width: 72%;
@@ -94,14 +93,36 @@ iframe {
   width: 100%;
   padding: 8px;
   background: #535353;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px;
+
+  .separator-line {
+    margin-bottom: 0;
+  }
+
+  h4 {
+    text-align: center;
+    padding-top: 5px;
+    margin: 0;
+  }
 }
 
-.btn {
-  margin-bottom: 8px;
+.call-action-btn {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+
 }
 
 .band-show-media {
-  text-align: right;
-  font-size: 16px;
+  display: flex;
+  justify-content: center;
+
+  a {
+    padding: 0 15px 8px 15px;
+    font-size: 25px;
+  }
+
+  .btn-primary {
+    float: left;
+  }
 }
