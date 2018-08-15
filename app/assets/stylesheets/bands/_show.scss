@@ -1,15 +1,3 @@
-.navbar {
-  position: fixed;
-}
-
-.background-page {
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
-  asset-url('home-background-map.jpg') !important;
-  background-repeat: no-repeat;
-  background-size: cover !important;
-  height: 116vh;
-  display:flex;
-}
 
 .band-infos-container {
   border-radius: 1px;
@@ -17,45 +5,11 @@
   content: justify;
 }
 
-.band-show-photo {
-  img {
-    margin-left: 8px;
-    margin-right: 24px;
-    content: justify;
-    width: 100%;
-    height: 90%;
-    margin-top: 24px;
-    border-radius: 2%;
-    box-shadow: 5px 10px 20px black;
-  }
+.navbar {	
+  position: fixed;	
 }
 
-.band-show-name {
-  border-top: 10px;
-  text-align: center;
-  padding: 15px;
-  h2 {
-    letter-spacing: 3px;
-  }
 
-  h4 {
-    padding-bottom: 6px;
-    margin-top: -8px;
-    font-size: 17px;
-  }
-}
-
-.band-min-price {
-  border-bottom: 0.1px solid white;
-}
-
-.band-show-description {
-  p {
-  margin-left: 16px;
-  margin-right: 8px;
-  margin-bottom: 0px;
-  }
-}
 
 .band-show-action {
   display:flex;
@@ -78,4 +32,58 @@ iframe {
   border: 15px solid #000;
   border-radius: 5px !important;
   box-shadow: 5px 5px 20px black;
+}
+
+.navegador-tag {
+  margin-top: 96px;
+  margin-left: 32px;
+}
+
+.form-control-lg {
+ margin-top: 24px;
+ margin-left: 32px;
+ height: 100%;
+}
+
+
+
+
+
+
+
+.band-name-div {
+  display: block;
+}
+
+.band-name {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  text-align: center;
+  font-size: 49px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.band-show-photo {
+  img {
+    width: 32px;
+    height: 48px;
+    border-radius: 5px 5px 0px 0px;
+  }
+}
+.band-min-price {
+  border-bottom: 0.1px solid white;
+}
+
+.card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  img {
+    height: 50vh;
+  }
+}
+
+.outter-card {
+  padding: 16px;
+  background: #36245D;
 }
