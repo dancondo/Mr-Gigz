@@ -28,8 +28,12 @@ class BandsController < ApplicationController
 
   def suggestions
     @tags = params[:tags].map { |tag| Tag.find(tag) }
-    @bands = []
-    @tags.map { |tag| tag.my_tags.map { |my_tag| @bands << my_tag.band unless @bands.include?(my_tag.band) } }[0]
+    @bands = {}
+    @tags.map { |tag| tag.my_tags.map do|my_tag|
+      @bands[my_tag.band] ? @bands[my_tag.band] += 1 : @bands[my_tag.band] = 1
+    end
+    }
+    @bands = @bands.sort_by { |k, v| v }.reverse
   end
 
   def new
