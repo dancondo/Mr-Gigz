@@ -11,6 +11,18 @@
   display:flex;
 }
 
+
+.bands-container {
+  position: relative;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  h4 {
+    color: rgba(255,255,255,0.5);
+  }
+}
+
 .band-infos-container {
   border-radius: 1px;
   margin: 0 auto;
