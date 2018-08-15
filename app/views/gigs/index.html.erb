@@ -1,6 +1,6 @@
 <div class="gig_banner">
   <div class="gig-banner-content">
-    <h1 style="padding: 32px; font-size: 64px;">ESCOLHE SEU GIG !</h1>
+    <h1 class="candidatar-gig-title">CANDIDATE-SE A UM GIG !</h1>
     <div class="row gig-search">
       <%= form_tag gigs_path, method: :get, class: 'form-inline ' do %>
       <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control gig-search-path genre-selector' %>
@@ -14,53 +14,45 @@
 
   <div class="row">
     <% @gigs.each do |gig| %>
-        <div class="col-xs-1 col-sm-1 col-lg-1">
-    </div>
-    <div class="col-xs-10 col-sm-10 col-lg-5 gigs-card">
-
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-lg-6 photo-container">
-          <% if gig.bar.photo.url %>
-          <%= image_tag(gig.bar.photo.url, class: "photo") %>
-          <% end %>
-        </div> 
-        <div class="col-xs-6 col-sm-6 col-lg-6 gig-card-details">
-          <div class="description">
-            <p class="gig-text-center">
-              <% gig.gig_tags.each do |tag| %>
-              <spam><button type="button" class="btn btn-secondary"><%= tag.tag.genre %></button></spam>
+    <div class="col-xs-12 col-sm-12 col-lg-6 col-no-padding">
+      <div class="row gigs-card">
+        <div class="col-sm-12 ">
+          <%= link_to gig do %>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 photo-container">
+              <% if gig.bar.photo.url %>
+              <%= image_tag(gig.bar.photo.url, class: "photo") %>
               <% end %>
-            </p>
-            <h3 class="index-gig-title gig-text-center"><%= gig.title %></h3>
-            <h4 class="gig-text-center"><%= gig.bar.name %></h4>
-             <p class="gig-card-localizacao gig-text-center">
-            <i class="fa fa-map-marker-alt"></i>
-            São Paulo
-          </p>
+              <p class="gig-card-price">
+                R$<%= gig.cache %>,00 por 1 hora
+              </p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-lg-6 gig-card-details">
+              <div class="description">
+                <h3 class="index-gig-title gig-text-center"><%= gig.title[0..20] %></h3>
+                <h4 class="gig-text-center"><%= gig.bar.name %></h4>
+                 <p class="gig-card-localizacao gig-text-center">
+                <i class="fa fa-map-marker-alt"></i>
+                São Paulo
+              </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class= "col-xs-12 col-sm-12 col-lg-12 gig-card-description  ">
-          <p> <%= gig.description %></p>
-        </div>
-      </div>
-      <div class="row gig-card-details gig-card-price-bttn">
-        <div class= "col-xs-6 col-sm-6 col-lg-6 gig-card-details">
-          <p class="gig-card-price gig-text-center">
-            R$<%= gig.cache %>,00 por 1 hora
-          </p>
-        </div>
-        <div class= "col-xs-6 col-sm-6 col-lg-6 gig-card-details">
-          <p class="ver-gig">
-            <%= link_to 'Ver Gig', gig, class: 'btn btn-primary btn-primary-card btn-gig' %>
-            <%= render partial: 'modal', locals: {gig: gig} %>
-          </p>
+          <div class="row">
+            <div class= "col-xs-12 col-sm-12 col-lg-12 gig-card-description  ">
+              <p class="gig-text-center">
+                <p class="separator-line"></p>
+                <h5>Gênero(s) procurado(s):</h5>
+                <% gig.gig_tags.each do |tag| %>
+                  <spam><button type="button" class="btn btn-secondary"><%= tag.tag.genre %></button></spam>
+                <% end %>
+              </p>
+            </div>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>
     <%end%>
   </div>
 </div>
-
-
