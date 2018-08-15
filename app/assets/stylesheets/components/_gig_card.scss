@@ -53,7 +53,7 @@
 .gig-card-action {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 
 .btn-primary {
@@ -92,6 +92,8 @@
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5), 0 8px 15px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   padding: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .candidatar-gig-title {
