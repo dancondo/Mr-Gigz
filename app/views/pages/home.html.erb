@@ -14,13 +14,12 @@
             </div>
           </div>
         </div>
-
       </header>
 
       <!-- Last Gigs -->
       <section class="last-gigs">
         <div class="container">
-          <h4 class="anuncios-recentes"><i class="fas fa-bomb"></i> Procura-se bandas para HOJE</h4>
+          <h4 class="anuncios-recentes"><i class="fas fa-bomb icone-color"></i> Procura-se bandas para HOJE</h4>
           <div class="gigs-box-home">
             <div class="row">
              <% @gigs.last(4).each do |gig| %>
@@ -56,7 +55,7 @@
     <hr style="color: white; border: solid 1px; margin-top: 24px; border-radius: 2px;">
   </div>
   <div class="container home-gigs-urgentes">
-   <h4 class="anuncios-recentes"><i class="fas fa-fire"></i> Últimos anúncios</h4>
+   <h4 class="anuncios-recentes"><i class="fas fa-fire icone-color"></i> Últimos anúncios</h4>
    <div class="gigs-box-home">
      <div class="row">
        <% @gigs.last(4).each do |gig| %>
