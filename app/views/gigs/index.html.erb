@@ -1,17 +1,16 @@
 <div class="gig_banner">
   <div class="gig-banner-content">
-    <h1 class="candidatar-gig-title">CANDIDATE-SE A UM GIG !</h1>
-    <div class="row gig-search">
-      <%= form_tag gigs_path, method: :get, class: 'form-inline ' do %>
-      <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control gig-search-path genre-selector' %>
-      <%= submit_tag "Buscar", class: 'btn btn-primary search-btn-inline' %>
+    <h1>CANDIDATE-SE A UM GIG !</h1>
+    <p>
+      <%= form_tag gigs_path, method: :get, class: 'form-inline gig-banner-form-search ' do %>
+      <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control gig-search-path genre-selector'%>
+      <%= submit_tag "Buscar", class:"bttn-dark gig-banner-btn-search",  style: "background-color: transparent; color: white;" %>
       <% end %>
-    </div>
+    </p>
   </div>
 </div>
 
 <div class="gigs-container">
-
   <div class="row">
     <% @gigs.each do |gig| %>
     <div class="col-xs-12 col-sm-12 col-lg-6 col-no-padding">
