@@ -5,9 +5,14 @@ class GigsController < ApplicationController
   def index
     @tags = Tag.all
 
-    if params[:tag]
-      tag = Tag.find(params[:tag])
-      @gigs = tag.gigs
+    if params[:tags]
+      @select_tags = params[:tags].map { |tag| Tag.find(tag) }
+      @gigs = {}
+      @select_tags.map { |tag| tag.gig_tags.map do|gig_tag|
+        @gigs[gig_tag.gig] && gig_tag.gig.active ? @gigs[gig_tag.gig] += 1 : @gigs[gig_tag.gig] = 1
+      end
+      }
+      @gigs = @gigs.sort_by { |k, v| v }.reverse
     else
       @gigs = Gig.where(active: true)
     end

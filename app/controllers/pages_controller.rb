@@ -2,7 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :bands_home]
 
   def home
-    @gigs = Gig.all
+    @gigs = Gig.last(4)
+    @today_gigs = Gig.where(date: Date.today)
     @markers = @gigs.map do |gig|
       {
         lat: gig.bar.latitude,
