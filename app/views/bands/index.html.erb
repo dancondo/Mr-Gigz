@@ -1,45 +1,36 @@
-<div class="band-search">
-    <div class="container bands-page">
-      <div class="row band-search-title">
-        <%= form_tag bands_path, method: :get, class: 'form-inline' do %>
-        <div class="search-title">
-          <h1> Pesquise uma banda por gênero:</h1>
-        </div>
-        <div class="band-search-form">
-          <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control genre-selector' %>
-            <%= submit_tag "Buscar", class: 'btn btn-primary search-btn-inline' %>
-          <% end %>
-        </div>
-        </div>
+<div class="band_banner">
+  <div class="band-banner-content">
+    <h1>PROCURA UMA BANDA !</h1>
+    <div class="row band-search">
+      <%= form_tag bands_path, method: :get, class: 'form-inline ' do %>
+      <%= select_tag :tag, options_from_collection_for_select(@tags, 'id', 'genre', params[:tag]), class: 'form-control band-search-path genre-selector' %>
+      <%= submit_tag "Buscar", class: 'btn btn-primary search-btn-inline' %>
+      <% end %>
     </div>
-  </div>
-
-<div class = "container band-cards" >
-  <div class="row">
-    <% @bands.each do |band| %>
-
-      <div class="col-xs-12 col-sm-6 col-lg-4" id="band-card">
-        <div class="card">
-          <% if band.photo.url %>
-            <%= image_tag band.photo.url, class: 'card-img-top', size: '250x250' %>
-          <% else %>
-            <img src='https://images.unsplash.com/photo-1431069767777-c37892aa0a07?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c3a556a7c67a4fe290e9336a9703ed61&auto=format&fit=crop&w=1353&q=80' class='card-img-top' style='height: 250px;' >
-          <% end %>
-          <div class="card-body">
-            <h5 class="card-title"><%= band.name %></h5>
-            <p class="card-text">Mínimo: R$<%= band.minimum_price %>,00</p>
-            <div class="text-right">
-              <%= link_to 'Ver Perfil', band, class: "btn btn-primary" %>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
   </div>
 </div>
 
+<div class="bands-container">
+  <div class="row">
+    <% @bands.each do |band| %>
 
+    <div class="col-xs-10 col-lg-5 bands-card">
+     
+      <div class="band-index-card-blog alt">
+        <div class="card-photo" style="background-image: url(<%= band.photo.url %>)"></div>
+        <div class="description">
+          <h1><%= band.name %></h1>
+          <p><%= band.description %></p>
+          <h6 class="band-show-card-price-title">R$<%= band.minimum_price %>,00 por 1 hora</h6>
+          <%= link_to 'Ver Banda', band, class: 'bttn-pink' %>
+        </div>
+      </div>
+  </div>
+  <div class="col-xs-1 col-lg-1"></div>
 
-
+  <%end%>
+</div>
+</div>
 
 <!-- <%= link_to 'Nova Banda!', new_band_path %> -->
+
