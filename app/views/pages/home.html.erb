@@ -11,46 +11,7 @@
 </div>
 
 <!-- Last Gigs -->
-<div class="container home-cards-container">
-  <div class="bandas-hoje">
-    <h4 class="anuncios-recentes"><i class="fas fa-bomb icone-color"></i> Procura-se bandas para HOJE</h4>
-    <div class="gigs-box-home">
-      <div class="row">
-        <% @gigs.last(4).each do |gig| %>
-        <div class="col-xs-6 col-sm-6 col-lg-3">
-          <div class="gig-card-home-effect">
-            <div class="gig-card-body-home">
-              <div class="gig-card-top-home urgente">
-                <%= gig.title %>
-              </div>
-              <p class="gig-card-genero-home">
-                <% gig.gig_tags.each do |tag| %>
-                <spam><button type="button" class="btn btn-secondary home-card-gig-bttn"><%= tag.tag.genre %></button></spam>
-                <% end %>
-              </p>
-              <p class="gig-card-localizacao-home">
-                <i class="fa fa-map-marker-alt"></i>
-                São Paulo
-              </p>
-              <p class="gig-card-data-home">
-                <%= gig.start_date %>
-              </p>
-              <p class="gig-card-price-home">
-                R$<%= gig.cache %>,00 por 1 hora
-              </p>
-              <button type="button" class="btn btn-primary btn-primary-card" data-toggle="modal" data-target="#modal<%= gig.id %>">
-                Ver Gig
-              </button>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-    </div>
-    <h6 class="ver-mais"><i class="fas fa-plus"></i> Ver mais</h6>
-    <hr class="separator-line-home">
-  </div>
-</div>
+
 
     <!-- Últimos anúncios -->
 
