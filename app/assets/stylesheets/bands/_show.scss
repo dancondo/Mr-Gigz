@@ -5,33 +5,22 @@
   content: justify;
 }
 
-.navbar {	
-  position: fixed;	
+.navbar {
+  position: fixed;
 }
 
 
-
-.band-show-action {
-  display:flex;
-  padding: 15px;
-  justify-content: space-between;
-  align-items: center;
-  .band-show-media {
-    font-size: 23px;
-  }
-}
 
 .band-show-video {
-  margin-top: 32px;
+  margin-top: 0px;
   margin-left: 48px;
   margin-right: 8px;
 }
 
 iframe {
-  margin-top: 32px;
-  border: 15px solid #000;
+  margin-top: 0px;
+  border: 16px solid #000;
   border-radius: 5px !important;
-  box-shadow: 5px 5px 20px black;
 }
 
 .navegador-tag {
@@ -71,13 +60,14 @@ iframe {
     border-radius: 5px 5px 0px 0px;
   }
 }
+
 .band-min-price {
   border-bottom: 0.1px solid white;
 }
 
 .card {
   width: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: #919191;
   img {
     height: 50vh;
   }
@@ -85,5 +75,17 @@ iframe {
 
 .outter-card {
   padding: 16px;
-  background: #36245D;
+  background: #535353;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.band-show-action {
+  display:flex;
+  padding: 2px;
+  justify-content: space-between;
+
+  .band-show-media {
+    font-size: 23px;
+    align-items: right;
+  }
 }
