@@ -15,8 +15,6 @@ import scrollButtonMap from "./scroll_button_map"
 import scrollButtonFunciona from "./scroll_button_funciona"
 import scrollButtonAboutUS from "./scroll_button_about_us"
 
-
-
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
 
@@ -29,3 +27,5 @@ scrollButton();
 scrollButtonMap();
 scrollButtonFunciona();
 scrollButtonAboutUS();
+
+

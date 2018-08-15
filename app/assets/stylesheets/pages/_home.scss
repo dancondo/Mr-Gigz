@@ -203,8 +203,6 @@ a:hover {
   font-size: 50px;
 }
 
-// !!!! PARALLAX !!!! //
-
 
 // SCROLL BUTTON first page //
 
@@ -232,7 +230,7 @@ a:hover {
   display: block;
   width: 32px;
   height: 32px;
-  border: 2px solid #FFF;
+  border: 2px solid $light-white;
   background-size: 14px auto;
   border-radius: 50%;
   z-index: 2;
@@ -251,7 +249,7 @@ a:hover {
     width: 12px;
     height: 12px;
     content: "";
-    border: 2px solid white;
+    border: 2px solid $light-white;
     border-width: 0px 0 2px 2px;
 }
 
@@ -298,7 +296,7 @@ a:hover {
   display: block;
   width: 32px;
   height: 32px;
-  border: 2px solid #FFF;
+  border: 2px solid $light-white;
   background-size: 14px auto;
   border-radius: 50%;
   z-index: 2;
@@ -317,7 +315,7 @@ a:hover {
     width: 12px;
     height: 12px;
     content: "";
-    border: 2px solid white;
+    border: 2px solid $light-white;
     border-width: 0px 0 2px 2px;
 }
 
@@ -365,7 +363,7 @@ a:hover {
   display: block;
   width: 32px;
   height: 32px;
-  border: 2px solid #FFF;
+  border: 2px solid $light-white;
   background-size: 14px auto;
   border-radius: 50%;
   z-index: 2;
@@ -432,7 +430,7 @@ a:hover {
   display: block;
   width: 32px;
   height: 32px;
-  border: 2px solid #FFF;
+  border: 2px solid $light-white;
   background-size: 14px auto;
   border-radius: 50%;
   z-index: 2;
@@ -451,7 +449,7 @@ a:hover {
     width: 12px;
     height: 12px;
     content: "";
-    border: 2px solid white;
+    border: 2px solid $light-white;
     border-width: 0px 0 2px 2px;
 }
 
