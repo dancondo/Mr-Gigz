@@ -11,14 +11,14 @@
   </div>
 </div>
 
-<div class="bands-container">
+<div class="container">
   <div class="row">
     <% @bands.each do |band| %>
 
-    <div class="col-xs-10 col-lg-5 bands-card">
+    <div class="col-xs-10 col-lg-6 bands-card">
 
-      <div class="band-index-card-blog alt">
-        <div class="card-photo" style="background-image: url(<%= band.photo.url %>)"></div>
+      <div class="band-index-card-blog" style="background-image: url(<%= band.photo.url %>); background-size: cover; background-position: center;">
+        <div class="card-photo" ></div>
         <div class="description">
           <h1><%= band.name %></h1>
           <p><%= band.description %></p>
@@ -26,8 +26,7 @@
           <%= link_to 'Ver Banda', band, class: 'bttn-pink' %>
         </div>
       </div>
-  </div>
-  <div class="col-xs-1 col-lg-1"></div>
+    </div>
 
   <%end%>
 </div>

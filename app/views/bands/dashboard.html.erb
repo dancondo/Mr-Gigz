@@ -122,9 +122,9 @@
                   <td><%= apply.gig.title[0..9] %><%= '(...)' if apply.gig.title.length > 10 %></td>
                   <td><%= apply.gig.date %></td>
                   <td>
-                    <% unless gig.tags == [] %>
+                    <% unless apply.gig.tags == [] %>
                       <div class="btn btn-secondary">
-                        <%= gig.tags.first.genre %>
+                        <%= apply.gig.tags.first.genre %>
                       </div>
                     <% end %>
                   </td>
