@@ -116,6 +116,7 @@ a.bttn-dark {
 }
 
 
+
 .bttn-pink {
   font-size:16px;
   font-family: $body-font;
@@ -164,3 +165,10 @@ a.bttn-dark {
     }
   }
 }
+
+.btn-action {
+  background-color: $call-action !important;
+  border-color: $call-action !important;
+  color: white !important;
+}
+

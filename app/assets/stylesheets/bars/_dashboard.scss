@@ -56,6 +56,9 @@
   tbody td {
     border: 1px solid $background;
   }
+  tr td:last-child {
+    text-align: center;
+  }
 }
 .dashboard-calendar {
   overflow: scroll;
@@ -122,4 +125,13 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
+.done {
+  color: $dark-blue;
+}
+.todo {
+  color: $call-action;
+}
+.popover-header {
+  color: $background !important;
 }

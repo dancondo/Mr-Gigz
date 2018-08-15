@@ -40,10 +40,12 @@
 
           <%= calendar @date do |date| %>
             <% if @gigs_by_date[date] %>
-              <%#= link_to @gigs_by_date[date], class: 'gig-today' do %>
-                <%= date.day %>
-                <i class="fas fa-music"></i>
-              <%# end %>
+              <%= date.day %>
+              <% if @gigs_by_date[date].first.active %>
+                <a class="gig-popover" data-toggle="popover" title="<%= @gigs_by_date[date].first.title %>" data-content="Aplicacoes: <%= @gigs_by_date[date].first.applies.count %>"><i class="fas fa-music todo"></i></a>
+              <% else %>
+                <a class="gig-popover"data-toggle="popover" title="<%= @gigs_by_date[date].first.title %>" data-content="Banda Escolhida: <%= @gigs_by_date[date].first.band.name %>"><i class="fas fa-music done"></i></a>
+              <% end %>
             <% else %>
               <%= date.day %>
             <% end %>
@@ -51,6 +53,45 @@
         </div>
     </div>
 
+    <div class="col-sm-12 dashboard-col">
+      <div class="gigs-dashboard gig-dashboard-table-container">
+
+        <h3>Proximos Gigs</h3>
+
+        <table class="dashboard-gig-table">
+          <thead>
+            <tr>
+              <td>Titulo</td>
+              <td>Banda</td>
+              <td>Data</td>
+              <td>Tags</td>
+              <td>Cache</td>
+              <td></td>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @upcoming_gigs.each do |gig| %>
+            <tr>
+              <td><%= gig.title[0..9] %><%= '(...)' if gig.title.length > 10 %></td>
+              <td><%= gig.band.name %></td>
+              <td><%= l(gig.date) unless gig.date.nil?  %></td>
+              <td>
+              <% unless gig.tags == [] %>
+                <div class="btn btn-secondary">
+                  <%= gig.tags.first.genre %>
+                </div>
+              <% end %>
+              </td>
+              <td class="price-table">R$<%= gig.cache %></td>
+              <td><%= link_to 'Ver Gig', gig, class: 'btn btn-action' %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
 
     <div class="col-sm-12 dashboard-col">
       <div class="gigs-dashboard gig-dashboard-table-container">
@@ -64,7 +105,6 @@
               <td>Data</td>
               <td>Tags</td>
               <td>Cache</td>
-              <td>Status</td>
               <td>Aplicacoes</td>
               <td></td>
             </tr>
@@ -74,7 +114,7 @@
             <% @gigs.each do |gig| %>
             <tr>
               <td><%= gig.title[0..9] %><%= '(...)' if gig.title.length > 10 %></td>
-              <td><%= gig.date %></td>
+              <td><%= l(gig.date) unless gig.date.nil? %></td>
               <td>
               <% unless gig.tags == [] %>
                 <div class="btn btn-secondary">
@@ -83,9 +123,8 @@
               <% end %>
               </td>
               <td class="price-table">R$<%= gig.cache %></td>
-              <td><%= gig.active ? 'Ativo' : 'Finalizado' %></td>
               <td><%= gig.applies.count %></td>
-              <td><%= link_to 'Ver Aplicacoes', gig_applies_url(gig), class: 'btn btn-primary' %></td>
+              <td><%= link_to 'Ver Aplicacoes', gig_applies_url(gig), class: 'btn btn-action' %></td>
             </tr>
             <% end %>
           </tbody>
