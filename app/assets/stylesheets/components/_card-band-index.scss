@@ -24,7 +24,11 @@
   border-radius: 5px;
   overflow: hidden;
   z-index: 0;
+  min-height: 200px;
   height: 90%;
+  &:hover {
+    transform: scale(1.05);
+  }
   a {
     color: inherit;
     &:hover {
@@ -57,6 +61,7 @@
     padding: 1rem;
     background: rgba($background, 0.8);
     color: $light-white;
+
 
     position: relative;
     z-index: 1;
@@ -157,3 +162,37 @@
   height: 275px;
 }
 
+.tags-card {
+  padding: 16px 16px 16px 0;
+  width: 100%;
+  ul {
+    padding-left: 0;
+    font-weight: bold;
+    display: none;
+    font-size: 16px;
+  }
+  color: $light-white;
+  &:hover {
+    background-color: rgba($background, .4);
+    ul {
+      display: block;
+    }
+  }
+}
+.tag-ok {
+  color: $price;
+}
+.tag-no {
+  color: #C00000;
+}
+.card-tag {
+  margin-right: 4px;
+}
+.description {
+  p, h1, h6 {
+    text-align: left;
+  }
+  a {
+
+  }
+}

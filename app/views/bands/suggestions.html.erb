@@ -1,13 +1,15 @@
 <div class="band_banner">
   <div class="band-banner-content">
     <h1>Nossas Sugestoes</h1>
-    <div class="row band-search">
-       <p>
-        <% @tags.each do |tag| %>
-        <%= tag.genre %>
-       </p>
+    <h3 class="suggestions-match">
+      <% @tags.each do |tag| %>
+        <% unless tag == @tags.last %>
+          <%= "#{tag.genre} +" %>
+        <% else %>
+          <%= tag.genre %>
+        <% end %>
       <% end %>
-    </div>
+    </h3>
   </div>
 </div>
 
@@ -17,13 +19,22 @@
 
     <div class="col-xs-10 col-lg-6 bands-card">
 
-      <div class="band-index-card-blog" style="background-image: url(<%= band.photo.url %>); background-size: cover; background-position: center;">
-        <div class="card-photo" ></div>
+      <div class="band-index-card-blog" style="background-image: url(<%= band[0].photo.url %>); background-size: cover; background-position: center;">
         <div class="description">
-          <h1><%= band.name %></h1>
-          <p><%= band.description %></p>
-          <h6 class="band-show-card-price-title">R$<%= band.minimum_price %>,00 por 1 hora</h6>
-          <%= link_to 'Ver Banda', band, class: 'bttn-pink' %>
+          <h1><%= band[0].name[0..14] %></h1>
+          <h6 class="band-show-card-price-title">R$<%= band[0].minimum_price %>,00 por 1 hora</h6>
+          <%= link_to 'Ver Banda', band[0], class: 'bttn-pink' %>
+        </div>
+        <div class="tags-card">
+          <ul>
+            <% @tags.each do |tag| %>
+              <% if band[0].tags.include?(tag) %>
+                <li><i class="fas fa-check card-tag tag-ok"></i><%= tag.genre %></li>
+              <% else %>
+                <li><i class="fas fa-times card-tag tag-no"></i><%= tag.genre %></li>
+              <% end %>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
