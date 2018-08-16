@@ -8,7 +8,7 @@
         <select class="form-control" name="gig" id="">
           <option value="" disabled selected>Selecione Gig</option>
         <% @gigs.each do |gig| %>
-          <option value="<%= gig.id %>" label="<%= gig.title %>"></option>
+          <option value="<%= gig.id %>" label=<%= "#{gig.title}(#{l(gig.date)})" %>></option>
         <% end %>
         </select>
       </div>
