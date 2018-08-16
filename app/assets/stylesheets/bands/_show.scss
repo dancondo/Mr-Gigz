@@ -29,6 +29,10 @@
     color: $price;
   }
 
+  .separator-line {
+    border: 1px solid #535353;
+  }
+
   .band-description {
     padding: 16px;
     color: $light-white;
@@ -119,6 +123,7 @@ iframe {
 
   .separator-line {
     margin-bottom: 0;
+    border: 1px solid gray;
   }
 
   h4 {
@@ -153,7 +158,7 @@ iframe {
      }
   }
 
- 
+
 
   .btn-primary {
     float: left;

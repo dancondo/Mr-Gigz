@@ -1,16 +1,10 @@
-
-
 <div class="band-show-title" > <% unless @band.name == nil && current_user.band == @band %> </div>
-  <div class="row band-name-div">
-    <div class="col-xs-12">
-      <h1 class="band-name"><%= @band.name %></h1>
-    </div>
-  </div>
 
   <div class = "container margin-set container-margin-separator">
     <div class="row">
       <div class="col-xs-12 col-md-8">
         <div class="outter-card">
+          <h1 class="band-name"><%= @band.name %></h1>
           <div class="card">
             <% if @band.photo.url %>
               <%= image_tag @band.photo.url, class: 'card-img-top';%>
