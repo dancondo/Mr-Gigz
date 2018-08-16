@@ -42,7 +42,7 @@ margin-top: 16px;
 
 .gigs-da-semana {
   text-align: center;
-  padding-bottom: 56px;
+  padding: 16px;
   text-transform: uppercase;
 }
 
@@ -52,8 +52,8 @@ margin-top: 16px;
 
 .home-gigs-map {
   margin-top: 50px;
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
-  asset-url('home-background-map.jpg') !important;
+  background-image: //linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
+  asset-url('home-background-map-bw.jpg') !important;
     background-repeat: no-repeat;
   background-size: cover !important;
   background-position: 20% 80%;
