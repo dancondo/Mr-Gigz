@@ -1,11 +1,6 @@
 // Specific CSS for your home-page
 
-.logo-home {
-  position: relative;
 
-
-
-}
 
 .banner-home-text {
 text-align: left;
@@ -237,14 +232,12 @@ a:hover {
 // SCROLL BUTTON first page //
 
 .scroll-btn {
-  position: relative;
-  top: 65vh;
+  align-items: flex-end;
+  grid-column: 1;
+  grid-row: 2;
 }
 
-.scroll-btn-map {
-  position: relative;
-  top: 224px;
-}
+
 .scroll-down {
   margin-bottom: 16px;
   opacity: 1;

@@ -1,18 +1,20 @@
 <div class="banner">
   <div class="banner-content">
     <div class="banner-home-text">
-    <h1>Bem-vindo !</h1>
-    <p class="home-banner-h3">Encontre palcos para seu talento !</p>
+      <h1>Bem-vindo !</h1>
+      <p class="home-banner-h3">Encontre palcos para seu talento !</p>
     </div>
   </div>
-  <div class="banner-scroll-btn scroll-btn">
+    <div class="center-image">
+      <%=link_to image_tag("logo-gigz-2.png", width: 450, height: 450)%>
+       
+    </div>
+
+    <div class="scroll-btn-homepage">
+      <%= link_to ' Ver Gigz', gigs_path, class: 'bttn-dark-home' %> 
+    </div>
+
     <a href="#" class="scroll-down" address="true"></a>
-    <h5>Últimos Gigz</h5>
-  </div>
-  <div class="logo-home">
-  <%=link_to image_tag("logo-gigz-2.png", width: 450, height: 450), :class => 'image-home'%>
-  <%= link_to ' Ver Gigz', gigs_path, class: 'bttn-dark-home logo-home' %>
-  </div>
 </div>
 
 <!-- Last Gigs -->
@@ -91,10 +93,10 @@
             </p>
           </div>
           <div class="home-gig-card-action">
-          <button type="button" class="btn btn-primary btn-primary-card" data-toggle="modal" data-target="#modal<%= gig.id %>">
-            <%= link_to 'Ver Gig', gig %>
-          </button>
-        </div>
+            <button type="button" class="btn btn-primary btn-primary-card" data-toggle="modal" data-target="#modal<%= gig.id %>">
+              <%= link_to 'Ver Gig', gig %>
+            </button>
+          </div>
         </div>
       </div>
       <% end %>
@@ -110,7 +112,7 @@
 
 <section class="home-gigs-map">
   <div class="banner-content-semana">
-      <h1 class="gigs-da-semana">Gigs da semana</h1>
+    <h1 class="gigs-da-semana">Gigs da semana</h1>
   </div>
   <div class="container map-container">
     <div class="row">

@@ -116,69 +116,7 @@ a.bttn-dark {
   }
 }
 
-.bttn-dark-home {
-  font-size:20px;
-  letter-spacing:8px;
-  font-family: $headers-font;
-  text-transform:uppercase;
-  display:inline-block;
-  text-align:center;
-  width:160px;
-  font-weight:thin;
-  padding:8px 0px;
-  border:1px solid $light-white;
-  border-radius:4px;
-  position:absolute;
-  right: 307px;
-  top: 130px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.1);
-  z-index:2;
-  color: $light-white;
-  &:before {
-    -webkit-transition:0.5s all ease;
-    transition:0.5s all ease;
-    position:absolute;
-    top:0;
-    left:50%;
-    right:50%;
-    bottom:0;
-    opacity:0;
-    content:'';
-    background-color: $light-white;
-    z-index:-1;
-  }
-  &:hover {
-    &:before {
-      -webkit-transition:0.5s all ease;
-      transition:0.5s all ease;
-      left:0;
-      right:0;
-      opacity:1;
-    }
-  }
-  &:focus {
-    &:before {
-      -webkit-transition:0.5s all ease;
-      transition:0.5s all ease;
-      left:0;
-      right:0;
-      opacity:1;
-    }
-  }
-}
 
-a.bttn-dark-home {
-  color: $light-gray;
-  text-decoration:none;
-  -webkit-transition:0.3s all ease;
-  transition:0.3s ease all;
-  &:hover {
-    color: $background !important;
-  }
-  &:focus {
-    color: #d9d9d9;
-  }
-}
 
 
 .bttn-pink {
