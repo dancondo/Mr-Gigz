@@ -1,13 +1,6 @@
-<div class = "container margin-set">
-  <div class="row bar-name-div">
-    <div class="col-xs-12">
-      <h1 class="bar-name"><%= "#{@gig.title} no #{@bar.name}" %></h1>
-    </div>
-  </div>
-
-
+<div class = "container margin-set container-margin-separator">
   <div class="row">
-
+      <h1 class="bar-name"><%= "#{@gig.title} no #{@bar.name}" %></h1>
     <div class="col-xs-12 col-md-8 mr-2-sm">
       <div class="row">
         <%= render 'gigs/info_bar' %>
@@ -15,15 +8,12 @@
       <div class="row mt-2">
         <%= render 'gigs/info_band' %>
       </div>
-
     </div>
 
     <div class="col-xs-12 col-md-4 mt-2-xs">
       <div class="row">
         <%= render 'gigs/info_map' %>
       </div>
-
     </div>
   </div>
-
 </div>
