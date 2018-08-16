@@ -33,7 +33,7 @@
                 São Paulo
               </p>
               <p class="gig-card-data-home">
-                <%= gig.start_date %>
+                <%= l(gig.date) %>
               </p>
               <p class="gig-card-price-home">
                 R$<%= gig.cache %>,00 por 1 hora
@@ -75,7 +75,7 @@
               São Paulo
             </p>
             <p class="gig-card-data-home">
-              <%= gig.start_date %>
+              <%= l(gig.date) %>
             </p>
             <p class="gig-card-price-home">
               R$<%= gig.cache %>,00 por 1 hora
@@ -102,7 +102,7 @@
       <div class="col-12">
         <h1 class="gigs-da-semana">Gigs da semana</h1>
         <div class="container-homepage-map">
-          <div id="map" data-markers="<%= @markers.to_json %>"></div>
+          <div id="map" class="map-fix-size" data-markers="<%= @markers.to_json %>"></div>
         </div>
       </div>
     </div>
