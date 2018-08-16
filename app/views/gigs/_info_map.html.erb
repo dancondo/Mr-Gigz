@@ -1,14 +1,21 @@
-<div class="gig-box gig-infos-box ">
+<div class="gig-box gig-infos-box">
   <div id="map" class="map-gig-show" data-markers="<%= @markers.to_json %>"></div>
 
-<div class="gig-infos">
-  <p>
-    <i class="fas fa-map-marker-alt"></i>
-    <%= @bar.address %>
-  </p>
-  <p>
-    <i class="far fa-calendar-alt"></i>
-    <%= @gig.start_date %>
-  </p>
-</div>
+  <div class="gig-infos">
+    <p>
+      <i class="fas fa-map-marker-alt"></i>
+      <%= @bar.address %>
+    </p>
+    <p>
+      <i class="far fa-calendar-alt"></i>
+      <%= @gig.start_date %>
+    </p>
+  </div>
+  <p class="separator-line-home"></p>
+  <div class="band-show-media">
+    <a href="#"><i class="fab fa-instagram fab-show"></i></a>
+    <a href="#"><i class="fab fa-facebook fab-show"></i></a>
+    <a href="#"><i class="fab fa-twitter fab-show"></i></a>
+    <a href="#"><i class="fab fa-youtube fab-show"></i></a>
+  </div>
 </div>
