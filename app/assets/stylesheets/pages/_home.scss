@@ -35,7 +35,8 @@ section {
 }
 
 .ver-mais {
-  padding-top: 15px;
+margin-top: 16px;
+  padding-top: 16px;
   text-align: right;
 }
 
@@ -213,6 +214,8 @@ a:hover {
 
 #map {
   width: 100%;
+}
+.map-fix-size {
   height: 530px;
 }
 

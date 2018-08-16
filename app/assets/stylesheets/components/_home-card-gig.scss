@@ -1,9 +1,8 @@
-
  .gig-card-body-home {
-  background-color: #55597b;
-  box-shadow: 0 10px 60px -5px black;
+  background-color: #919191; ;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5), 0 8px 15px rgba(0, 0, 0, 0.5);
   color: white;
-  padding-top: 8px;
+  padding: 8px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -28,15 +27,15 @@
  }
 
  .gig-card-localizacao-home {
-   font-size: 12px;
+   font-size: 16px;
  }
 
  .gig-card-data-home {
-   font-size: 12px;
+   font-size: 16px;
  }
 
  .gig-card-price-home {
-   font-size: 12px;
+   font-size: 16px;
    color: $price;
  }
  .btn-primary {
@@ -57,15 +56,11 @@
      padding-bottom: 16px;
 }
 
-.gig-card-home-effect:hover {
-
-      transform: scale(1.1) ;
-      transition: transform .4s;
-      z-index: 1;
-    }
-
 .gig-card-home-effect {
-  padding-bottom: 24px;
+border-radius: 10px; 
+padding: 8px;
+background: rgba(255, 255, 255, 0.2);
+box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5), 0 8px 15px rgba(0, 0, 0, 0.5);
 }
 
 .gig-card-top-home {
@@ -73,16 +68,22 @@
   text-align: center;
   padding-bottom: 8px;
   padding-top: 8px;
-  font-size: 16px;
+  font-size: 24px;
+  border-radius: 4px;
+  font-family: $headers-font !important;
 
 }
 
 .urgente {
-   background-color: rgba(215, 40, 40,0.3);
+   background-color: rgba($call-action, 0.5);
+   border-radius: 4px;
+   padding: 8px;
   text-align: center;
   padding-bottom: 8px;
   padding-top: 8px;
-  font-size: 16px;
+    font-size: 24px;
+  border-radius: 4px;
+  font-family: $headers-font !important;
 
 }
 .home-card-gig-bttn {
@@ -95,4 +96,12 @@
 
 .home-gigs-urgentes {
   padding-top: 80px;
+}
+
+.home-gig-card-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 8px;
+ 
 }
