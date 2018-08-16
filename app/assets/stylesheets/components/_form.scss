@@ -3,16 +3,16 @@
 .simple
 
 .form-margin {
-  margin-top: 10vh;
+  margin-top: 100px;
 }
 
 .form-margin-role {
-  margin-top: 30vh;
+  margin-top: 100px;
 
 }
 
 .form-margin-banda-bar {
-  margin-top: 5vh;
+  margin-top: 100px;
 }
 
 .form-post {
@@ -43,7 +43,11 @@
     color: black;
   }
 }
-
+@media (max-width: 720px) {
+  .form-post {
+    padding: 20px;
+  }
+}
 // Checkboxes design
 .tag-choices {
   display: flex;

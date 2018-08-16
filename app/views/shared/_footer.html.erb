@@ -1,4 +1,8 @@
-<div class="footer">
+<% if current_page?(:root) %>
+  <div class="footer fix-footer-home">
+<% else %>
+  <div class="footer">
+<% end %>
     <span>
     <%= link_to "Sobre nós", "#"%> <a>|</a> <%= link_to "Contato", "#"%>
     </span>

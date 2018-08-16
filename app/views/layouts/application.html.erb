@@ -10,7 +10,11 @@
     <%= stylesheet_pack_tag 'application' %>
 
   </head>
-  <body>
+  <% if current_page?(:root) %>
+    <body class="body-home">
+  <% else %>
+    <body>
+  <% end %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>

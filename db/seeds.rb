@@ -1,27 +1,42 @@
+puts "***************************************************"
+puts "|            Bem Vindo ao Mr Gigz Seeds           |"
+puts "***************************************************"
+puts ""
 puts "Cleaning up your database"
+puts ""
 
 puts "Deleting messages"
+puts ""
 Message.destroy_all
 puts "Deleting conversations"
+puts ""
 Conversation.destroy_all
 puts "Deleting tags connections"
+puts ""
 MyTag.destroy_all
 GigTag.destroy_all
-puts "Deleting tags"
 Tag.destroy_all
+puts "Deleting tags"
+puts ""
 puts "Deleting gigs applies"
+puts ""
 Apply.destroy_all
 puts "Deleting gigs"
+puts ""
 Gig.destroy_all
 puts "Deleting all bars"
+puts ""
 Bar.destroy_all
 puts "Deleting all bands"
+puts ""
 Band.destroy_all
 puts "Deleting all users"
+puts ""
 User.destroy_all
 
 
 puts "Creating new Tags"
+puts ""
 
 rock = Tag.create!(genre: 'Rock')
 pop = Tag.create!(genre: 'Pop')
@@ -49,9 +64,11 @@ britanico = Tag.create!(genre: 'Britanico')
 groove = Tag.create!(genre: 'Groove')
 indie = Tag.create!(genre: 'Indie')
 folk = Tag.create!(genre: 'Folk')
+country = Tag.create!(genre: 'Country')
 
-puts "Created #{Tag.all.count} tags"
+puts "Created #{Tag.all.count * 2} tags"
 puts "Creating new users"
+puts ""
 users = []
 
 
@@ -61,43 +78,56 @@ Tag.all.each do |tag|
 end
 
 puts "Created #{User.all.count} users"
+puts ""
 
-# rock_user = User.create!(email: 'rock_band@gmail.com', password: '123456', role: 'band')
-# pop_user = User.create!(email: 'pop_band@gmail.com', password: '123456', role: 'band')
-# sertanejo_user = User.create!(email: 'sertanejo@gmail.com', password: '123456', role: 'band')
+rock_user = User.create!(email: 'rockband@gmail.com', password: '123456', role: 'band')
+pop_user = User.create!(email: 'popband@gmail.com', password: '123456', role: 'band')
+country_user = User.create!(email: 'country@gmail.com', password: '123456', role: 'band')
 # samba_user = User.create!(email: 'samba@gmail.com', password: '123456', role: 'band')
 # mpb_user = User.create!(email: 'mpb_band@gmail.com', password: '123456', role: 'band')
 # pop_rock_user = User.create!(email: 'pop_rock@gmail.com', password: '123456', role: 'band')
 
-# bar_user_one = User.create!(email: 'bar_one@gmail.com', password: '123456', role: 'bar')
-# bar_user_two = User.create!(email: 'bar_two1@gmail.com', password: '123456', role: 'bar')
-# bar_user_three = User.create!(email: 'bar_three@gmail.com', password: '123456', role: 'bar')
-# bar_user_four = User.create!(email: 'bar_four@gmail.com', password: '123456', role: 'bar')
-# bar_user_five = User.create!(email: 'bar_five@gmail.com', password: '123456', role: 'bar')
+bar_user_one = User.create!(email: 'bar_one@gmail.com', password: '123456', role: 'bar')
+bar_user_two = User.create!(email: 'bar_two1@gmail.com', password: '123456', role: 'bar')
+bar_user_three = User.create!(email: 'bar_three@gmail.com', password: '123456', role: 'bar')
+bar_user_four = User.create!(email: 'bar_four@gmail.com', password: '123456', role: 'bar')
+bar_user_five = User.create!(email: 'bar_five@gmail.com', password: '123456', role: 'bar')
 
-# puts "Creating new bands"
+puts "Created a few more user (Total: #{User.count})"
+puts "Creating new bands"
+puts ""
 
-# rock_band_url = 'https://images.unsplash.com/photo-1508252592163-5d3c3c559f36?ixlib=rb-0.3.5&ixid=
-# eyJhcHBfaWQiOjEyMDd9&s=ec1ecefddebe708d9f122e4ef5372b04&auto=format&fit=crop&w=1350&q=80'
-# rock_band = Band.new(name: 'The Rockers', user: rock_user, minimum_price: '300', description: 'Somos uma banda
-#   que toca junto faz 5 anos, tendo como principais influencias Led Zeppelin e Black Sabbath')
-# rock_band.remote_photo_url = rock_band_url
-# rock_band.save
-# MyTag.create!(band: rock_band, tag: rock)
+rock_band_url = 'https://images.unsplash.com/photo-1508252592163-5d3c3c559f36?ixlib=rb-0.3.5&ixid=
+eyJhcHBfaWQiOjEyMDd9&s=ec1ecefddebe708d9f122e4ef5372b04&auto=format&fit=crop&w=1350&q=80'
+rock_band = Band.new(name: 'The Rockers', user: rock_user, minimum_price: '300', description: 'Somos uma banda
+  que toca junto faz 5 anos, tendo como principais influencias Led Zeppelin e Black Sabbath. Tocamos casualmente de finais
+   de semana, mas sempre com muita compentencia e compromisso. Aceitamos cervejinhas como parte do pagamento')
+rock_band.remote_photo_url = rock_band_url
+rock_band.save
+MyTag.create!(band: rock_band, tag: rock)
+MyTag.create!(band: rock_band, tag: internacional)
 
-# pop_band_url = 'https://images.unsplash.com/photo-1518552722618-737f6d8e91c6?ixlib=rb-0.3.5&ixid=
-# eyJhcHBfaWQiOjEyMDd9&s=20e3528b582270383b6b01e784e50c7c&auto=format&fit=crop&w=1350&q=80'
-# pop_band = Band.new(name: 'Pop Band', user: pop_user, minimum_price: '450', description: 'O Botafogo de Mané foi bicampeão carioca de 1961/62, campeão do Rio-São Paulo de 1962 e 1964 e ganhou inúmeros torneios internacionais. Juntamente com o Santos, abriu de vez as portas do mercado europeu para os jogadores brasileiros. Esses clubes tornaram-se a base da Seleção Brasileira.')
-# pop_band.remote_photo_url = pop_band_url
-# pop_band.save
-# MyTag.create!(band: pop_band, tag: pop)
+pop_band_url = 'https://images.unsplash.com/photo-1518552722618-737f6d8e91c6?ixlib=rb-0.3.5&ixid=
+eyJhcHBfaWQiOjEyMDd9&s=20e3528b582270383b6b01e784e50c7c&auto=format&fit=crop&w=1350&q=80'
+pop_band = Band.new(name: 'The Roman Times', user: pop_user, minimum_price: '450', description: 'Ola, nos somos The Roman Times, uma banda
+  de Pop Rock, com uma pegada mais puxada para o U2. Adoramos tocar na noite, e todos os membros tocam a muito tempo. Ficaremos felizes com
+  qualquer proposta')
+pop_band.remote_photo_url = pop_band_url
+pop_band.save
+MyTag.create!(band: pop_band, tag: pop)
+MyTag.create!(band: pop_band, tag: internacional)
+MyTag.create!(band: pop_band, tag: nacional)
 
-# sertanejo_band_url = 'https://images.unsplash.com/photo-1516016906593-866c0d0356af?ixlib=rb-0.3.5&ixid=
-# eyJhcHBfaWQiOjEyMDd9&s=94b14b7f05f19b3bf6ef1ee7d21e07e6&auto=format&fit=crop&w=1350&q=80'
-# sertanejo_band = Band.new(name: 'Sertanejo Band', user: sertanejo_user, minimum_price: '800', description: 'O Botafogo de Mané foi bicampeão carioca de 1961/62, campeão do Rio-São Paulo de 1962 e 1964 e ganhou inúmeros torneios internacionais. Juntamente com o Santos, abriu de vez as portas do mercado europeu para os jogadores brasileiros. Esses clubes tornaram-se a base da Seleção Brasileira.')
-# sertanejo_band.remote_photo_url = sertanejo_band_url
-# sertanejo_band.save
-# MyTag.create!(band: sertanejo_band, tag: sertanejo)
+country_band_url = 'https://images.unsplash.com/photo-1516016906593-866c0d0356af?ixlib=rb-0.3.5&ixid=
+eyJhcHBfaWQiOjEyMDd9&s=94b14b7f05f19b3bf6ef1ee7d21e07e6&auto=format&fit=crop&w=1350&q=80'
+country_band = Band.new(name: 'Luisiana Plains', user: country_user, minimum_price: '300', description: 'Tocamos frequentemente na Vila Country,
+  tentamos diversificar no nosso som com algumas pegadas diferentes, tentando dar uma variada na playlist, somos bastante flexiveis em relacao a muicas.
+  Todos os membros sao bastante ecleticos e gostam de musica boa, independente de genero!')
+country_band.remote_photo_url = country_band_url
+country_band.save
+MyTag.create!(band: country_band, tag: country)
+MyTag.create!(band: country_band, tag: rock)
+MyTag.create!(band: country_band, tag: folk)
 
 # samba_band_url = 'https://images.unsplash.com/photo-1518886849533-2a7b825fe852?ixlib=rb-0.3.5&ixid=
 # eyJhcHBfaWQiOjEyMDd9&s=caafb9f7f5f2804d01e4f7d8ba483418&auto=format&fit=crop&w=1347&q=80'
@@ -121,37 +151,45 @@ puts "Created #{User.all.count} users"
 # MyTag.create!(band: pop_rock_band, tag: rock)
 # MyTag.create!(band: pop_rock_band, tag: pop)
 
-# puts "Creating new Bars"
+puts "Created #{Band.all.count} bands"
+puts ""
 
-# rock_bar_url = 'https://images.unsplash.com/photo-1456743625079-86a97ff8bc86?ixlib=rb-0.3.5&
-# ixid=eyJhcHBfaWQiOjEyMDd9&s=eebf1f844460b2b340c876eb14ee2861&auto=format&fit=crop&w=1489&q=80'
-# rock_bar = Bar.create!(name: 'Xerelete', address: 'Rua Londres 123', user: bar_user_one)
-# rock_bar.remote_photo_url = rock_bar_url
-# rock_bar.save
+puts "Creating new Bars"
+puts ""
 
-# pop_bar_url = 'https://images.unsplash.com/photo-1532499408512-a163ed4b16a7?ixlib=rb-0.3.5&
-# ixid=eyJhcHBfaWQiOjEyMDd9&s=b80b8460b37bd0aa447bf44ea1620b24&auto=format&fit=crop&w=1350&q=80'
-# pop_bar = Bar.create!(name: 'Pinguçu', address: 'Rua EUA 123', user: bar_user_one)
-# pop_bar.remote_photo_url = pop_bar_url
-# pop_bar.save
+rock_bar_url = 'https://images.unsplash.com/photo-1456743625079-86a97ff8bc86?ixlib=rb-0.3.5&
+ixid=eyJhcHBfaWQiOjEyMDd9&s=eebf1f844460b2b340c876eb14ee2861&auto=format&fit=crop&w=1489&q=80'
+rock_bar = Bar.create!(name: 'Bar Le Wagon', address: 'Rua Mourato Coelho 1404', user: bar_user_one)
+rock_bar.remote_photo_url = rock_bar_url
+rock_bar.save
 
-# sertanejo_bar_url = 'https://images.unsplash.com/photo-1523173508938-2dbf2c43d473?ixlib=rb-0.3.5&
-# ixid=eyJhcHBfaWQiOjEyMDd9&s=d71c648d8d781564da5f7f9e45f20deb&auto=format&fit=crop&w=1351&q=80'
-# sertanejo_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua Mato Grosso 123', user: bar_user_one)
-# sertanejo_bar.remote_photo_url = sertanejo_bar_url
-# sertanejo_bar.save
+pop_bar_url = 'https://images.unsplash.com/photo-1532499408512-a163ed4b16a7?ixlib=rb-0.3.5&
+ixid=eyJhcHBfaWQiOjEyMDd9&s=b80b8460b37bd0aa447bf44ea1620b24&auto=format&fit=crop&w=1350&q=80'
+pop_bar = Bar.create!(name: 'Pinguçu', address: 'Rua Ministro Godoi 340', user: bar_user_one)
+pop_bar.remote_photo_url = pop_bar_url
+pop_bar.save
 
-# samba_bar_url = 'https://images.unsplash.com/photo-1515612457076-03034c364cd4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&
-# s=dc6445bbd3690e76bfb94e4d7dfb6836&auto=format&fit=crop&w=1350&q=80'
-# samba_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua Rio de Janeiro 123', user: bar_user_one)
-# samba_bar.remote_photo_url = samba_bar_url
-# samba_bar.save
+sertanejo_bar_url = 'https://images.unsplash.com/photo-1523173508938-2dbf2c43d473?ixlib=rb-0.3.5&
+ixid=eyJhcHBfaWQiOjEyMDd9&s=d71c648d8d781564da5f7f9e45f20deb&auto=format&fit=crop&w=1351&q=80'
+sertanejo_bar = Bar.create!(name: 'Caipira House', address: 'Rua Inacio Peireira da Rocha, 400', user: bar_user_one)
+sertanejo_bar.remote_photo_url = sertanejo_bar_url
+sertanejo_bar.save
 
-# mpb_bar_url = 'https://images.unsplash.com/photo-1481833761820-0509d3217039?ixlib=rb-0.3.5&
-# ixid=eyJhcHBfaWQiOjEyMDd9&s=3fb6b264e88b8819ae92aa44494eca81&auto=format&fit=crop&w=1350&q=80'
-# mpb_bar = Bar.create!(name: 'Toma To Toma', address: 'Rua São Paulo 123', user: bar_user_one)
-# mpb_bar.remote_photo_url = mpb_bar_url
-# mpb_bar.save
+samba_bar_url = 'https://images.unsplash.com/photo-1515612457076-03034c364cd4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&
+s=dc6445bbd3690e76bfb94e4d7dfb6836&auto=format&fit=crop&w=1350&q=80'
+samba_bar = Bar.create!(name: 'O Tomador', address: 'Rua Teodoro Sampaio 150', user: bar_user_one)
+samba_bar.remote_photo_url = samba_bar_url
+samba_bar.save
+
+mpb_bar_url = 'https://images.unsplash.com/photo-1481833761820-0509d3217039?ixlib=rb-0.3.5&
+ixid=eyJhcHBfaWQiOjEyMDd9&s=3fb6b264e88b8819ae92aa44494eca81&auto=format&fit=crop&w=1350&q=80'
+mpb_bar = Bar.create!(name: 'Entretanto Bar', address: 'Rua Rodesia 500', user: bar_user_one)
+mpb_bar.remote_photo_url = mpb_bar_url
+mpb_bar.save
+
+puts "Created #{Bar.all.count} bars"
+puts ""
+
 
 # puts "Creating new GIGS"
 
