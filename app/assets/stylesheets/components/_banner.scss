@@ -4,6 +4,7 @@
 
 .image-home {
   display: flex;
+  position: fixed;
   justify-content: center;
   align-items: center;
 }
@@ -36,7 +37,7 @@
   border-radius: 0px 10px 10px 0px;
   width: 57vw;
   position: relative;
-  top: 35%;
+  top: 35vh;
   padding: 32px;
   box-shadow: 0 18px 35px rgba(0,0,0,.5), 0 8px 15px rgba(0,0,0,.5);
   display: flex;
