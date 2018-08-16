@@ -22,7 +22,7 @@
         <div class="tags-card">
           <ul>
             <% @tags.each do |tag| %>
-              <% if band[0].tags.include?(tag) %>
+              <% if apply.band.tags.include?(tag) %>
                 <li><i class="fas fa-check card-tag tag-ok"></i><%= tag.genre %></li>
               <% else %>
                 <li><i class="fas fa-times card-tag tag-no"></i><%= tag.genre %></li>
