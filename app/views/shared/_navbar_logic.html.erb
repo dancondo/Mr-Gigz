@@ -46,7 +46,7 @@
 
 <li class="nav-item" >
 
-  <% if user_signed_in? %>
+  <% if user_signed_in? && current_user.bar || current_user.band%>
 
     <%= link_to "dashboard", dashboard_path, class: "nav-link" %>
 
