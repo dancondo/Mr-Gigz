@@ -56,7 +56,7 @@
     <div class="col-sm-12 dashboard-col">
       <div class="gigs-dashboard gig-dashboard-table-container">
 
-        <h3 class="box-margin-separator">Proximos Gigs</h3>
+        <h3 class="box-margin-separator">Próximos Gigs</h3>
 
         <%= render 'bars/bar_gigs' %>
 
@@ -66,16 +66,16 @@
     <div class="col-sm-12 dashboard-col">
       <div class="gigs-dashboard gig-dashboard-table-container">
 
-        <h3 class="box-margin-separator">Seus Anuncios</h3>
+        <h3 class="box-margin-separator">Seus Anúncios</h3>
 
         <table class="dashboard-gig-table">
           <thead>
             <tr>
-              <td>Titulo</td>
+              <td>Título</td>
               <td>Data</td>
               <td>Tags</td>
               <td>Cache</td>
-              <td>Aplicacoes</td>
+              <td>Aplicações</td>
               <td></td>
             </tr>
           </thead>
@@ -94,7 +94,7 @@
               </td>
               <td class="price-table">R$<%= gig.cache %></td>
               <td><%= gig.applies.count %></td>
-              <td><%= link_to 'Ver Aplicacoes', gig_applies_url(gig), class: 'btn btn-action' %></td>
+              <td><%= link_to 'Ver Aplicações', gig_applies_url(gig), class: 'btn btn-action' %></td>
             </tr>
             <% end %>
           </tbody>
