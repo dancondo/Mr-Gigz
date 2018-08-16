@@ -1,12 +1,17 @@
 <div class="banner">
   <div class="banner-content">
-    <h1>Bem-vindo ao Mr.Gigz</h1>
+    <div class="banner-home-text">
+    <h1>Bem-vindo !</h1>
     <p class="home-banner-h3">Encontre palcos para seu talento !</p>
-    <%= link_to ' Ver Gigz', gigs_path, class: 'bttn-dark' %>
+    </div>
   </div>
   <div class="banner-scroll-btn scroll-btn">
     <a href="#" class="scroll-down" address="true"></a>
     <h5>Últimos Gigz</h5>
+  </div>
+  <div class="logo-home">
+  <%=link_to image_tag("logo-gigz-2.png", width: 450, height: 450), :class => 'image-home'%>
+  <%= link_to ' Ver Gigz', gigs_path, class: 'bttn-dark-home image-home' %>
   </div>
 </div>
 

@@ -1,6 +1,14 @@
 
 // BANNER HOME //
 
+
+.image-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .banner {
   text-align: right;
   height: 100vh;
@@ -31,6 +39,8 @@
   top: 35%;
   padding: 32px;
   box-shadow: 0 18px 35px rgba(0,0,0,.5), 0 8px 15px rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
 }
 
 .banner-content-semana {
@@ -66,7 +76,7 @@
   font-size: 32px;
   font-weight: lighter;
   color: rgba($light-white, 0.8);
-  margin-bottom: 60px;
+  margin-bottom: 16px;
 }
 
 // GIG BANNER //
