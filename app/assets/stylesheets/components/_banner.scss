@@ -38,18 +38,6 @@
   align-items: center;
 }
 
-@media (max-width: 575.98px) {
-  .banner {
-    height: auto;
-  }
-}
-
-@media (max-width: 980px) {
-  .banner p {
-  font-size: auto;
-}
-
-}
 
 .banner-content {
   background-color: rgba($call-action, 0.8);
@@ -91,7 +79,7 @@
 }
 
 .banner p {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: lighter;
   color: rgba($light-white, 0.8);
   margin-bottom: 16px;
@@ -101,7 +89,7 @@
 
 .bttn-dark-home {
   position: relative;
-  right: 155px;
+  right: 125px;
   top: 132px;
   font-size:20px;
   letter-spacing:8px;
@@ -161,6 +149,13 @@ a.bttn-dark-home {
     color: #d9d9d9;
   }
 }
+
+@media (max-width: 1000px) {
+
+.banner-content {
+display:none;
+}
+} 
 
 // GIG BANNER //
 
