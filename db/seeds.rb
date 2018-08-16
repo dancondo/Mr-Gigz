@@ -1,14 +1,23 @@
 puts "Cleaning up your database"
 
+puts "Deleting messages"
 Message.destroy_all
+puts "Deleting conversations"
 Conversation.destroy_all
+puts "Deleting tags connections"
 MyTag.destroy_all
 GigTag.destroy_all
+puts "Deleting tags"
 Tag.destroy_all
+puts "Deleting gigs applies"
 Apply.destroy_all
+puts "Deleting gigs"
 Gig.destroy_all
+puts "Deleting all bars"
 Bar.destroy_all
+puts "Deleting all bands"
 Band.destroy_all
+puts "Deleting all users"
 User.destroy_all
 
 
@@ -19,15 +28,53 @@ pop = Tag.create!(genre: 'Pop')
 sertanejo = Tag.create!(genre: 'Sertanejo')
 samba = Tag.create!(genre: 'Samba')
 mpb = Tag.create!(genre: 'MPB')
+punk = Tag.create!(genre: 'Punk')
+surf = Tag.create!(genre: 'Surf')
+metal = Tag.create!(genre: 'Metal')
+godico = Tag.create!(genre: 'Gotico')
+gospel = Tag.create!(genre: 'Gospel')
+romantico = Tag.create!(genre: 'Romantico')
+chorinho = Tag.create!(genre: 'Chorinho')
+alto = Tag.create!(genre: 'Partido Alto')
+forro = Tag.create!(genre: 'Forro')
+bossa = Tag.create!(genre: 'Bossa Nova')
+nacional = Tag.create!(genre: 'Nacional')
+internacional = Tag.create!(genre: 'Internacional')
+disco = Tag.create!(genre: 'Disco')
+jazz = Tag.create!(genre: 'Jazz')
+swing = Tag.create!(genre: 'Swing')
+funk = Tag.create!(genre: 'Funk')
+blues = Tag.create!(genre: 'Blues')
+bebop = Tag.create!(genre: 'Bebop')
+cool = Tag.create!(genre: 'Cool')
+britanico = Tag.create!(genre: 'Britanico')
+groove = Tag.create!(genre: 'Groove')
+indie = Tag.create!(genre: 'Indie')
+folk = Tag.create!(genre: 'Folk')
+hard_rock = Tag.create!(genre: 'Hard Rock')
+classic_rock = Tag.create!(genre: 'Classic Rock')
+anos_50 = Tag.create!(genre: 'Anos 50')
+anos_60 = Tag.create!(genre: 'Anos 60')
+anos_70 = Tag.create!(genre: 'Anos 70')
+anos_80 = Tag.create!(genre: 'Anos 80')
+anos_90 = Tag.create!(genre: 'Anos 90')
 
+puts "Created #{Tag.all.count} tags"
 puts "Creating new users"
 
-rock_user = User.create!(email: 'rock_band@gmail.com', password: '123456', role: 'band')
-pop_user = User.create!(email: 'pop_band@gmail.com', password: '123456', role: 'band')
-sertanejo_user = User.create!(email: 'sertanejo@gmail.com', password: '123456', role: 'band')
-samba_user = User.create!(email: 'samba@gmail.com', password: '123456', role: 'band')
-mpb_user = User.create!(email: 'mpb_band@gmail.com', password: '123456', role: 'band')
-pop_rock_user = User.create!(email: 'pop_rock@gmail.com', password: '123456', role: 'band')
+Tag.all.each_with_index do |tag, index|
+  public_send("#{tag.genre}_user") = User.create!(email: "#{tag.genre}_band@gmail.com", password: '123456', role: 'band')
+  public_send("bar_#{index}") = User.create!(email: "bar_#{index}", password: '123456', role: 'bar')
+end
+
+puts "Created #{User.all.count} users"
+
+# rock_user = User.create!(email: 'rock_band@gmail.com', password: '123456', role: 'band')
+# pop_user = User.create!(email: 'pop_band@gmail.com', password: '123456', role: 'band')
+# sertanejo_user = User.create!(email: 'sertanejo@gmail.com', password: '123456', role: 'band')
+# samba_user = User.create!(email: 'samba@gmail.com', password: '123456', role: 'band')
+# mpb_user = User.create!(email: 'mpb_band@gmail.com', password: '123456', role: 'band')
+# pop_rock_user = User.create!(email: 'pop_rock@gmail.com', password: '123456', role: 'band')
 
 bar_user_one = User.create!(email: 'bar_one@gmail.com', password: '123456', role: 'bar')
 bar_user_two = User.create!(email: 'bar_two1@gmail.com', password: '123456', role: 'bar')
@@ -39,7 +86,8 @@ puts "Creating new bands"
 
 rock_band_url = 'https://images.unsplash.com/photo-1508252592163-5d3c3c559f36?ixlib=rb-0.3.5&ixid=
 eyJhcHBfaWQiOjEyMDd9&s=ec1ecefddebe708d9f122e4ef5372b04&auto=format&fit=crop&w=1350&q=80'
-rock_band = Band.new(name: 'Rock Band', user: rock_user, minimum_price: '500', description: 'O Botafogo de Mané foi bicampeão carioca de 1961/62, campeão do Rio-São Paulo de 1962 e 1964 e ganhou inúmeros torneios internacionais. Juntamente com o Santos, abriu de vez as portas do mercado europeu para os jogadores brasileiros. Esses clubes tornaram-se a base da Seleção Brasileira.')
+rock_band = Band.new(name: 'The Rockers', user: rock_user, minimum_price: '300', description: 'Somos uma banda
+  que toca junto faz 5 anos, tendo como principais influencias Led Zeppelin e Black Sabbath')
 rock_band.remote_photo_url = rock_band_url
 rock_band.save
 MyTag.create!(band: rock_band, tag: rock)
