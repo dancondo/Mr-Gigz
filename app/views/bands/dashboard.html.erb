@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
 
-    <h1 class="dashboard-box dashboard-main-title">Bem Vindo <%= @band.name %> no seu dashboard ! </h1>
+    <h1 class="dashboard-box dashboard-main-title">Bem Vindo! <%= @band.name if @band.name %></h1>
 
     <div class='col-sm-12 col-md-5 dashboard-col'>
 
@@ -64,11 +64,11 @@
         <table class="dashboard-gig-table">
           <thead>
             <tr>
-              <td>Titulo</td>
+              <td>Título</td>
               <td>Data</td>
               <td>Bar</td>
               <td>Tags</td>
-              <td>Cache</td>
+              <td>Cachê</td>
               <td></td>
             </tr>
           </thead>
@@ -100,16 +100,16 @@
     <div class="col-sm-12 dashboard-col">
       <div class="gigs-dashboard gig-dashboard-table-container">
 
-        <h3>Suas Aplicacoes</h3>
+        <h3>Suas Aplicações</h3>
 
         <table class="dashboard-gig-table">
           <thead>
             <tr>
-              <td>Titulo</td>
+              <td>Título</td>
               <td>Data</td>
               <td>Bar</td>
               <td>Tags</td>
-              <td>Cache</td>
+              <td>Cachê</td>
               <td></td>
             </tr>
           </thead>

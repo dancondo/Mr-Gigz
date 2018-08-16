@@ -27,11 +27,11 @@
               <div class="description">
                 <h3 class="index-gig-title gig-text-center"><%= gig.title[0..20] %></h3>
                 <h4 class="gig-text-center"><%= gig.bar.name %></h4>
-                
+
                 <h5 class="gig-card-localizacao"><i class="fa fa-map-marker-alt"></i>
                   São Paulo
                 </h5>
-                <h5 class="gig-card-price">R$<%= gig.cache %>,00 por 1 hora</h5> 
+                <h5 class="gig-card-price">R$<%= gig.cache %>,00 por 1 hora</h5>
 
               </div>
             </div>
@@ -43,11 +43,11 @@
               <spam><button type="button" class="btn btn-secondary"><%= tag.tag.genre %></button></spam>
               <% end %>
             </div>
-            <div class= "col-xs-3 col-sm-3 col-lg-3 index-gigs-bttn-center">
-              <button type="button" class="btn btn-primary btn-primary-card gig-index-btn-ver-perfil-margin" data-toggle="modal" data-target="#modal<%= gig.id %>">
-                Ver Gig
-              </button>
-            </div>
+          </div>
+          <div class="button-div-card">
+            <button type="button" class="btn btn-primary btn-primary-card gig-index-btn-ver-perfil-margin" data-toggle="modal" data-target="#modal<%= gig.id %>">
+              Ver Gig
+            </button>
           </div>
         </div>
         <% end %>

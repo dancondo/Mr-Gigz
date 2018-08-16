@@ -23,13 +23,13 @@ class MessagesController < ApplicationController
     @message = Message.new
     @message.sender = current_user.role
     if current_user.role == 'bar'
-      @messages = Message.where(bar: current_user.bar, band_id: params[:element_id])
+      @messages = Message.where(bar: current_user.bar, band_id: params[:element_id]).order(created_at: :asc)
       @element_id = params[:element_id]
       @element = Band.find(@element_id)
       @bar = current_user.bar
       @gigs = Gig.where(bar: @bar, active: true)
     else
-      @messages = Message.where(band: current_user.band, bar: params[:element_id])
+      @messages = Message.where(band: current_user.band, bar: params[:element_id]).order(created_at: :asc)
       @element_id = params[:element_id]
       @element = Bar.find(@element_id)
     end
