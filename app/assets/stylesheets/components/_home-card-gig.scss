@@ -27,15 +27,15 @@
  }
 
  .gig-card-localizacao-home {
-   font-size: 12px;
+   font-size: 16px;
  }
 
  .gig-card-data-home {
-   font-size: 12px;
+   font-size: 16px;
  }
 
  .gig-card-price-home {
-   font-size: 12px;
+   font-size: 16px;
    color: $price;
  }
  .btn-primary {
@@ -68,7 +68,9 @@ box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5), 0 8px 15px rgba(0, 0, 0, 0.5);
   text-align: center;
   padding-bottom: 8px;
   padding-top: 8px;
-  font-size: 16px;
+  font-size: 24px;
+  border-radius: 4px;
+  font-family: $headers-font !important;
 
 }
 
@@ -79,7 +81,9 @@ box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5), 0 8px 15px rgba(0, 0, 0, 0.5);
   text-align: center;
   padding-bottom: 8px;
   padding-top: 8px;
-  font-size: 16px;
+    font-size: 24px;
+  border-radius: 4px;
+  font-family: $headers-font !important;
 
 }
 .home-card-gig-bttn {
@@ -92,4 +96,12 @@ box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5), 0 8px 15px rgba(0, 0, 0, 0.5);
 
 .home-gigs-urgentes {
   padding-top: 80px;
+}
+
+.home-gig-card-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 8px;
+ 
 }
