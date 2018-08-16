@@ -53,12 +53,17 @@
 .gig-card-action {
   display: flex;
   justify-content: center;
- 
+
+}
+
+.button-div-card {
+  margin-right: -24px;
+  float: right;
 }
 
 .index-gig-card-action {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   margin-top: 16px;
 }
 
@@ -199,7 +204,7 @@ height: 425px;
   border-radius: 4px 0px 4px 0px;
 
   img {
- 
+
     width: 100%;
     height: 100%;
   }
@@ -228,5 +233,5 @@ text-align: center;
 
 .gig-card-price-bttn {
   height: 64px;
-} 
+}
 
