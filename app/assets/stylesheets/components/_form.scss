@@ -43,7 +43,11 @@
     color: black;
   }
 }
-
+@media (max-width: 720px) {
+  .form-post {
+    padding: 20px;
+  }
+}
 // Checkboxes design
 .tag-choices {
   display: flex;
