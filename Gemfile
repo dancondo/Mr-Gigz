@@ -30,9 +30,9 @@ gem "select2-rails"
 
 # Image Upload
 
-# Geocode
+# SSL
 
-
+gem 'rack-ssl-enforcer'
 
 # Internacionalization 118n
 
