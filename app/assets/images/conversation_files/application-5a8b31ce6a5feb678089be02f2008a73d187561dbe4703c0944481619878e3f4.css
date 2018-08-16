@@ -17569,7 +17569,7 @@ a:hover {
 
 /* line 134, /home/dancondo/code/dancondo/mr-gigz/app/assets/stylesheets/pages/_home.scss */
 .timeline-badge.danger {
-  background-color: #d9534f !important;
+  background-color: $call-action !important;
 }
 
 /* line 137, /home/dancondo/code/dancondo/mr-gigz/app/assets/stylesheets/pages/_home.scss */
