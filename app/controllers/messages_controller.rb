@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
       @bar = current_user.bar
       @gigs = Gig.where(bar: @bar, active: true)
     else
-      @messages = Message.where(band: current_user.band, bar: params[:element_id])
+      @messages = Message.where(band: current_user.band, bar: params[:element_id]).order(created_at: :asc)
       @element_id = params[:element_id]
       @element = Bar.find(@element_id)
     end
