@@ -40,12 +40,10 @@ class BandsController < ApplicationController
   end
 
   def create
+    @current_tags = MyTag.where(band: @band)
+    @current_tags.destroy_all
     @band = Band.new(band_params)
     @band.user = current_user
-    band_params[:tag_ids].each do |tag_id|
-      next if tag_id.empty?
-      MyTag.create(band: @band, tag_id: tag_id)
-    end
     if @band.save
       redirect_to @band
     else
