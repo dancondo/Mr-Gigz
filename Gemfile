@@ -32,7 +32,7 @@ gem "select2-rails"
 
 # SSL
 
-# gem 'rack-ssl-enforcer'
+gem 'rack-ssl-enforcer', group: :production
 
 # Internacionalization 118n
 
