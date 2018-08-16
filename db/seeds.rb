@@ -70,11 +70,11 @@ puts "Created #{Tag.all.count * 2} tags"
 puts "Creating new users"
 puts ""
 users = []
-
+user_bar = []
 
 Tag.all.each do |tag|
   users << User.create!(email: "#{tag.genre}_band@gmail.com", password: '123456', role: 'band')
-  users << User.create!(email: "bar_#{tag.genre}@gmail.com", password: '123456', role: 'bar')
+  user_bar << User.create!(email: "bar_#{tag.genre}@gmail.com", password: '123456', role: 'bar')
 end
 
 puts "Created #{User.all.count} users"
@@ -92,15 +92,32 @@ bar_user_two = User.create!(email: 'bar_two1@gmail.com', password: '123456', rol
 bar_user_three = User.create!(email: 'bar_three@gmail.com', password: '123456', role: 'bar')
 bar_user_four = User.create!(email: 'bar_four@gmail.com', password: '123456', role: 'bar')
 bar_user_five = User.create!(email: 'bar_five@gmail.com', password: '123456', role: 'bar')
-bar_user_six = User.create!(email: 'bar_six@gmail.com', password: '123456', role: 'bar')
-bar_user_seven = User.create!(email: 'bar_seven1@gmail.com', password: '123456', role: 'bar')
-bar_user_eight = User.create!(email: 'bar_eight@gmail.com', password: '123456', role: 'bar')
-bar_user_nine = User.create!(email: 'bar_nine@gmail.com', password: '123456', role: 'bar')
-bar_user_ten = User.create!(email: 'bar_ten@gmail.com', password: '123456', role: 'bar')
 
 puts "Created a few more user (Total: #{User.count})"
 puts "Creating new bands"
 puts ""
+
+bar_images = ['https://images.unsplash.com/photo-1513309914637-65c20a5962e1?ixlib=rb-0.3.5&ixid=
+  eyJhcHBfaWQiOjEyMDd9&s=228f272007b6369007faeba1901c3274&auto=format&fit=crop&w=1350&q=80','https://images.unsplash.com/photo-
+  1468072114808-903e572b8ead?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9b463368e97bb53abbab20a7a0237744&auto=format&fit=
+  crop&w=1266&q=80', 'https://images.unsplash.com/photo-1517638851339-a711cfcf3279?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyM
+  Dd9&s=6b7d3fd7313e179636c1189245a70534&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1512805147242-c3e
+  79caf64bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f89e5d8f05a055a7087b6e6ca146527e&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1434569842867-4d6d1d4d1ef0?ixlib
+  =rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=15c0a622b638b386d523ad4cfc681691&auto=format&fit=crop&w=1950&q=80', 'https://images.unsplash.com/photo-1513003604845-103fe8aaf4e6?ixlib=rb-0.3.5&ixid=
+  eyJhcHBfaWQiOjEyMDd9&s=fa3d6a72156a9b7ff6a5a40288267617&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1494962227006-107baac595eb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEy
+  MDd9&s=bb6541d87c6c4e45aa07f513224db142&auto=format&fit=crop&w=1353&q=80', 'https://images.unsplash.com/uploads/1412198485051133af17f/5049dacb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dddba898
+  12ed0325b966bf07aba683e3&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1503788311183-fa3bf9c4bc32?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=22a6f0b55dd62647508c8a81b6ac3
+  071&auto=format&fit=crop&w=1350&q=80']
+addresses = ['Rua Mourato Coelho, 105', 'Rua Apinages, 300', 'Rua Aspicuelta, 644', 'Rua Purpurina, 306', 'Rua Doutor Eduardo de Souza Aranha, 377', 'Rua dos Chanes, 627', 'Rua Ministro Jesuino Cardoso, 181', 'Avenida Paulista, 500', 'Rua Inacio Pereira da Rocha, 400', 'Avenida Brasil, Sao Paulo']
+
+
+bar_images.each_with_index do |image, index|
+  tag = Tag.all.sample
+  bar = Bar.create!(address: addresses[index], user: user_bar[index], name: "Bar #{tag.genre}")
+  bar.remote_photo_url = image
+  bar.save
+end
+
 
 rock_band_url = 'https://images.unsplash.com/photo-1508252592163-5d3c3c559f36?ixlib=rb-0.3.5&ixid=
 eyJhcHBfaWQiOjEyMDd9&s=ec1ecefddebe708d9f122e4ef5372b04&auto=format&fit=crop&w=1350&q=80'
@@ -195,8 +212,6 @@ mpb_bar = Bar.create!(name: 'Entretanto Bar', address: 'Rua Rodesia 500', user: 
 mpb_bar.remote_photo_url = mpb_bar_url
 mpb_bar.save
 
-bar_six_url = ''
-
 puts "Created #{Bar.all.count} bars"
 puts ""
 
@@ -206,12 +221,12 @@ end
 
 Bar.all.each do |bar|
   time = time_rand
-  puts tag = Tag.all.sample
-  puts tag2 = Tag.where.not(genre: tag.genre).sample
-  puts gig = Gig.create!(bar: bar, description: "A melhor noite de #{tag.genre} em SP!!! Teremos um publico de por volta de #{rand(50..300)} pessoas,
+  tag = Tag.all.sample
+  tag2 = Tag.where.not(genre: tag.genre).sample
+  gig = Gig.create!(bar: bar, description: "A melhor noite de #{tag.genre} em SP!!! Teremos um publico de por volta de #{rand(50..300)} pessoas,
     e uma banda muito boa para animar essa galera", start_date: time, end_date: time, date: time.to_date, cache: rand(311..1042))
-  puts GigTag.create!(tag_id: tag.id, gig_id: gig.id)
-  puts GigTag.create!(tag_id: tag2.id, gig_id: gig.id)
+  GigTag.create!(tag_id: tag.id, gig_id: gig.id)
+  GigTag.create!(tag_id: tag2.id, gig_id: gig.id)
   time = time_rand
   tag = Tag.all.sample
   tag2 = Tag.where.not(genre: tag.genre).sample
@@ -234,11 +249,20 @@ at&fit=crop&w=1276&q=80', 'https://images.unsplash.com/photo-1516450360452-9312f
 cHBfaWQiOjEyMDd9&s=40d6efa8c4937c7eb633d8190af66b4e&auto=format&fit=crop&w=1225&q=80', 'https://images.unsplash.com/photo-1512749831818-40542429a606?ixlib=rb-0.3.5&ixid
 =eyJhcHBfaWQiOjEyMDd9&s=1f3d1f3a501ea00614ad976aee4f0deb&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1467317520917-b7451a8e99d7?ixlib=rb-0.3.5&s=
 a1ba1d9e6ff930d55de91fc80ac81ef6&auto=format&fit=crop&w=1363&q=80', 'https://images.unsplash.com/photo-1512140528825-526de61a5bcb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s
-=a4853f6b80bd9f23e90279b865f5665c&auto=format&fit=crop&w=1350&q=80']
+=a4853f6b80bd9f23e90279b865f5665c&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1525025500848-f00b7d362dec?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=
+54bb7909f1d65e323278536d1fb2e06b&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1527091736853-64ca6a9b64d9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f
+d5710eed8516997f943a97ef4de40d8&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1477611160464-0b9fb6404529?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e
+5b40b3ee6d0c7ad423c4d5db2a19c00&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1508179735919-161405495554?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=
+3ef0f80a8c81517ddf10b0cdf773fd3a&auto=format&fit=crop&w=1900&q=80', 'https://images.unsplash.com/photo-1516108759901-daf1a20f9281?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=53
+5bb00cdf05aebc04ebb8fe3ed47d04&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1504637929313-c8eebe7c27af?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=
+03f18f5a17062544b8b92ee4189aef23&auto=format&fit=crop&w=1348&q=80', 'https://images.unsplash.com/photo-1520693700639-99eec807302c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=
+4d204c1672398383d54486613013e408&auto=format&fit=crop&w=1352&q=80', 'https://images.unsplash.com/photo-1533593184105-06d93344a54f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=
+2f715497b95205bbbfec8c2a96a5cc62&auto=format&fit=crop&w=1349&q=80']
 
 images.each_with_index do |image, index|
   url = image
   tag = Tag.all.sample
+  tag2 = Tag.all.where.not(genre: tag.genre).sample
   band = Band.create!(name: "#{tag.genre} Band", user: users[index], minimum_price: rand(100..500), description: "Sou uma banda de #{tag.genre} que toca faz 5 anos com muito
   comprometimento. Estou disponivel para tocar na regiao de SP")
   MyTag.create!(band_id: band.id, tag_id: tag.id)
