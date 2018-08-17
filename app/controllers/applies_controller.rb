@@ -4,6 +4,7 @@ class AppliesController < ApplicationController
 
   def index
     @applies = Apply.where(gig: @gig)
+    @tags = @gig.tags
   end
 
   def create

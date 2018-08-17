@@ -20,7 +20,7 @@ class BarsController < ApplicationController
 
   def dashboard
     @bar = current_user.bar
-    @bands = Message.where(bar: @bar).map{ |m| Band.find(m.band_id) }.uniq
+    @bands = Message.where(bar: @bar).order(created_at: :desc).map{ |m| Band.find(m.band_id) }.uniq
     @gigs = Gig.where(bar: @bar, active: true).order(:start_date)
     @upcoming_gigs = Gig.where(bar: @bar, active: false).where.not(band: nil).order(:start_date)
     @gig = Gig.new
