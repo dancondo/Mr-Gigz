@@ -5,9 +5,14 @@
 <% end %>
   <p class="navbar-brand"></p>
 
-  <%= content_tag :p, class: brand_class_from_page do %>
-    <%= link_to 'Mr.Gigz', home_path %>
-  <% end %>
+
+
+<%= link_to href: 'home_path/' do %>
+    <%= image_tag 'navbar-logo.png', height: 70, alt: 'a face that is unnervingly happy'%>
+<% end %>
+
+
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
