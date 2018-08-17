@@ -1,4 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<% if current_page?(:root) %>
+  <nav class="home-nav navbar navbar-expand-lg navbar-light fixed-top">
+<% else %>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-brand-dakr navbar-brand-dark">
+<% end %>
   <p class="navbar-brand"></p>
 
   <%= content_tag :p, class: brand_class_from_page do %>
