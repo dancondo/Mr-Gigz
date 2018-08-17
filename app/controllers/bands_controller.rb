@@ -18,7 +18,7 @@ class BandsController < ApplicationController
 
   def dashboard
     @band = current_user.band
-    @bars = Message.where(band: @band).map{ |m| Bar.find(m.bar_id) }.uniq
+    @bars = Message.where(band: @band).order(created_at: :desc).map{ |m| Bar.find(m.bar_id) }.uniq
     @gigs = Gig.where(band: @band).order(:start_date)
     @applies = Apply.where(band: @band).map { |a| a if a.gig.active }
     @gigs_by_date = @gigs.group_by(&:date)
